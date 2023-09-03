@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;600&display=swap');
+
+.eventContainer {
+    position: relative;
+    margin: 0 5vw;
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.583);
+}
+
+.eventHeading {
+    font-size: 5rem;
+    color: #BF953F;
+    font-weight: bold;
+    font-family: 'Handjet', cursive;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1rem 1rem 8rem;
+    gap: 6%;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.imageContainer {
+    background: linear-gradient(to left, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+}
+
+.image {
+    z-index: 20;
+    transition: all 0.5s ease-in-out;
+    padding: 0.75rem 1rem 2rem 1rem;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    border: 5px solid goldenrod;
+}
+
+.image:hover {
+    transform: skew(-10deg, 10deg);
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.Descp {
+    font-size: 2.5rem;
+    font-weight: 600;
+    word-spacing: 8px;
+    font-family: 'Handjet', cursive;
+    color: orange;
+}
+
+.Date {
+    font-size: 2.25rem;
+    font-family: 'handjet', cursive;
+    font-weight: 500;
+    color: #007bff;
+}
+
+.Timing {
+    font-size: 2.3rem;
+    font-family: 'handjet', cursive;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.Button {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: -6px 6px 0 rgba(255, 166, 0, 0.553);
+    transition: all .15s linear 0s;
+}
+
+.Button:hover {
+    box-shadow: -3px 3px 0 rgba(255, 166, 0, 0.553);
+    top: 3px;
+    left: -3px;
+}
+
+@media screen and (max-width: 1116px) {
+
+    .eventContainer{
+        gap: 0.25rem;
+        justify-content: flex-start;
+    }
+
+    .mainContainer {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .eventHeading{
+        font-size: 4rem;
+    }
+
+    .image{
+        width: 50vw;
+        height: 50vh;
+        padding: 2%;
+    }
+    
+    .textContainer{
+        align-items: center;
+        width: 60%;
+        gap: 0.75rem;
+    }
+
+    .Descp{
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .timeDate{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Timing{
+        font-size: 2rem;
+    }
+
+    .Date{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 707px) {
+
+    .eventHeading{
+        font-size: 2.75rem;
+    }
+
+    .eventContainer{
+        justify-content: flex-start;
+    }
+
+    .timeDate{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 15rem;
+        gap: 0.25rem;
+    }
+
+    .image{
+        width: 50vw;
+        height: 40vh;
+        padding: 2%;
+    }
+
+    .Descp{
+        font-size: 1.5rem;
+    }
+
+    .Timing{
+        font-size: 1.75rem;
+    }
+
+    .Date{
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,28 @@
+.dotDisplay {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  
+  .dot {
+    width: 30px;
+    height: 30px;
+    background-color: beige;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

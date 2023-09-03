@@ -1,0 +1,10 @@
+.container{
+    position: relative;
+}
+
+.dots{
+    position: absolute;
+    left: 6.5%;
+    top: 35%;
+    z-index: 20;
+}

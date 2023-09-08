@@ -80,7 +80,7 @@ const AlumniComponent: React.FC<AlumniProps> = ({ alumniData }) => {
   
   useEffect(() => {
     const handleResize = () => {
-      sethideCarousel(window.innerWidth > 768);
+      sethideCarousel(window.innerWidth > 1280);
     };
 
    

@@ -9,6 +9,7 @@ interface ButtonProps {
   background?: string;
   color?: string;
   border?: string;
+  onclick?: () => void;
 }
 
 function Button({

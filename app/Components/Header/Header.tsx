@@ -5,7 +5,7 @@ import Image from "next/image";
 import logo from "../../../public/logo.png";
 import Button from "../Button/Button";
 import styled from "styled-components";
-import { FaRocket} from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
 import { Abril_Fatface } from "next/font/google";
 import hover3d from "../../utils/hover";
 
@@ -14,27 +14,31 @@ const abril = Abril_Fatface({
   weight: "400",
 });
 
+const recruitment = () => {
+  alert("Coming Soon!");
+}
+
 function Header() {
   const hero = useRef<HTMLDivElement>(null);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
 
-  
+
   useEffect(() => {
     const handleResize = () => {
       setShouldAnimate(window.innerWidth > 768);
     };
 
-   
+
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-    
+
   }, []);
 
   const toggleMenu = () => {
@@ -62,7 +66,7 @@ function Header() {
     <HeaderStyled ref={hero}>
       <nav className="navbar">
         <div className="logo">
-          <Image src={logo} alt="logo" width={50} className="brand-logo"/>
+          <Image src={logo} alt="logo" width={50} className="brand-logo" />
           <h2 className="brand">UNESQUO</h2>
         </div>
         <div className="menu-icon" onClick={toggleMenu}>
@@ -77,7 +81,7 @@ function Header() {
           </li>
           <li className="button genesis-button">
             <a className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special" href="/genesis"
-             rel="noreferrer noopener">
+              rel="noreferrer noopener">
               <div className="btn special"><div className="text">Genesis</div><svg width="79" height="46" viewBox="0 0 79 46"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_f_618_1123)">
@@ -114,13 +118,15 @@ function Header() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia alias necessitatibus provident, iusto explicabo voluptatum reprehenderit, pariatur cumque illum architecto ipsa asperiores? Similique accusamus, fuga maiores quod totam culpa!
           </p>
           <div className="buttons">
-            <Button
-              name="Recruitment"
-              background="#f2994a"
-              color="#fff"
-              border="1px solid #f2994a"
-              icon={<FaRocket />}
-            />
+            <div className="recruitment" onClick={recruitment}>
+              <Button
+                name="Recruitment"
+                background="#f2994a"
+                color="#fff"
+                border="1px solid #f2994a"
+                icon={<FaRocket />}
+              />
+            </div>
             <Button name="About us" />
           </div>
         </div>
@@ -138,7 +144,7 @@ function Header() {
               height={600}
               alt="hero"
               style={{
-                transform: shouldAnimate?imageHover.transform: "none",
+                transform: shouldAnimate ? imageHover.transform : "none",
               }}
             />
           </div>

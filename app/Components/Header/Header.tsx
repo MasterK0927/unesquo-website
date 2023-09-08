@@ -27,7 +27,7 @@ function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 768);
+      setShouldAnimate(window.innerWidth > 1280);
     };
 
 

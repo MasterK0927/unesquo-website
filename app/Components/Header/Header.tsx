@@ -197,7 +197,7 @@ const HeaderStyled = styled.header`
           display: inline-block;
           max-width: 100%;
           height: 40px;
-          transition: all 0.2s ease 0s;
+          transition: all 0.1s ease 0s;
         }
           .btn {
             position: relative;

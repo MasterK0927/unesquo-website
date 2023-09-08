@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import Button from "../Button/Button";
@@ -16,6 +16,31 @@ const abril = Abril_Fatface({
 
 function Header() {
   const hero = useRef<HTMLDivElement>(null);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
+
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setShouldAnimate(window.innerWidth > 768);
+    };
+
+   
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+    
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
 
   const hoverHero = hover3d(hero, {
     x: 30,
@@ -35,19 +60,22 @@ function Header() {
 
   return (
     <HeaderStyled ref={hero}>
-      <nav>
+      <nav className="navbar">
         <div className="logo">
-          <Image src={logo} alt="logo" width={50} />
-          <h2>UNESQUO</h2>
+          <Image src={logo} alt="logo" width={50} className="brand-logo"/>
+          <h2 className="brand">UNESQUO</h2>
         </div>
-        <ul className="nav-items">
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰
+        </div>
+        <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
           <li>
             <a href="" onClick={home}>Home</a>
           </li>
           <li>
             <a href="#events">Events</a>
           </li>
-          <li className="button">
+          <li className="button genesis-button">
             <a className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special" href="/genesis"
              rel="noreferrer noopener">
               <div className="btn special"><div className="text">Genesis</div><svg width="79" height="46" viewBox="0 0 79 46"
@@ -100,16 +128,17 @@ function Header() {
           <div
             className="image"
             style={{
-              transform: hoverHero.transform,
+              transform: shouldAnimate ? imageHover.transform : "none",
             }}
           >
             <Image
               src="/images/monkey.png"
+              className="monkey"
               width={600}
               height={600}
               alt="hero"
               style={{
-                transform: imageHover.transform,
+                transform: shouldAnimate?imageHover.transform: "none",
               }}
             />
           </div>
@@ -284,6 +313,118 @@ const HeaderStyled = styled.header`
         border-radius: 8px;
       }
     }
+  }
+  @media screen and (max-width: 768px) {
+    .nav-items{
+      padding: 0%;
+      font-size: 1rem;
+      margin: 0;
+    }
+    .logo{
+      font-size: 1rem;
+    }
+    .navbar{
+      padding : 1rem !important;
+      justify-content: space-between !important;
+    }
+    .brand{
+      font-size: 1.8rem;
+    }
+    .brand-logo{
+      width: 2rem !important;
+      height: 2rem !important;
+    }
+    .special{
+      width: 6rem !important;
+      height: 2.4rem !important;
+      
+    }
+    .text{
+      margin-left: -0.8rem !important;
+    }
+    
+    
+    .nav-items {
+      display: none;
+    }
+    
+    .menu-icon {
+      visibility: visible;
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+      padding: 1rem;
+    }
+
+    .nav-items {
+      display: none;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      background-color: #111111;
+      text-align: center;
+      padding-bottom: 0.7rem;
+      padding-top: 0.5rem;
+      z-index: 10;
+    }
+
+    .nav-items.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-items.close{
+      visibility: hidden;
+      width: 0 !important;
+    }
+
+    .nav-items.open li {
+      margin: 1rem 0;
+    }
+    
+    .nav-items.open a {
+      color: white;
+    }
+
+    .nav-items a {
+      padding: 1.3rem ; 
+      border-bottom: 1px solid rgba(254, 254, 254, 0.345); 
+    }
+
+
+    .button__StyledButton-sc-18iddzu-1{
+      border-bottom: none !important;
+    }
+
+    .genesis-button{
+      margin-top: 0 !important;
+    }
+     
+    .header-content{
+      flex-direction: column-reverse;
+      padding: 5rem 1rem !important;
+    }
+
+    .image-content{
+      padding-top: 3rem !important;
+      
+    }
+
+    .monkey{  
+      
+      width: 21rem !important;
+      height: 21rem !important;
+      z-index: 0 !important;
+    }
+    .text-content{
+      width: 23rem;
+      align-items: center;
+      position: center;
+      text-align: center;
+    }
+    
   }
 `;
 

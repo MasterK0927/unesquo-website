@@ -32,8 +32,8 @@ const TextWrapper = ({ children }: Props) => {
   );
 
   return (
-    <div ref={text}>
-      <motion.p style={{ opacity, x, color: colorChange }}>{children}</motion.p>
+    <div ref={text} >
+      <motion.p className="events-text" style={{ opacity, x, color: colorChange }}>{children}</motion.p>
     </div>
   );
 };
@@ -80,6 +80,20 @@ const TextSectionStyled = styled.section`
 
   .heading{
     font-size: 10rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading{
+      font-size:5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .events-text{
+      font-size: 2rem !important;
+      width: 20rem !important;
+      margin: auto ;
+      text-align: center;
+    }
   }
 `;
 

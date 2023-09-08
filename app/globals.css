@@ -107,3 +107,12 @@ header {
   background-color: var(--color-border);
   border-radius: 5px;
 }
+
+.menu-icon{
+  visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+  

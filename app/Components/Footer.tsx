@@ -103,7 +103,7 @@ const FooterStyled = styled.footer`
     .links {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       h4 {
         font-size: 1.8rem;
@@ -130,6 +130,36 @@ const FooterStyled = styled.footer`
     margin-top: 2rem;
     padding: 2rem 0;
     border-top: 1px solid var(--color-border);
+  }
+
+  @media screen and (max-width: 768px) {
+    
+    padding: 1rem !important;
+    
+    .nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 100;
+      width: 100%;
+    }
+    .logo-con{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+    }
+    .logo{
+      justify-content: center;
+    }
+    .socials{
+      justify-content: center;
+    }
+    .links{
+      margin: auto;
+      text-align: center;
+    }
   }
 `;
 

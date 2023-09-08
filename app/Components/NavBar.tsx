@@ -14,9 +14,9 @@ function NavBar() {
 
     return (
         <HeaderStyled ref={hero}>
-            <nav>
+            <nav className="navbar">
                 <div className="logo">
-                    <Image src={logo} alt="logo" width={50} />
+                    <Image src={logo} alt="logo" width={50} className="brand-logo"/>
                     <h2>UNESQUO</h2>
                 </div>
                 <ul className="nav-items">
@@ -26,9 +26,9 @@ function NavBar() {
                     <li>
                         <a href="/#events">Events</a>
                     </li>
-                    <li className="button">
+                    <li className="button ">
                         <a className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special" href="/genesis" rel="noreferrer noopener">
-                            <div className="btn special"><div className="text">Genesis</div><svg width="79" height="46" viewBox="0 0 79 46"
+                            <div className="btn special"><div className="text">Genesis</div><svg  width="79" height="46" viewBox="0 0 79 46"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_f_618_1123)">
                                     <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"></path>

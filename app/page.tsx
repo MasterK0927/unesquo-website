@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Components/Header/Header";
 import styled from "styled-components";
 import SectionLayout from "./Components/SectionLayout";
@@ -11,41 +11,32 @@ import Footer from "./Components/Footer";
 import AlumniPage from "./Components/AlumniData";
 import HorizontalWrapper from "./Components/HorizontalWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"
 
-export default function Home() {
-  const video = React.useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: video,
-    offset: ["start end", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.65, 1], [1, 1, 0]);
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.6, 0.8, 0.9],
-    [1, 0.8, 0.8, 0]
-  );
-
-  return (
+const AnimatedCard = () =>  {
+  return(
     <>
-      <Header />
-      <MainStyled>
-        <SectionLayout>
-          <HorizontalWrapper height="40rem" direction={-1400}>
-            <div className="cards">
-              {cards.map((card, index) => {
-                return (
-                  <Card
-                    key={index}
-                    title={card.title}
-                    description={card.description}
-                    image={card.image}
-                  />
-                );
-              })}
-            </div>
-          </HorizontalWrapper>
+    <MainStyled>
+    <SectionLayout>
+          
+            <HorizontalWrapper height="40rem" direction={-1400}>
+              <div className="cards">
+                {cards.map((card, index) => {
+                  return (
+                    <Card
+                      key={index}
+                      title={card.title}
+                      description={card.description}
+                      image={card.image}
+                    />
+                  );
+                })}
+              </div>
+            </HorizontalWrapper>
+          
         </SectionLayout>
 
         <Fullpage />
@@ -66,14 +57,94 @@ export default function Home() {
             </div>
           </HorizontalWrapper>
         </SectionLayout>
+        </MainStyled>
+        </>
+  )
 
+}
+
+
+const Carousel = () => {
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnFocus: true,
+    autoplay: true,
+    autoplaySpeed: 1400
+  };
+  return (
+    
+    <div className="carousel">
+      <Slider {...settings}>
+      {cards.map((card, index) => {
+                return (
+                  <div className="carousel-cards">
+                      <Card
+                      key={index}
+                      title={card.title}
+                      description={card.description}
+                      image={card.image}
+                    />
+                  </div>
+                );
+              })}
+    </Slider>
+    </div>
+    
+  );
+}
+
+export default function Home() {
+  const video = React.useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: video,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.65, 1], [0.9, 1, 0]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.6, 0.8, 0.9],
+    [1, 0.8, 0.8, 0]
+  );
+
+  const [showCards, setshowCards] = useState(true);
+
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setshowCards(window.innerWidth > 768);
+    };
+
+   
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+    
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <MainStyled>
+        {showCards ? <AnimatedCard />  :  <Carousel /> } 
+      
         <SectionLayout>
           <div id="events">
             <TextSection />
           </div>
         </SectionLayout>
 
-        <SectionLayout>
+        <div className="yt-video">
           <motion.div
             className="video"
             ref={video}
@@ -89,12 +160,12 @@ export default function Home() {
               allowFullScreen
             ></iframe>
           </motion.div>
-        </SectionLayout>
+        </div>
 
         <SectionLayout>
           <AlumniPage />
         </SectionLayout>
-
+     
         <Footer />
       </MainStyled>
     </>
@@ -102,6 +173,7 @@ export default function Home() {
 }
 
 const MainStyled = styled.main`
+  display : block;
   min-height: 100vh;
   width: 100%;
 
@@ -121,5 +193,42 @@ const MainStyled = styled.main`
       width: 100%;
       height: 52rem;
     }
+  }
+  .alumni-content{
+    padding: 10rem 5rem;
+    z-index: 1;
+  }
+  @media screen and (max-width: 768px) {
+    
+    .yt-video{
+      margin: auto;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    .video{
+      margin-top:2rem;
+      iframe {
+        border: none;
+        width: 100%;
+        height: 15rem;
+      }
+    }
+    .carousel{
+      margin:0 2.5rem !important;
+    }
+    
+    .carousel-cards{
+      padding: 0 1rem !important
+    }
+
+    .normal-cards{
+      visibility: hidden;
+    }
+    .video{
+      transform: none !important;
+      margin-bottom: 5rem;
+      
+    }
+    
   }
 `;

@@ -32,7 +32,7 @@ const footer = [
         link: "/",
       },
     ],
-  },
+  } 
 ];
 
 export default footer;

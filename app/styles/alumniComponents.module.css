@@ -87,3 +87,40 @@
     border: 4px solid rgb(124, 127, 255);
     box-shadow: rgb(124, 127, 255) 0px 0px 12px;
 }
+
+.test {
+    z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+    .heading{
+        font-size: 5rem;
+        margin-bottom: 7rem;
+        text-align: center;
+        
+    }
+    .alumni-carousel{
+        margin: 0 2rem;
+        
+        margin-bottom : 4rem;
+    }
+    .alumni-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin : 0 !important;
+        padding: 0 ;
+    
+    }
+    .dpeDzF{
+        justify-content: center;
+        margin: 0 auto !important;
+        padding: 2rem !important;
+    }
+    
+    .dpeDzF:hover {
+        transform: none;
+    }
+    
+}

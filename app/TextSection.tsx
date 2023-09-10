@@ -32,8 +32,13 @@ const TextWrapper = ({ children }: Props) => {
   );
 
   return (
-    <div ref={text} >
-      <motion.p className="events-text" style={{ opacity, x, color: colorChange }}>{children}</motion.p>
+    <div ref={text}>
+      <motion.p
+        className="events-text"
+        style={{ opacity, x, color: colorChange }}
+      >
+        {children}
+      </motion.p>
     </div>
   );
 };
@@ -41,51 +46,21 @@ const TextWrapper = ({ children }: Props) => {
 function TextSection() {
   return (
     <TextSectionStyled>
-      <h1 className="heading">
-        EVENTS
-      </h1>
-      <TextWrapper>
-        Just A Min.
-      </TextWrapper>
-      <TextWrapper>
-        lAMEST QUIZ.
-      </TextWrapper>
-      <TextWrapper>
-        PYRAMID.
-      </TextWrapper>
-      <TextWrapper>
-        BIZTECH QUIZ.
-      </TextWrapper>
-      <TextWrapper>
-        MORE THAN MONOLOGUES.
-      </TextWrapper>
-      <TextWrapper>
-        SPENT QUIZ.
-      </TextWrapper>
-      <TextWrapper>
-        TURNCOAT DEBATE.
-      </TextWrapper>
-      <TextWrapper>
-        MELAS QUIZ
-      </TextWrapper>
-      <TextWrapper>
-        SPIN A STORY
-      </TextWrapper>
-      <TextWrapper>
-        GENERAL QUIZ
-      </TextWrapper>
-      <TextWrapper>
-        PARLIAMENTARY DEBATE.
-      </TextWrapper>
-      <TextWrapper>
-        ATM QUIZ.
-      </TextWrapper>
-      <TextWrapper>
-        THREESOME IN A BOAT.
-      </TextWrapper>
-      <TextWrapper>
-        MUSIC DAY QUIZ.
-      </TextWrapper>
+      <h1 className="heading">EVENTS</h1>
+      <TextWrapper>Just A Min.</TextWrapper>
+      <TextWrapper>lAMEST QUIZ.</TextWrapper>
+      <TextWrapper>PYRAMID.</TextWrapper>
+      <TextWrapper>BIZTECH QUIZ.</TextWrapper>
+      <TextWrapper>MORE THAN MONOLOGUES.</TextWrapper>
+      <TextWrapper>SPENT QUIZ.</TextWrapper>
+      <TextWrapper>TURNCOAT DEBATE.</TextWrapper>
+      <TextWrapper>MELAS QUIZ</TextWrapper>
+      <TextWrapper>SPIN A STORY</TextWrapper>
+      <TextWrapper>GENERAL QUIZ</TextWrapper>
+      <TextWrapper>PARLIAMENTARY DEBATE.</TextWrapper>
+      <TextWrapper>ATM QUIZ.</TextWrapper>
+      <TextWrapper>THREESOME IN A BOAT.</TextWrapper>
+      <TextWrapper>MUSIC DAY QUIZ.</TextWrapper>
     </TextSectionStyled>
   );
 }
@@ -99,20 +74,20 @@ const TextSectionStyled = styled.section`
     gap: 3rem;
   }
 
-  .heading{
+  .heading {
     font-size: 10rem;
   }
 
-  @media screen and (max-width: 768px) {
-    .heading{
-      font-size:5rem;
+  @media screen and (max-width: 1280px) {
+    .heading {
+      font-size: 5rem;
       text-align: center;
       margin-bottom: 3rem;
     }
-    .events-text{
+    .events-text {
       font-size: 2rem !important;
       width: 20rem !important;
-      margin: auto ;
+      margin: auto;
       text-align: center;
     }
   }

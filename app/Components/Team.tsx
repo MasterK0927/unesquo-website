@@ -9,7 +9,7 @@ interface Team {
     position: string;
 }
 
-interface AlumniProps {
+interface TeamProps {
     teamData: Team[];
 }
 

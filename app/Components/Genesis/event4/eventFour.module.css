@@ -17,7 +17,7 @@
     font-size: 5rem;
     color: #BF953F;
     font-weight: bold;
-    font-family: 'Handjet', cursive;
+    font-family: 'Handjet', 'monospace';
 }
 
 .mainContainer {
@@ -56,20 +56,20 @@
     font-size: 2.5rem;
     font-weight: 600;
     word-spacing: 8px;
-    font-family: 'Handjet', cursive;
+    font-family: 'Handjet', 'monospace';
     color: orange;
 }
 
 .Date {
     font-size: 2.25rem;
-    font-family: 'handjet', cursive;
+    font-family: 'handjet', 'monospace';
     font-weight: 500;
     color: #007bff;
 }
 
 .Timing {
     font-size: 2.3rem;
-    font-family: 'handjet', cursive;
+    font-family: 'handjet', 'monospace';
     font-weight: 600;
     color: #007bff;
 }

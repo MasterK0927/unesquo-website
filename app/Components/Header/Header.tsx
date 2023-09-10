@@ -27,7 +27,7 @@ function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 768);
+      setShouldAnimate(window.innerWidth > 1280);
     };
 
 
@@ -191,13 +191,13 @@ const HeaderStyled = styled.header`
       align-items: center;
       gap: 2rem;
       li {
-        transition: all 0.2s ease-in-out;
+        transition: all 0.1s ease-in-out;
 
         .ixHxFg {
           display: inline-block;
           max-width: 100%;
           height: 40px;
-          transition: all 0.2s ease 0s;
+          transition: all 0.1s ease 0s;
         }
           .btn {
             position: relative;

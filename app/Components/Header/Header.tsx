@@ -138,7 +138,7 @@ function Header() {
             }}
           >
             <Image
-              src="/images/OIP (2).jpeg"
+              src="/images/oip.jpeg"
               className="monkey"
               width={600}
               height={600}

@@ -23,7 +23,7 @@ function HorizontalWrapper({ children, direction, height }: Props) {
   
   useEffect(() => {
     const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 1280);
+      setShouldAnimate(window.innerWidth > 1750);
       console.log(window.innerWidth);
     };
 

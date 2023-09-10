@@ -1,5 +1,5 @@
-'use client'
-import React, { useState, useEffect } from 'react';
+"use client"
+import React, { useState } from 'react';
 import DotDisplay from '../Components/dots/DotDisplay';
 import GenesisLanding from '../Components/Genesis/landing/Landing';
 import styles from '../styles/genesis.module.css';
@@ -18,9 +18,6 @@ const components: React.FC[] = [
   EventFive,
 ];
 
-const SCROLL_THRESHOLD = 100;
-const TOUCH_SENSITIVITY = 50;
-
 const Genesis: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -29,63 +26,19 @@ const Genesis: React.FC = () => {
     setActiveIndex(dotNumber - 1);
   };
 
-  useEffect(() => {
-    const handleScroll = (e: WheelEvent) => {
-      if (e.deltaY > SCROLL_THRESHOLD && activeIndex > 0) {
-        // Scroll up
-        setActiveIndex((prevIndex) => prevIndex - 1);
-      } else if (e.deltaY < -SCROLL_THRESHOLD && activeIndex < components.length - 1) {
-        // Scroll down
-        setActiveIndex((prevIndex) => prevIndex + 1);
-      }
-    };
+  const handleNextButtonClick = () => {
+    const nextIndex = (activeIndex + 1) % components.length;
+    setActiveIndex(nextIndex);
+  };
+  
+  
 
-    const handleTouchStart = (e: TouchEvent) => {
-      // Store the initial touch position
-      const startY = e.touches[0].clientY;
 
-      const handleTouchMove = (e: TouchEvent) => {
-        // Calculate the vertical distance traveled
-        const deltaY = e.touches[0].clientY - startY;
-
-        if (deltaY > TOUCH_SENSITIVITY && activeIndex > 0) {
-          // Scroll up
-          setActiveIndex((prevIndex) => prevIndex - 1);
-        } else if (deltaY < -TOUCH_SENSITIVITY && activeIndex < components.length - 1) {
-          // Scroll down
-          setActiveIndex((prevIndex) => prevIndex + 1);
-        }
-      };
-
-      const handleTouchEnd = () => {
-        // Remove touch move and touch end event listeners
-        window.removeEventListener('touchmove', handleTouchMove);
-        window.removeEventListener('touchend', handleTouchEnd);
-      };
-
-      // Attach touch move and touch end event listeners
-      window.addEventListener('touchmove', handleTouchMove);
-      window.addEventListener('touchend', handleTouchEnd);
-    };
-
-    // Attach the appropriate event listeners based on device type
-    if ('ontouchstart' in window) {
-      // Touchscreen device
-      window.addEventListener('touchstart', handleTouchStart);
-    } else {
-      // Non-touchscreen device
-      window.addEventListener('wheel', handleScroll);
+  const handlePrevButtonClick = () => {
+    if (activeIndex > 0) {
+      setActiveIndex((prevIndex) => prevIndex - 1);
     }
-
-    return () => {
-      // Clean up the event listeners when the component unmounts
-      if ('ontouchstart' in window) {
-        window.removeEventListener('touchstart', handleTouchStart);
-      } else {
-        window.removeEventListener('wheel', handleScroll);
-      }
-    };
-  }, [activeIndex]);
+  };
 
   const ActiveComponent = components[activeIndex];
 
@@ -94,6 +47,20 @@ const Genesis: React.FC = () => {
       <div className={styles.dots}>
         <DotDisplay activeDot={activeIndex + 1} onDotClick={handleDotClick} />
       </div>
+        <button
+          className={`${styles.navButton} ${styles.prevButton}`}
+          onClick={handlePrevButtonClick}
+          disabled={activeIndex === 0}
+        >
+          &lt; {/* Left arrow */}
+        </button>
+        <button
+          className={`${styles.navButton} ${styles.nextButton}`}
+          onClick={handleNextButtonClick}
+          disabled={activeIndex === components.length - 1}
+        >
+          &gt; {/* Right arrow */}
+        </button>
       <ActiveComponent />
     </div>
   );

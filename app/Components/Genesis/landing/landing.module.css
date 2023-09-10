@@ -1,4 +1,4 @@
-.landingContainer{
+.landingContainer {
     position: relative;
     margin: 0 5vw;
     height: 100vh;
@@ -10,7 +10,7 @@
     overflow-y: hidden;
 }
 
-.text{
+.text {
     font-size: 20vw;
     font-weight: bold;
     position: absolute;
@@ -21,7 +21,7 @@
     text-shadow: 1px 0px 0px rgba(250, 235, 215, 0.66);
 }
 
-.landingContainer::after{
+.landingContainer::after {
     content: "";
     z-index: 5;
     position: absolute;
@@ -33,11 +33,21 @@
     animation: animate 2.5s linear;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         width: 0px;
     }
-    100%{
+
+    100% {
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landingContainer {
+        height: 88vh;
+        background: url("../../../../public/genesis-logo-sp.png") ;
+        background-size: cover;
+        background-position: center;
     }
 }

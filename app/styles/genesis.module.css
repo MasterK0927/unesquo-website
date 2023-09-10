@@ -1,10 +1,59 @@
-.container{
+.container {
     position: relative;
 }
 
-.dots{
+.dots {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     position: absolute;
     left: 6.5%;
     top: 35%;
     z-index: 20;
+}
+
+.buttonContainer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(255, 215, 0, 1);
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 40px rgba(165, 48, 48, 0.643), 0 6px 20px rgba(165, 48, 48, 0.643), 0 8px 40px rgba(165, 48, 48, 0.643);
+    transition: background-color 0.5s ease;
+}
+
+.navButton:hover {
+    background-color: rgba(255, 217, 0, 0.800);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.prevButton {
+    z-index: 50;
+    position: absolute;
+    top: 23vh;
+    left: 6.8vw;
+}
+
+.nextButton {
+    z-index: 50;
+    position: absolute;
+    bottom: 15vh;
+    left: 6.8vw;
 }

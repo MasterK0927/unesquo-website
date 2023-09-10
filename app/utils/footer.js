@@ -20,15 +20,15 @@ const footer = [
     title: "Photo Gallery",
     links: [
       {
-        name: "event 1",
+        name: "Genesis",
         link: "/",
       },
       {
-        name: "event 2",
+        name: "BIT MUN",
         link: "/",
       },
       {
-        name: "event 3",
+        name: "Weekenders",
         link: "/",
       },
     ],

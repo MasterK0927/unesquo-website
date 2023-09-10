@@ -1,44 +1,45 @@
-import monkey from "/public/images/monkey.png";
-import bulb from "/public/images/bulb_tree.png";
-import smoke_2 from "/public/images/monkey.png";
-import smoke_head from "/public/images/smoke_head.png";
-import smoke from "/public/images/smoke_2.png";
-import bitcoin from "/public/images/bitcoin.jpg";
+import music from "/public/images/music.png"
+import internet from "/public/images/internet.png";
+import informal from "/public/images/informal.png";
+import jab from "/public/images/jab.png";
+import jam from "/public/images/jam.png";
+import melas from "/public/images/melas.png";
 
 export const cards = [
   {
     id: 1,
-    title: "Monkey King",
-    description: "A monkey king who is a disciple of Buddha.",
-    image: bitcoin,
+    title: "Just A Min",
+    description: "1min on the clock to captivate audience",
+    image: jam,
     link: "/monkey-king",
   },
   {
     id: 2,
-    title: "Bulb Tree",
-    description: "A tree that grows bulbs.",
-    image: bulb,
+    title: "Music Day Quiz",
+    description: "The Ultimate Music Quiz Showdown!",
+    image: music,
     link: "/bulb-tree",
   },
   {
     id: 3,
-    title: "Smoke",
-    description: "A smoke that is a byproduct of fire.",
-    image: smoke,
+    title: "Just Add Banter!",
+    description: " Riveting battle of wit & Charisma.",
+    image: jab,
     link: "/smoke",
   },
   {
     id: 4,
-    title: "Smoke Head",
-    description: "A smoke that is a byproduct of fire.",
-    image: smoke_head,
+    title: "Informal Debate",
+    description: "Show off Your Debating Talent",
+    image: informal,
     link: "/smoke-head",
   },
   {
     id: 5,
-    title: "Smoke 2",
-    description: "A smoke that is a byproduct of fire.",
-    image: smoke_2,
+    title: "Internet Culture Quiz",
+    description: " Everything from viral memes to blockchain technology.",
+    image: internet,
     link: "/smoke-2",
   },
+
 ];

@@ -24,13 +24,29 @@ function Footer() {
             <h2>UNESQUO, BIT Mesra</h2>
           </div>
           <p>
-          The United Engineers' Speaking & Quizzing Organization is the official quizzing and oratory body of BIT Mesra. The club is led by top- tier orators, debaters and quizzers who feel that erudition and confidence are two essential elements of one's persona that must be nurtured in order to be cornerstones to a prosperous future.
+            The United Engineers' Speaking & Quizzing Organization is the
+            official quizzing and oratory body of BIT Mesra. The club is led by
+            top- tier orators, debaters and quizzers who feel that erudition and
+            confidence are two essential elements of one's persona that must be
+            nurtured in order to be cornerstones to a prosperous future.
           </p>
           <div className="socials">
-           <Link href="/"> <AiFillTwitterCircle /></Link>
-           <Link href="https://www.instagram.com/unesquo/"> <AiFillInstagram /></Link>
-           <Link href="/"> <BsDiscord /></Link>
-           <Link href="https://www.linkedin.com/company/unesquo-bit-mesra/"> <AiFillLinkedin /></Link>
+            <Link href="/">
+              {" "}
+              <AiFillTwitterCircle />
+            </Link>
+            <Link href="https://www.instagram.com/unesquo/">
+              {" "}
+              <AiFillInstagram />
+            </Link>
+            <Link href="/">
+              {" "}
+              <BsDiscord />
+            </Link>
+            <Link href="https://www.linkedin.com/company/unesquo-bit-mesra/">
+              {" "}
+              <AiFillLinkedin />
+            </Link>
           </div>
         </div>
         <div className="links">
@@ -134,28 +150,28 @@ const FooterStyled = styled.footer`
   @media screen and (max-width: 1280px) {
     
     padding: 1rem !important;
-    
-    .nav{
+
+    .nav {
       display: flex;
       flex-direction: column;
       justify-content: center;
       z-index: 100;
       width: 100%;
     }
-    .logo-con{
+    .logo-con {
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       margin: auto;
     }
-    .logo{
+    .logo {
       justify-content: center;
     }
-    .socials{
+    .socials {
       justify-content: center;
     }
-    .links{
+    .links {
       margin: auto;
       text-align: center;
     }

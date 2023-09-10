@@ -45,25 +45,46 @@ function TextSection() {
         EVENTS
       </h1>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        Just A Min.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        lAMEST QUIZ.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        PYRAMID.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        BIZTECH QUIZ.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        MORE THAN MONOLOGUES.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        SPENT QUIZ.
       </TextWrapper>
       <TextWrapper>
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+        TURNCOAT DEBATE.
+      </TextWrapper>
+      <TextWrapper>
+        MELAS QUIZ
+      </TextWrapper>
+      <TextWrapper>
+        SPIN A STORY
+      </TextWrapper>
+      <TextWrapper>
+        GENERAL QUIZ
+      </TextWrapper>
+      <TextWrapper>
+        PARLIAMENTARY DEBATE.
+      </TextWrapper>
+      <TextWrapper>
+        ATM QUIZ.
+      </TextWrapper>
+      <TextWrapper>
+        THREESOME IN A BOAT.
+      </TextWrapper>
+      <TextWrapper>
+        MUSIC DAY QUIZ.
       </TextWrapper>
     </TextSectionStyled>
   );

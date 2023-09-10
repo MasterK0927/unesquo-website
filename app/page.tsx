@@ -119,7 +119,7 @@ export default function Home() {
   
   useEffect(() => {
     const handleResize = () => {
-      setshowCards(window.innerWidth > 768);
+      setshowCards(window.innerWidth > 1280);
     };
 
    
@@ -155,7 +155,7 @@ export default function Home() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/UNESQUO"
+              src="https://www.youtube.com/embed/MSTDhx574P4"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -190,29 +190,33 @@ const MainStyled = styled.main`
     padding: 2rem;
     background-color: #161616;
     border-radius: 1rem;
+    height: 50rem;
     iframe {
       border: none;
       width: 100%;
-      height: 52rem;
+      height: 100%;
     }
   }
   .alumni-content{
     padding: 10rem 5rem;
     z-index: 1;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     
     .yt-video{
       margin: auto;
       z-index: 100;
       padding: 0 1rem;
+      
     }
     .video{
       margin-top:2rem;
+      margin-bottom: 2rem !important;
+      height: 25rem;
       iframe {
         border: none;
         width: 100%;
-        height: 15rem;
+        height: 100%;
       }
     }
     .carousel{

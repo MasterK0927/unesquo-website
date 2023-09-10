@@ -156,8 +156,9 @@ function Header() {
 
 const HeaderStyled = styled.header`
   nav {
-    padding: 0 4rem;
+    padding: 1.5rem 4rem;
     min-height: 10vh;
+    margin-bottom: 1rem;
     border-bottom: 1px solid var(--color-border);
     display: flex;
     justify-content: space-between;
@@ -320,7 +321,9 @@ const HeaderStyled = styled.header`
       }
     }
   }
-  @media screen and (max-width: 768px) {
+ 
+  @media screen and (max-width: 1280px) {
+    
     .nav-items{
       padding: 0%;
       font-size: 1rem;
@@ -330,7 +333,7 @@ const HeaderStyled = styled.header`
       font-size: 1rem;
     }
     .navbar{
-      padding : 1rem !important;
+      padding : 1rem 2rem !important;
       justify-content: space-between !important;
     }
     .brand{

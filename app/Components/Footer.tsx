@@ -131,7 +131,7 @@ const FooterStyled = styled.footer`
     border-top: 1px solid var(--color-border);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     
     padding: 1rem !important;
     

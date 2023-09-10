@@ -103,7 +103,7 @@ const TextSectionStyled = styled.section`
     font-size: 10rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     .heading{
       font-size:5rem;
       text-align: center;

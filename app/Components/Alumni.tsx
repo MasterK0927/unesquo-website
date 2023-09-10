@@ -42,12 +42,31 @@ const AlumniGrid: React.FC<AlumniProps> = ({ alumniData }) => {
 
 const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
     
-    
+    const [slidesToShow, setSlidesToShow] = useState(1); 
+
+    useEffect(() => {
+      const handleResize = () => {
+        const innerWidth = window.innerWidth;
+        if (innerWidth >= 900 && innerWidth <= 1280) {
+          setSlidesToShow(2);
+        } else {
+          setSlidesToShow(1);
+        }
+      };
+  
+      handleResize();
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+
     var settings = {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: slidesToShow,
       slidesToScroll: 1,
       pauseOnFocus: true,
       autoplay: true,
@@ -73,6 +92,9 @@ const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
 }
 
 
+
+
+
 const AlumniComponent: React.FC<AlumniProps> = ({ alumniData }) => {
     
     const [hideCarousel, sethideCarousel] = useState(true);
@@ -93,11 +115,13 @@ const AlumniComponent: React.FC<AlumniProps> = ({ alumniData }) => {
     };
     
   }, []);
+
+  
     
     return (
         <div>
             <h2 className={styles.heading}>Alumni</h2>
-            {hideCarousel? <AlumniGrid alumniData={alumniData} /> : <CarouselAlumni alumniData={alumniData} />}
+            {hideCarousel? <AlumniGrid alumniData={alumniData} /> : <CarouselAlumni alumniData={alumniData}  />}
         </div>
     );
 };

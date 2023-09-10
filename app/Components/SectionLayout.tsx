@@ -9,8 +9,8 @@ interface SectionLayoutProps {
 
 const SectionLayoutStyled = styled.section`
   padding: 5rem 10rem;
-  @media (max-width: 768px) {
-    padding : 3rem 1rem;
+  @media (max-width: 1280px) {
+    padding : 3rem 3rem;
   }
   
 `;

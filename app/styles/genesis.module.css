@@ -47,13 +47,13 @@
 .prevButton {
     z-index: 50;
     position: absolute;
-    top: 23vh;
+    top: 20vh;
     left: 6.8vw;
 }
 
 .nextButton {
     z-index: 50;
     position: absolute;
-    bottom: 15vh;
+    top: 75vh;
     left: 6.8vw;
 }

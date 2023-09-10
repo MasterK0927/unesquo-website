@@ -3,7 +3,7 @@
 .eventContainer {
     position: relative;
     margin: 0 5vw;
-    height: fit-content;
+    height: 97vh;
     width: 90vw;
     display: flex;
     flex-direction: column;

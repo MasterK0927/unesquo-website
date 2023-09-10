@@ -39,6 +39,8 @@
     position: relative;
     display: inline-flex;
     padding: 1px 10px 3px 30px;
+    color: rgba(0, 0, 255, 0.487);
+    font-weight: bold;
     background-color: rgba(255, 228, 196, 0.575);
     border-radius: 100px;
 }

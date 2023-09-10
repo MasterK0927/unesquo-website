@@ -33,7 +33,7 @@ function Fullpage() {
         }}
       >
         <Image
-          src="/images/rover.jpg"
+          src="/images/team1.jpeg"
           alt="monkey"
           fill={true}
           style={{

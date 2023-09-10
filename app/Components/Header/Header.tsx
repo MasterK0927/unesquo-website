@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import Button from "../Button/Button";
 import styled from "styled-components";
-import { FaRocket} from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
 import { Abril_Fatface } from "next/font/google";
 import hover3d from "../../utils/hover";
 
@@ -14,8 +14,37 @@ const abril = Abril_Fatface({
   weight: "400",
 });
 
+const recruitment = () => {
+  alert("Coming Soon!");
+}
+
 function Header() {
   const hero = useRef<HTMLDivElement>(null);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShouldAnimate(window.innerWidth > 1280);
+    };
+
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
 
   const hoverHero = hover3d(hero, {
     x: 30,
@@ -35,21 +64,24 @@ function Header() {
 
   return (
     <HeaderStyled ref={hero}>
-      <nav>
+      <nav className="navbar">
         <div className="logo">
-          <Image src={logo} alt="logo" width={50} />
-          <h2>UNESQUO</h2>
+          <Image src={logo} alt="logo" width={50} className="brand-logo" />
+          <h2 className="brand">UNESQUO</h2>
         </div>
-        <ul className="nav-items">
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰
+        </div>
+        <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
           <li>
             <a href="" onClick={home}>Home</a>
           </li>
           <li>
             <a href="#events">Events</a>
           </li>
-          <li className="button">
+          <li className="button genesis-button">
             <a className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special" href="/genesis"
-             rel="noreferrer noopener">
+              rel="noreferrer noopener">
               <div className="btn special"><div className="text">Genesis</div><svg width="79" height="46" viewBox="0 0 79 46"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_f_618_1123)">
@@ -80,19 +112,21 @@ function Header() {
       <div className="header-content">
         <div className="text-content">
           <h1 className={abril.className}>
-            United Engineers' Speaking And Quizzing Organisation
+          United Engineers' Speaking And Quizzing Organisation
           </h1>
           <p>
           Welcome to the digital home of UNESQUO, your gateway to the world of vibrant debates and mind-bending quizzes. We're delighted to have you here, and we invite you to explore the boundless horizons of knowledge and discourse that await you.
           </p>
           <div className="buttons">
-            <Button
-              name="Recruitment"
-              background="#f2994a"
-              color="#fff"
-              border="1px solid #f2994a"
-              icon={<FaRocket />}
-            />
+            <div className="recruitment" onClick={recruitment}>
+              <Button
+                name="Recruitment"
+                background="#f2994a"
+                color="#fff"
+                border="1px solid #f2994a"
+                icon={<FaRocket />}
+              />
+            </div>
             <Button name="About us" />
           </div>
         </div>
@@ -100,16 +134,17 @@ function Header() {
           <div
             className="image"
             style={{
-              transform: hoverHero.transform,
+              transform: shouldAnimate ? imageHover.transform : "none",
             }}
           >
             <Image
               src="/images/OIP (2).jpeg"
+              className="monkey"
               width={600}
               height={600}
               alt="hero"
               style={{
-                transform: imageHover.transform,
+                transform: shouldAnimate ? imageHover.transform : "none",
               }}
             />
           </div>

@@ -7,12 +7,12 @@ import footer from "../utils/footer";
 import Image from "next/image";
 
 import {
-  AiFillGithub,
   AiFillTwitterCircle,
   AiFillInstagram,
   AiFillLinkedin,
 } from "react-icons/ai";
 import { BsDiscord } from "react-icons/bs";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -24,14 +24,13 @@ function Footer() {
             <h2>UNESQUO, BIT Mesra</h2>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto excepturi, laudantium voluptate non necessitatibus asperiores fugit animi praesentium placeat similique.
+          The United Engineers' Speaking & Quizzing Organization is the official quizzing and oratory body of BIT Mesra. The club is led by top- tier orators, debaters and quizzers who feel that erudition and confidence are two essential elements of one's persona that must be nurtured in order to be cornerstones to a prosperous future.
           </p>
           <div className="socials">
-            <AiFillGithub />
-            <AiFillTwitterCircle />
-            <AiFillInstagram />
-            <BsDiscord />
-            <AiFillLinkedin />
+           <Link href="/"> <AiFillTwitterCircle /></Link>
+           <Link href="https://www.instagram.com/unesquo/"> <AiFillInstagram /></Link>
+           <Link href="/"> <BsDiscord /></Link>
+           <Link href="https://www.linkedin.com/company/unesquo-bit-mesra/"> <AiFillLinkedin /></Link>
           </div>
         </div>
         <div className="links">
@@ -103,8 +102,8 @@ const FooterStyled = styled.footer`
     .links {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(2, 0.3fr);
+      gap: 1rem;
       h4 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;

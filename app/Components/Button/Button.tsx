@@ -38,6 +38,7 @@ const ButtonStyled = styled.button`
   border-radius: 30px;
   border: 2px solid var(--color-border);
   cursor: pointer;
+  font-size: 1.1rem;
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;

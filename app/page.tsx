@@ -14,6 +14,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
+import TeamPage from "./Components/TeamData";
 
 
 const AnimatedCard = () =>  {
@@ -163,6 +164,7 @@ export default function Home() {
         </div>
 
         <SectionLayout>
+          <TeamPage />
           <AlumniPage />
         </SectionLayout>
      

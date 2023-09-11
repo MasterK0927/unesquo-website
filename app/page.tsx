@@ -13,28 +13,31 @@ import HorizontalWrapper from "./Components/HorizontalWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import Slider from "react-slick"
 import TeamPage from "./Components/TeamData";
 
-const AnimatedCard = () => {
-  return (
+
+const AnimatedCard = () =>  {
+  return(
     <>
-      <MainStyled>
-        <SectionLayout>
-          <HorizontalWrapper height="40rem" direction={-1400}>
-            <div className="cards">
-              {cards.map((card, index) => {
-                return (
-                  <Card
-                    key={index}
-                    title={card.title}
-                    description={card.description}
-                    image={card.image}
-                  />
-                );
-              })}
-            </div>
-          </HorizontalWrapper>
+    <MainStyled>
+    <SectionLayout>
+          
+            <HorizontalWrapper height="40rem" direction={-1400}>
+              <div className="cards">
+                {cards.map((card, index) => {
+                  return (
+                    <Card
+                      key={index}
+                      title={card.title}
+                      description={card.description}
+                      image={card.image}
+                    />
+                  );
+                })}
+              </div>
+            </HorizontalWrapper>
+          
         </SectionLayout>
 
         <Fullpage />
@@ -55,42 +58,48 @@ const AnimatedCard = () => {
             </div>
           </HorizontalWrapper>
         </SectionLayout>
-      </MainStyled>
-    </>
-  );
-};
+        </MainStyled>
+        </>
+  )
+
+}
+
 
 const Carousel = () => {
+
+  const windowWidth = window.innerWidth;
 
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: windowWidth > 1000 ? 2 : 1,
     slidesToScroll: 1,
     pauseOnFocus: true,
     autoplay: true,
-    autoplaySpeed: 1400,
+    autoplaySpeed: 1400
   };
   return (
+    
     <div className="carousel">
       <Slider {...settings}>
-        {cards.map((card, index) => {
-          return (
-            <div className="carousel-cards">
-              <Card
-                key={index}
-                title={card.title}
-                description={card.description}
-                image={card.image}
-              />
-            </div>
-          );
-        })}
-      </Slider>
+      {cards.map((card, index) => {
+                return (
+                  <div className="carousel-cards">
+                      <Card
+                      key={index}
+                      title={card.title}
+                      description={card.description}
+                      image={card.image}
+                    />
+                  </div>
+                );
+              })}
+    </Slider>
     </div>
+    
   );
-};
+}
 
 export default function Home() {
   const video = React.useRef<HTMLDivElement>(null);
@@ -109,17 +118,21 @@ export default function Home() {
 
   const [showCards, setshowCards] = useState(true);
 
+  
   useEffect(() => {
     const handleResize = () => {
-      setshowCards(window.innerWidth > 1280);
+      setshowCards(window.innerWidth > 768);
     };
 
+   
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+    
   }, []);
 
   return (
@@ -144,7 +157,7 @@ export default function Home() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/MSTDhx574P4"
+              src="https://www.youtube.com/UNESQUO"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -154,9 +167,11 @@ export default function Home() {
 
         <SectionLayout>
           <TeamPage />
+        </SectionLayout>
+        <SectionLayout>
           <AlumniPage />
         </SectionLayout>
-
+     
         <Footer />
       </MainStyled>
     </>
@@ -164,7 +179,7 @@ export default function Home() {
 }
 
 const MainStyled = styled.main`
-  display: block;
+  display : block;
   min-height: 100vh;
   width: 100%;
 
@@ -175,52 +190,58 @@ const MainStyled = styled.main`
     gap: 4rem;
   }
 
+  .carousel{
+    margin:5rem 5rem !important;
+  }
+
+  .carousel-cards{
+    padding: 0 2rem !important
+  }
   .video {
     padding: 2rem;
     background-color: #161616;
     border-radius: 1rem;
-    height: 50rem;
     iframe {
       border: none;
       width: 100%;
-      height: 100%;
+      height: 52rem;
     }
   }
-  .alumni-content {
+  .alumni-content{
     padding: 10rem 5rem;
     z-index: 1;
   }
-  @media screen and (max-width: 1280px) {
-    .yt-video {
+  @media screen and (max-width: 768px) {
+    
+    .yt-video{
       margin: auto;
       z-index: 100;
       padding: 0 1rem;
-      
     }
     .video{
       margin-top:2rem;
-      margin-bottom: 2rem !important;
-      height: 25rem;
       iframe {
         border: none;
         width: 100%;
-        height: 100%;
+        height: 15rem;
       }
     }
-    .carousel {
-      margin: 0 2.5rem !important;
+    .carousel{
+      margin:0 2.5rem !important;
+    }
+    
+    .carousel-cards{
+      padding: 0 1rem !important
     }
 
-    .carousel-cards {
-      padding: 0 1rem !important;
-    }
-
-    .normal-cards {
+    .normal-cards{
       visibility: hidden;
     }
-    .video {
+    .video{
       transform: none !important;
       margin-bottom: 5rem;
+      
     }
+    
   }
 `;

@@ -16,43 +16,14 @@ interface AlumniProps {
 }
 
 const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
-<<<<<<< HEAD
     const windowWidth = window.innerWidth;
     
-=======
-    
-    const [slidesToShow, setSlidesToShow] = useState(1); 
-
-    useEffect(() => {
-      const handleResize = () => {
-        const innerWidth = window.innerWidth;
-        if (innerWidth >= 900 && innerWidth <= 1280) {
-          setSlidesToShow(2);
-        } else {
-          setSlidesToShow(1);
-        }
-      };
-  
-      handleResize();
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-
->>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
     var settings = {
       dots: true,
       infinite: true,
       speed: 500,
-<<<<<<< HEAD
       slidesToShow: windowWidth > 1000 ? 3 : 1,
       slidesToScroll: 2,
-=======
-      slidesToShow: slidesToShow,
-      slidesToScroll: 1,
->>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
       pauseOnFocus: true,
       autoplay: true,
       autoplaySpeed: 1400
@@ -77,43 +48,11 @@ const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
 }
 
 
-
-
-
 const AlumniComponent: React.FC<AlumniProps> = ({ alumniData }) => {
-<<<<<<< HEAD
     return (
         <div>
             <h2 className={styles.heading}>Alumni</h2>
             <CarouselAlumni alumniData={alumniData} />
-=======
-    
-    const [hideCarousel, sethideCarousel] = useState(true);
-
-  
-  useEffect(() => {
-    const handleResize = () => {
-      sethideCarousel(window.innerWidth > 1280);
-    };
-
-   
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-    
-  }, []);
-
-  
-    
-    return (
-        <div>
-            <h2 className={styles.heading}>Alumni</h2>
-            {hideCarousel? <AlumniGrid alumniData={alumniData} /> : <CarouselAlumni alumniData={alumniData}  />}
->>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
         </div>
     );
 };

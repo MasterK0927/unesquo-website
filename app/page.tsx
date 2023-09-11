@@ -61,12 +61,9 @@ const AnimatedCard = () => {
 };
 
 const Carousel = () => {
-<<<<<<< HEAD
 
   const windowWidth = window.innerWidth;
 
-=======
->>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
   var settings = {
     dots: true,
     infinite: true,
@@ -131,13 +128,9 @@ export default function Home() {
     <>
       <Header />
       <MainStyled>
-<<<<<<< HEAD
         <Carousel />
-      
-=======
+    
         {showCards ? <AnimatedCard /> : <Carousel />}
-
->>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
         <SectionLayout>
           <div id="events">
             <TextSection />

@@ -1,73 +1,39 @@
-"use client";
+'use client'
 import React, { useEffect, useState } from "react";
 import Header from "./Components/Header/Header";
 import styled from "styled-components";
 import SectionLayout from "./Components/SectionLayout";
 import Card from "./Components/Card";
 import { cards } from "./utils/cards";
-// import Fullpage from "./Components/Fullpage";
 import TextSection from "./TextSection";
 import Footer from "./Components/Footer";
 import AlumniPage from "./Components/AlumniData";
-// import HorizontalWrapper from "./Components/HorizontalWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 import TeamPage from "./Components/TeamData";
 
-
-// const AnimatedCard = () =>  {
-//   return(
-//     <>
-//     <MainStyled>
-//     <SectionLayout>
-          
-//             <HorizontalWrapper height="40rem" direction={-1400}>
-//               <div className="cards">
-//                 {cards.map((card, index) => {
-//                   return (
-//                     <Card
-//                       key={index}
-//                       title={card.title}
-//                       description={card.description}
-//                       image={card.image}
-//                     />
-//                   );
-//                 })}
-//               </div>
-//             </HorizontalWrapper>
-          
-//         </SectionLayout>
-
-//         <Fullpage />
-
-//         <SectionLayout>
-//           <HorizontalWrapper height="40rem" direction={1400}>
-//             <div className="cards" style={{ right: 0 }}>
-//               {cards.map((card, index) => {
-//                 return (
-//                   <Card
-//                     key={index}
-//                     title={card.title}
-//                     description={card.description}
-//                     image={card.image}
-//                   />
-//                 );
-//               })}
-//             </div>
-//           </HorizontalWrapper>
-//         </SectionLayout>
-//         </MainStyled>
-//         </>
-//   )
-
-// }
-
-
 const Carousel = () => {
+  // Use useState to determine the window width on the client side
+  const [windowWidth, setWindowWidth] = useState(0);
 
-  const windowWidth = window.innerWidth;
+  useEffect(() => {
+    // Use a useEffect hook to set the initial window width and update it on window resize
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add an event listener to update the window width on resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   var settings = {
     dots: true,
@@ -85,9 +51,8 @@ const Carousel = () => {
       <Slider {...settings}>
       {cards.map((card, index) => {
                 return (
-                  <div className="carousel-cards">
+                  <div className="carousel-cards" key={index}>
                       <Card
-                      key={index}
                       title={card.title}
                       description={card.description}
                       image={card.image}
@@ -118,21 +83,17 @@ export default function Home() {
 
   const [showCards, setshowCards] = useState(true);
 
-  
   useEffect(() => {
     const handleResize = () => {
       setshowCards(window.innerWidth > 768);
     };
 
-   
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-    
   }, []);
 
   return (
@@ -179,7 +140,7 @@ export default function Home() {
 }
 
 const MainStyled = styled.main`
-  display : block;
+  display: block;
   min-height: 100vh;
   width: 100%;
 
@@ -190,12 +151,12 @@ const MainStyled = styled.main`
     gap: 4rem;
   }
 
-  .carousel{
-    margin:5rem 5rem !important;
+  .carousel {
+    margin: 5rem 5rem !important;
   }
 
-  .carousel-cards{
-    padding: 0 2rem !important
+  .carousel-cards {
+    padding: 0 2rem !important;
   }
   .video {
     padding: 2rem;
@@ -207,41 +168,39 @@ const MainStyled = styled.main`
       height: 52rem;
     }
   }
-  .alumni-content{
+  .alumni-content {
     padding: 10rem 5rem;
     z-index: 1;
   }
   @media screen and (max-width: 768px) {
-    
-    .yt-video{
+    .yt-video {
       margin: auto;
       z-index: 100;
       padding: 0 1rem;
     }
-    .video{
-      margin-top:2rem;
+    .video {
+      margin-top: 2rem;
       iframe {
         border: none;
         width: 100%;
         height: 15rem;
       }
     }
-    .carousel{
-      margin:0 2.5rem !important;
-    }
-    
-    .carousel-cards{
-      padding: 0 1rem !important
+    .carousel {
+      margin: 0 2.5rem !important;
     }
 
-    .normal-cards{
+    .carousel-cards {
+      padding: 0 1rem !important;
+    }
+
+    .normal-cards {
       visibility: hidden;
     }
-    .video{
+    .video {
       transform: none !important;
       margin-bottom: 5rem;
-      
     }
-    
   }
 `;
+

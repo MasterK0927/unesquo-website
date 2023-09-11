@@ -81,6 +81,7 @@
   transform: translateY(-12px);
 }
 
+<<<<<<< HEAD
 .alumniImage {
   border-radius: 50%;
   height: 175px;
@@ -100,12 +101,23 @@
   display: block;
   border: 4px solid rgb(124, 127, 255);
   box-shadow: rgb(124, 127, 255) 0px 0px 12px;
+=======
+.alumniImage{
+    border-radius: 50%;
+    height: 175px;
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    border: 4px solid rgb(124, 127, 255);
+    box-shadow: rgb(124, 127, 255) 0px 0px 12px;
+>>>>>>> parent of 2acdb3a (changed the cards to carousel component)
 }
 
 .test {
   z-index: 100;
 }
 
+<<<<<<< HEAD
 
 /* Default styles for larger screens */
 .slick-slide {
@@ -152,4 +164,37 @@
     opacity: 1;
   }
 
+=======
+@media screen and (max-width: 768px) {
+    .heading{
+        font-size: 5rem;
+        margin-bottom: 7rem;
+        text-align: center;
+        
+    }
+    .alumni-carousel{
+        margin: 0 2rem;
+        
+        margin-bottom : 4rem;
+    }
+    .alumni-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin : 0 !important;
+        padding: 0 ;
+    
+    }
+    .dpeDzF{
+        justify-content: center;
+        margin: 0 auto !important;
+        padding: 2rem !important;
+    }
+    
+    .dpeDzF:hover {
+        transform: none;
+    }
+    
+>>>>>>> parent of 2acdb3a (changed the cards to carousel component)
 }

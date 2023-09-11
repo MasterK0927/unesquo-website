@@ -62,13 +62,11 @@ const AnimatedCard = () => {
 
 const Carousel = () => {
 
-  const windowWidth = window.innerWidth;
-
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: windowWidth > 1000 ? 2 : 1,
+    slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnFocus: true,
     autoplay: true,
@@ -129,8 +127,7 @@ export default function Home() {
       <Header />
       <MainStyled>
         <Carousel />
-    
-        {showCards ? <AnimatedCard /> : <Carousel />}
+      
         <SectionLayout>
           <div id="events">
             <TextSection />
@@ -157,8 +154,6 @@ export default function Home() {
 
         <SectionLayout>
           <TeamPage />
-        </SectionLayout>
-        <SectionLayout>
           <AlumniPage />
         </SectionLayout>
 
@@ -180,13 +175,6 @@ const MainStyled = styled.main`
     gap: 4rem;
   }
 
-  .carousel{
-    margin:5rem 5rem !important;
-  }
-
-  .carousel-cards{
-    padding: 0 2rem !important
-  }
   .video {
     padding: 2rem;
     background-color: #161616;

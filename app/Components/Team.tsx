@@ -1,7 +1,8 @@
 <<<<<<< HEAD
 import React from 'react';
-import styles from '../styles/teamComponents.module.css'
+import styles from '../styles/alumniComponents.module.css'
 import Image from 'next/image';
+<<<<<<< HEAD
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -13,6 +14,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 >>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
+=======
+>>>>>>> parent of 2acdb3a (changed the cards to carousel component)
 
 interface Team {
     id: number;
@@ -25,6 +28,7 @@ interface TeamProps {
     teamData: Team[];
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const CarouselTeam: React.FC<TeamProps> = ({ teamData }) => {
 
@@ -124,6 +128,13 @@ const TeamCarousel: React.FC<TeamProps> = ({ teamData }) => {
 const TeamGrid: React.FC<TeamProps> = ({ teamData }) => {
     return (
         <ul className={styles['alumni-list']}>
+=======
+const TeamComponent: React.FC<TeamProps> = ({ teamData }) => {
+    return (
+        <div>
+            <h2 className={styles.heading}>Our Team</h2>
+            <ul className={styles['alumni-list']}>
+>>>>>>> parent of 2acdb3a (changed the cards to carousel component)
                 {teamData.map((team) => (
                     <li key={team.id} className={styles['alumni-item']}>
                         <div className={styles["dpeDzF"]}>
@@ -136,6 +147,7 @@ const TeamGrid: React.FC<TeamProps> = ({ teamData }) => {
                     </li>
                 ))}
             </ul>
+<<<<<<< HEAD
     ); 
 }
 
@@ -169,5 +181,10 @@ const TeamComponent: React.FC<TeamProps> = ({ teamData }) => {
     );
 };
 >>>>>>> ff66ed0e93b405d7fa273f25ec95f3cd05925649
+=======
+        </div>
+    );
+};
+>>>>>>> parent of 2acdb3a (changed the cards to carousel component)
 
 export default TeamComponent;

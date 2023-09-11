@@ -431,7 +431,7 @@ const HeaderStyled = styled.header`
     }
 
     .nav-items.open li {
-      margin: 1rem 0;
+      margin: 0.4rem 0;
     }
     
     .nav-items.open a {
@@ -458,7 +458,7 @@ const HeaderStyled = styled.header`
     }
 
     .image-content{
-      padding-top: 3rem !important;
+      padding-top: 0.35rem !important;
       
     }
 

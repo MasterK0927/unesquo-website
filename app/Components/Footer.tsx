@@ -23,12 +23,10 @@ function Footer() {
             <Image src={logo} width={36} alt="logo" />
             <h2>UNESQUO, BIT Mesra</h2>
           </div>
-          <p>
+          <p className="para">
             The United Engineers' Speaking & Quizzing Organization is the
             official quizzing and oratory body of BIT Mesra. The club is led by
-            top- tier orators, debaters and quizzers who feel that erudition and
-            confidence are two essential elements of one's persona that must be
-            nurtured in order to be cornerstones to a prosperous future.
+            top- tier orators, debaters and quizzers.
           </p>
           <div className="socials">
             <Link href="/">
@@ -167,6 +165,10 @@ const FooterStyled = styled.footer`
     }
     .logo {
       justify-content: center;
+    }
+
+    .para{
+      width: 100%;
     }
     .socials {
       justify-content: center;

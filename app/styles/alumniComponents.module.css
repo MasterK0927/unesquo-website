@@ -1,6 +1,5 @@
 .alumni-list{
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;;
 }
 
 .alumni-item{
@@ -53,7 +52,7 @@
     box-shadow: rgb(124, 127, 255) 0px 0px 12px;
     min-height: 300px;
     max-width: 350px;
-    min-width: 304px;
+    min-width: 254px;
     padding: 40px 48px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.8, -1, 0.2, 1.5) 0s;
@@ -104,13 +103,11 @@
 @media screen and (max-width: 768px) {
     .heading{
         font-size: 5rem;
-        margin-bottom: 7rem;
+        margin-bottom: 5rem;
         text-align: center;
         
     }
     .alumni-carousel{
-        margin: 0 2rem;
-        
         margin-bottom : 4rem;
     }
     .alumni-item{

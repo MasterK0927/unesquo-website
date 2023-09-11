@@ -5,11 +5,11 @@ import styled from "styled-components";
 import SectionLayout from "./Components/SectionLayout";
 import Card from "./Components/Card";
 import { cards } from "./utils/cards";
-import Fullpage from "./Components/Fullpage";
+// import Fullpage from "./Components/Fullpage";
 import TextSection from "./TextSection";
 import Footer from "./Components/Footer";
 import AlumniPage from "./Components/AlumniData";
-import HorizontalWrapper from "./Components/HorizontalWrapper";
+// import HorizontalWrapper from "./Components/HorizontalWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,52 +17,52 @@ import Slider from "react-slick"
 import TeamPage from "./Components/TeamData";
 
 
-const AnimatedCard = () =>  {
-  return(
-    <>
-    <MainStyled>
-    <SectionLayout>
+// const AnimatedCard = () =>  {
+//   return(
+//     <>
+//     <MainStyled>
+//     <SectionLayout>
           
-            <HorizontalWrapper height="40rem" direction={-1400}>
-              <div className="cards">
-                {cards.map((card, index) => {
-                  return (
-                    <Card
-                      key={index}
-                      title={card.title}
-                      description={card.description}
-                      image={card.image}
-                    />
-                  );
-                })}
-              </div>
-            </HorizontalWrapper>
+//             <HorizontalWrapper height="40rem" direction={-1400}>
+//               <div className="cards">
+//                 {cards.map((card, index) => {
+//                   return (
+//                     <Card
+//                       key={index}
+//                       title={card.title}
+//                       description={card.description}
+//                       image={card.image}
+//                     />
+//                   );
+//                 })}
+//               </div>
+//             </HorizontalWrapper>
           
-        </SectionLayout>
+//         </SectionLayout>
 
-        <Fullpage />
+//         <Fullpage />
 
-        <SectionLayout>
-          <HorizontalWrapper height="40rem" direction={1400}>
-            <div className="cards" style={{ right: 0 }}>
-              {cards.map((card, index) => {
-                return (
-                  <Card
-                    key={index}
-                    title={card.title}
-                    description={card.description}
-                    image={card.image}
-                  />
-                );
-              })}
-            </div>
-          </HorizontalWrapper>
-        </SectionLayout>
-        </MainStyled>
-        </>
-  )
+//         <SectionLayout>
+//           <HorizontalWrapper height="40rem" direction={1400}>
+//             <div className="cards" style={{ right: 0 }}>
+//               {cards.map((card, index) => {
+//                 return (
+//                   <Card
+//                     key={index}
+//                     title={card.title}
+//                     description={card.description}
+//                     image={card.image}
+//                   />
+//                 );
+//               })}
+//             </div>
+//           </HorizontalWrapper>
+//         </SectionLayout>
+//         </MainStyled>
+//         </>
+//   )
 
-}
+// }
 
 
 const Carousel = () => {

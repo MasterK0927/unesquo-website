@@ -51,7 +51,7 @@ const EventThree = () => {
                         initial="initial"
                         animate="animate"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolorem, magnam at neque maxime quisquam? Architecto, magnam quam! Ipsa, magnam.
+                        Get ready for a whirlwind of excitement, because JAM is about to kick off! Picture this: a lightning-paced challenge where words flow faster than a caffeine-fueled conversation.
                     </motion.div>
                     <motion.div
                         className={styles.Date}

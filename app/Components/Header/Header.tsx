@@ -413,7 +413,7 @@ const HeaderStyled = styled.header`
       top: 5rem;
       left: 0;
       width: 100%;
-      background-color: #111111;
+      background:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
       text-align: center;
       padding-bottom: 0.7rem;
       padding-top: 0.5rem;

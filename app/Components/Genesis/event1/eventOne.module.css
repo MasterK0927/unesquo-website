@@ -159,7 +159,7 @@
 @media screen and (max-width: 786px) {
 
     .eventHeading{
-        font-size: 2.75rem;
+        font-size: 2.5rem;
         margin-left: 40px;
     }
 
@@ -183,14 +183,14 @@
     }
 
     .Descp{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .Timing{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .Date{
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 }

@@ -51,7 +51,7 @@ const EventOne = () => {
                         initial="initial"
                         animate="animate"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolorem, magnam at neque maxime quisquam? Architecto, magnam quam! Ipsa, magnam.
+                        UNESQUO's Pyramid: Where Words Build Bridges ! Excitement soars as teams dive into the ultimate fusion of intellect and expression. Uniting quizzing and oratory, this electrifying competition challenges minds and mouths. Picture this: 
                     </motion.div>
                     <div className={styles.timeDate}>
                         <motion.div

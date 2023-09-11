@@ -54,7 +54,7 @@
 }
 
 .Descp {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     word-spacing: 8px;
     font-family: 'Handjet', 'inter';
@@ -177,14 +177,14 @@
     }
 
     .Descp{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .Timing{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .Date{
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 }

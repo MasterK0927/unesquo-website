@@ -51,7 +51,7 @@ const EventFive = () => {
                         initial="initial"
                         animate="animate"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolorem, magnam at neque maxime quisquam? Architecto, magnam quam! Ipsa, magnam.
+                        Engage in 'Turncoat : A Dance of Perspectives' with UNESQUO! Experience the thrill of swapping sides in a debate, where your arguments take a whirlwind turn. Step into your opponents' shoes as the debate unfolds, proving that insightful discourse knows no bounds.
                     </motion.div>
                     <motion.div
                         className={styles.Date}

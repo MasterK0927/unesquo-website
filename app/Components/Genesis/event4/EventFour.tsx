@@ -50,7 +50,7 @@ const EventFour = () => {
                         initial="initial"
                         animate="animate"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolorem, magnam at neque maxime quisquam? Architecto, magnam quam! Ipsa, magnam.
+                        If you are a bona fide pop culture connoisseur, ready to flex your knowledge across a dynamic range of topics then buckle up for "The LAMEST Quiz" where we're diving deep into the realms of literature, anime, music, entertainment, sports and technology
                     </motion.div>
                     <motion.div
                         className={styles.Date}

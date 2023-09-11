@@ -51,7 +51,7 @@ const EventTwo = () => {
                         initial="initial"
                         animate="animate"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolorem, magnam at neque maxime quisquam? Architecto, magnam quam! Ipsa, magnam.
+                        Attention, geniuses and subpar brains alike – it's time to get your thinking hats on and dazzle us with your random trivia knowledge as we proudly present to you the one and only General Knowledge Quiz Challenge!
                     </motion.div>
                     <motion.div
                         className={styles.Date}

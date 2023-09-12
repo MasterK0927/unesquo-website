@@ -153,7 +153,7 @@ const MainStyled = styled.main`
   }
 
   .carousel {
-    margin: 5rem 5rem !important;
+    margin: 5rem 3rem !important;
   }
 
   .carousel-cards {

@@ -46,23 +46,23 @@ const Carousel = () => {
     autoplaySpeed: 1400
   };
   return (
-    
+
     <div className="carousel">
       <Slider {...settings}>
-      {cards.map((card, index) => {
-                return (
-                  <div className="carousel-cards" key={index}>
-                      <Card
-                      title={card.title}
-                      description={card.description}
-                      image={card.image}
-                    />
-                  </div>
-                );
-              })}
-    </Slider>
+        {cards.map((card, index) => {
+          return (
+            <div className="carousel-cards" key={index}>
+              <Card
+                title={card.title}
+                description={card.description}
+                image={card.image}
+              />
+            </div>
+          );
+        })}
+      </Slider>
     </div>
-    
+
   );
 }
 
@@ -101,7 +101,7 @@ export default function Home() {
       <Header />
       <MainStyled>
         <Carousel />
-      
+
         <SectionLayout>
           <div id="events">
             <TextSection />
@@ -118,11 +118,12 @@ export default function Home() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/watch?v=MSTDhx574P4"
+              src="https://www.youtube.com/embed/MSTDhx574P4"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
+
           </motion.div>
         </div>
 
@@ -132,7 +133,7 @@ export default function Home() {
         <SectionLayout>
           <AlumniPage />
         </SectionLayout>
-     
+
         <Footer />
       </MainStyled>
     </>

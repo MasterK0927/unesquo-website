@@ -53,7 +53,7 @@ const CarouselTeam: React.FC<TeamProps> = ({ teamData }) => {
           <div key={team.id} className={styles['alumni-item']}>
             <div className={styles["dpeDzF"]}>
               <div className={styles["content"]}>
-                <Image src={team.src} alt="alumni" width={200} height={200} className={styles['alumniImage']} />
+                <Image src={team.src} alt="alumni" width={200} height={225} className={styles['alumniImage']} />
                 <h3 className={styles['alumni-name']}> {team.name}</h3>
                 <div className={styles['alumni-position']}><div className={styles['circle']}></div>{team.position}</div>
               </div>

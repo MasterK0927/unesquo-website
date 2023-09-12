@@ -55,7 +55,7 @@ const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
                     <div key={alumni.id} className={styles['alumni-item']}>
                         <div className={styles["dpeDzF"]}>
                             <div className={styles["content"]}>
-                                <Image src={alumni.src} alt="alumni" width={200} height={200} className={styles['alumniImage']} />
+                                <Image src={alumni.src} alt="alumni" width={200} height={225} className={styles['alumniImage']} />
                                 <h3 className={styles['alumni-name']}> {alumni.name}</h3>
                                 <div className={styles['alumni-position']}><div className={styles['circle']}></div>{alumni.position}</div>
                             </div>

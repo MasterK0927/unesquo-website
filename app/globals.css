@@ -16,6 +16,7 @@ body {
   background-color: var(--color-bg);
   font-size: 1.2rem;
   color: hsla(180, 7%, 75%, 0.9);
+  padding: 0 10px;
   overflow-x: hidden;
 }
 

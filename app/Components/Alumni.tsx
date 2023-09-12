@@ -40,12 +40,12 @@ const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 300,
         slidesToShow: windowWidth > 1000 ? 3 : 1,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         pauseOnFocus: true,
         autoplay: true,
-        autoplaySpeed: 1400
+        autoplaySpeed: 1000
     };
 
     return (

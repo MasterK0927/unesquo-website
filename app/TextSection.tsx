@@ -48,7 +48,7 @@ function TextSection() {
         Just A Min.
       </TextWrapper>
       <TextWrapper>
-        lAMEST QUIZ.
+        LAMEST QUIZ.
       </TextWrapper>
       <TextWrapper>
         PYRAMID.
@@ -105,12 +105,13 @@ const TextSectionStyled = styled.section`
 
   @media screen and (max-width: 1280px) {
     .heading{
-      font-size:5rem;
+      font-size:4rem;
       text-align: center;
       margin-bottom: 3rem;
     }
     .events-text{
       font-size: 2rem !important;
+      font-weight: bold;
       width: 20rem !important;
       margin: auto ;
       text-align: center;

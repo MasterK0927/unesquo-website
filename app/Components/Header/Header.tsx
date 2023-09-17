@@ -15,7 +15,7 @@ const abril = Abril_Fatface({
 });
 
 const recruitment = () => {
-  alert("Coming Soon!");
+  window.location.href = "https://forms.gle/4QggtdFevyaYvWjx8";
 };
 
 function Header() {
@@ -152,7 +152,7 @@ function Header() {
           <h1 className={abril.className}>
             United Engineers' Speaking And Quizzing Organisation
           </h1>
-          <p>
+          <p className="para">
             Welcome to the digital home of UNESQUO, your gateway to the world of
             vibrant debates and mind-bending quizzes. We're delighted to have
             you here, and we invite you to explore the boundless horizons of
@@ -464,12 +464,12 @@ const HeaderStyled = styled.header`
 
     .monkey{  
       
-      width: 21rem !important;
+      width: 20rem !important;
       height: 21rem !important;
       z-index: 0 !important;
     }
     .text-content{
-      width: 23rem;
+      width: 22.5rem;
       align-items: center;
       position: center;
       text-align: center;

@@ -5,7 +5,6 @@ const Bitmun = () => {
   return (
     <div>
         <NavBar />
-        Bitmun
     </div>
   )
 }

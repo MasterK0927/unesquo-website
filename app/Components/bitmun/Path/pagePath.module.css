@@ -1,0 +1,21 @@
+.pageHeader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pageName {
+    font-weight: bold;
+}
+
+.pagePath {
+    font-size: 12px;
+}

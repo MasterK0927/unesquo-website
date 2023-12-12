@@ -45,7 +45,7 @@ function Card({ title, description, image }: CardProps) {
 
 const CardStyled = styled.div`
   position: relative;
-  background-color: var(--color-bg);
+  background-color: black;
   height: 100%;
   padding: 1.5rem;
   border-radius: 8px;
@@ -89,7 +89,7 @@ const CardStyled = styled.div`
     left: -2px;
     width: calc(100% + 4px);
     height: 25%;
-    background: linear-gradient(0deg, #111111 1%, rgba(17, 17, 17, 0.06) 99%);
+    background: black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
   }

@@ -18,6 +18,27 @@
 .alumni-name {
     width: 300px;
 }
+.alumni-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.alumni-item{
+    margin: 1.25rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.alumni-name {
+    width: 300px;
+}
 
 .heading{
     font-size: 10rem;
@@ -28,29 +49,28 @@
 .circle{
     position: absolute;
     width: 25px;
-    height: 25px;
+    height: 20px;
     border-radius: 13px;
     left: 0;
-    background-color: red;
+    background-color: white;
+    
 }
 
 .alumni-position{
     position: relative;
     display: inline-flex;
     padding: 1px 10px 3px 30px;
-    color: rgba(0, 0, 255, 0.487);
+    color: white;
     font-weight: bold;
-    background-color: rgba(255, 228, 196, 0.575);
-    border-radius: 100px;
 }
 
 .dpeDzF {
-    background: linear-gradient(rgb(64, 221, 255) 0%, rgb(124, 127, 255) 100%);
+    
     border: 4px solid rgb(124, 127, 255);
     border-radius: 24px;
-    color: black;
+    color: white;
     box-shadow: rgb(124, 127, 255) 0px 0px 12px;
-    min-height: 300px;
+    min-height: 400px;
     max-width: 350px;
     min-width: 254px;
     padding: 40px 48px;
@@ -59,8 +79,6 @@
 }
 
 .dpeDzF::after {
-    background-image: url(https://lh3.googleusercontent.com/drive-viewer/AITFw-xv4pJEPePCEQK5jRt0ZIyVRRuouXlglwg9rUu7KBl7_j7Z5HdmcjNxWaBXf07T0_QB87IEuWC8A_Kg7OleemVNu4bNEg=s2560);
-    background-size: cover;
     background-position: center center;
     border-radius: inherit;
     content: "";
@@ -81,7 +99,7 @@
 
 .alumniImage{
     border-radius: 50%;
-    height: 175px;
+    height: 220px;
     width: 200px;
     margin: 0 auto;
     display: block;
@@ -94,15 +112,9 @@
     z-index: 100;
 }
 
-/* Default styles for larger screens */
-.slick-slide {
-    opacity: 0.5;
-    transition: opacity 0.5s;
-  }
-
 @media screen and (max-width: 768px) {
     .heading{
-        font-size: 5rem;
+        font-size: 3.5rem;
         margin-bottom: 5rem;
         text-align: center;
         
@@ -129,9 +141,4 @@
         transform: none;
     }
     
-    
-    .slick-slide {
-      opacity: 1;
-    }
-  
 }

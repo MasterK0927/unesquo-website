@@ -79,11 +79,11 @@ function Header() {
           <li className="button genesis-button">
             <a
               className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special"
-              href="/genesis"
+              href="/bitmun"
               rel="noreferrer noopener"
             >
               <div className="btn special">
-                <div className="text">Genesis</div>
+                <div className="text">BITMUN</div>
                 <svg
                   width="79"
                   height="46"
@@ -250,7 +250,7 @@ const HeaderStyled = styled.header`
             border: none;
             border-radius: 2px;
             clip-path: polygon(12px 0px, 100% 0px, 100% 72%, calc(100% - 12px) 100%, 0px 100%, 0px 12px);
-            color: rgb(23, 15, 30);
+            color: rgb(215, 148, 46);
             overflow: hidden;
             padding: 0px 0px 10px 5px;
             text-decoration: none;

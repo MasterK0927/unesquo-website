@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TeamBITMUN.module.css';
+import styles from './DelegateAffairs.module.css';
 import Image from 'next/image';
 
 interface Team {
@@ -9,9 +9,10 @@ interface Team {
   position: string;
 }
 
-interface TeamProps {
-  teamData: Team[];
+interface PublicRelationsProps {
+  publicRelationsData: Team[];
 }
+
 
 const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   return (
@@ -30,8 +31,8 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
           className={styles["card__background"]}
           src={src}
           alt="Secreteriat"
-          width={1500}
-          height={1700}
+          width={1200}
+          height={1400}
         />
         <div className={styles["card__content"]}>
           <div className={styles["card__content--container"]}>
@@ -47,13 +48,13 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const TeamBITMUNComponent: React.FC<TeamProps> = ({ teamData }) => {
+const PublicRelationsComponent: React.FC<PublicRelationsProps> = ({ publicRelationsData }) => {
   return (
     <>
-      <h1 className={styles['heading']}>OUR SECRETARIAT</h1>
+      <h1 className={styles['heading']}>PUBLIC RELATIONS</h1>
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
-          {teamData.map((team) => (
+          {publicRelationsData.map((team) => (
             <TeamCard key={team.id} {...team} />
           ))}
         </div>
@@ -62,4 +63,4 @@ const TeamBITMUNComponent: React.FC<TeamProps> = ({ teamData }) => {
   );
 };
 
-export default TeamBITMUNComponent;
+export default PublicRelationsComponent;

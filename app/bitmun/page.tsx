@@ -1,12 +1,12 @@
 import React from 'react'
 import NavBar from '../Components/NavBar'
-import TeamBITMUNPage from '../Components/bitmun/OurTeam/TeamBITMUNData'
+import Footer from '../Components/Footer'
 
 const Bitmun = () => {
   return (
     <div>
         <NavBar />
-        <TeamBITMUNPage />
+        <Footer />
     </div>
   )
 }

@@ -116,7 +116,7 @@ const teamData = [
     id: 26,
     src: '/images/sumeet.jpg',
     name: 'Sumeet Kumar',
-    position: 'Documentation Coordinator',
+    position: 'Document Coord',
   },
   {
     id: 26,

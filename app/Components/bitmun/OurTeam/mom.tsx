@@ -9,8 +9,8 @@ interface Team {
   position: string;
 }
 
-interface ItineraryProps {
-  itineraryData: Team[];
+interface MomProps {
+  MomData: Team[];
 }
 
 
@@ -30,7 +30,7 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
         <Image
           className={styles["card__background"]}
           src={src}
-          alt="Itinerary"
+          alt="WarCab"
           width={1200}
           height={1400}
         />
@@ -48,16 +48,12 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
+const Mom: React.FC<MomProps> = ({ MomData }) => {
   return (
     <>
-<<<<<<< HEAD
-=======
-      <h1 className={styles['heading']}>Itinerary</h1>
->>>>>>> 2dca3271ccafc67e583549793a5148e19dc1c6bc
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
-          {itineraryData.map((team) => (
+          {MomData.map((team) => (
             <TeamCard key={team.id} {...team} />
           ))}
         </div>
@@ -66,4 +62,4 @@ const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
   );
 };
 
-export default Itinerary;
+export default Mom;

@@ -10,7 +10,8 @@ import PublicRelationsComponent from './PublicRelationsComponent';
 import DesignContentComponent from './DesignContentComponent';
 import WebTeamComponent from './WebTeamComponent';
 import CulturalTeamComponent from './CulturalTeamComponent';
-
+import ChairsComponent from './ChairsComponent';
+import Itinerary from './Itinerary';
 
 const teamData = [
   {
@@ -203,6 +204,47 @@ const culturalTeamData = [
     position: 'Cultural',
   }
 ];
+  const chairsData = [
+    {
+      id: 1,
+      src: '/images/smoke_2.png',
+      name: 'Chair1',
+      position: 'Chair UNGA',
+    },
+    {
+      id: 2,
+      src: '/images/smoke_2.png',
+      name: 'Shaurya Singh',
+      position: 'ViceChair UNGA',
+    },
+    {
+      id: 3,
+      src: '/images/smoke_2.png',
+      name: 'Someone',
+      position: 'Rappeuter',
+    },
+];
+const ItineraryData = [
+  {
+    id: 1,
+    src: '/images/smoke_2.png',
+    name: 'Chair1',
+    position: 'Chair UNGA',
+  },
+  {
+    id: 2,
+    src: '/images/smoke_2.png',
+    name: 'Shaurya Singh',
+    position: 'ViceChair UNGA',
+  },
+  {
+    id: 3,
+    src: '/images/smoke_2.png',
+    name: 'Someone',
+    position: 'Rappeuter',
+  },
+];
+
 
 const TeamBITMUNPage: React.FC = () => {
   return (
@@ -217,6 +259,7 @@ const TeamBITMUNPage: React.FC = () => {
       <DesignContentComponent designContentData={designContentData}/>
       <WebTeamComponent webTeamData={webTeamData}/>
       <CulturalTeamComponent culturalTeamData={culturalTeamData}/>
+      <Itinerary ItineraryData={ItineraryData}/>
     </div>
   );
 };

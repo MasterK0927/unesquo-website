@@ -1,0 +1,35 @@
+/* Itinerary.css */
+
+.itinerary {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .activity {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .time {
+    font-weight: bold;
+  }
+  
+  .description {
+    flex: 1;
+    margin-left: 10px;
+  }
+  

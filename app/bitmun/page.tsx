@@ -5,8 +5,8 @@ import Footer from '../Components/Footer'
 import Timer from '../Components/bitmun/OurTeam/Timer'
 import  ChairPage from '../Components/bitmun/OurTeam/ChairData'
 import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids'
-
-
+import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage'
+import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1'
 
 const initialTime = 3600;
 
@@ -16,8 +16,11 @@ const Bitmun = () => {
     <div>
         <NavBar />
         <Timer initialTime={initialTime}/>
-        <ChairPage />
         <FourGridsSection />
+        <br />
+        <ExampleUsage />
+        <ExampleUsage1 />
+        <ChairPage />
         <Footer />
     </div>
   );

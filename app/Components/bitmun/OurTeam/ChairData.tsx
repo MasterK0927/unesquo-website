@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from "./DelegateAffairs.module.css";
-import Itinerary from './Itinerary';
+import Unga from './Unga';
 import WarCab from './warCab';
 import Mom from './Mom';
 import Jsip from './jsip';
 import Press from './press';
 
-const itineraryData = [
+const ungaData = [
   {
     id: 1,
     src: '/images/harsh.jpg',
@@ -112,7 +112,7 @@ const ChairPage: React.FC = () => {
   return (
     <div className={styles['container']}>
         <h1 className={styles['heading']}>UNGA</h1>
-      <Itinerary itineraryData={itineraryData} />
+      <Unga ungaData={ungaData} />
       <h1 className={styles['heading']}>War Cabinet</h1>
       <WarCab warCabData={warCabData} />
       <h1 className={styles['heading']}>Ministry Of Magic</h1>

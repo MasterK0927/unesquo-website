@@ -9,8 +9,8 @@ interface Team {
   position: string;
 }
 
-interface ItineraryProps {
-  itineraryData: Team[];
+interface UngaProps {
+ungaData: Team[];
 }
 
 
@@ -48,12 +48,12 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
+const Unga: React.FC<UngaProps> = ({ ungaData }) => {
   return (
     <>
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
-          {itineraryData.map((team) => (
+          {ungaData.map((team) => (
             <TeamCard key={team.id} {...team} />
           ))}
         </div>
@@ -62,4 +62,4 @@ const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
   );
 };
 
-export default Itinerary;
+export default Unga;

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./DelegateAffairs.module.css";
 import Itinerary from './Itinerary';
 import WarCab from './warCab';
-import Mom from './Mom';
+import Mom from './mom';
 import Jsip from './jsip';
 import Press from './press';
 

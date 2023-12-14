@@ -9,8 +9,8 @@ interface Team {
   position: string;
 }
 
-interface UngaProps {
-ungaData: Team[];
+interface ItineraryProps {
+  itineraryData: Team[];
 }
 
 
@@ -48,12 +48,19 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const Unga: React.FC<UngaProps> = ({ ungaData }) => {
+const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
   return (
     <>
+<<<<<<<<< Temporary merge branch 1
+<<<<<<< HEAD
+=======
+      <h1 className={styles['heading']}>Itinerary</h1>
+>>>>>>> 2dca3271ccafc67e583549793a5148e19dc1c6bc
+=========
+>>>>>>>>> Temporary merge branch 2
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
-          {ungaData.map((team) => (
+          {itineraryData.map((team) => (
             <TeamCard key={team.id} {...team} />
           ))}
         </div>
@@ -62,4 +69,4 @@ const Unga: React.FC<UngaProps> = ({ ungaData }) => {
   );
 };
 
-export default Unga;
+export default Itinerary;

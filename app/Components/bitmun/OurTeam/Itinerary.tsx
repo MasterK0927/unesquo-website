@@ -6,6 +6,7 @@ interface Team {
   id: number;
   src: string;
   name: string;
+  position: string;
 }
 
 interface ItineraryProps {
@@ -47,13 +48,13 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const Itinerary: React.FC<ItineraryProps> = ({ ItineraryData }) => {
+const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
   return (
     <>
-      <h1 className={styles['heading']}>FINANCE AND SPONSORSHIP</h1>
+      <h1 className={styles['heading']}>Itinerary</h1>
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
-          {ItineraryData.map((team) => (
+          {itineraryData.map((team) => (
             <TeamCard key={team.id} {...team} />
           ))}
         </div>

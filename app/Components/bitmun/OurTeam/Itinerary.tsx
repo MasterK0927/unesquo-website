@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './DelegateAffairs.module.css';
 import Image from 'next/image';
 
-
 interface Team {
   id: number;
   src: string;
@@ -10,8 +9,8 @@ interface Team {
   position: string;
 }
 
-interface ChairsProps {
-  ChairsData: Team[];
+interface ItineraryProps {
+  itineraryData: Team[];
 }
 
 
@@ -31,7 +30,7 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
         <Image
           className={styles["card__background"]}
           src={src}
-          alt="Chairs"
+          alt="Itinerary"
           width={1200}
           height={1400}
         />
@@ -49,17 +48,19 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
-const ChairsComponent: React.FC<ChairsProps> = ({ chairsData }) => (
-  <>
-    <h1 className={styles['heading']}>OUR CHAIRS</h1>
-    <div className={styles.teamGrid}>
-      <div className={styles.teamCards}>
-        {chairsData.map((team) => (
-          <TeamCard key={team.id} {...team} />
-        ))}
+const Itinerary: React.FC<ItineraryProps> = ({ ItineraryData }) => {
+  return (
+    <>
+      <h1 className={styles['heading']}>FINANCE AND SPONSORSHIP</h1>
+      <div className={styles.teamGrid}>
+        <div className={styles.teamCards}>
+          {ItineraryData.map((team) => (
+            <TeamCard key={team.id} {...team} />
+          ))}
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
-export default ChairsComponent;
+export default Itinerary;

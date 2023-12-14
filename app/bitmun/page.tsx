@@ -1,19 +1,17 @@
-"use client"
-import React from 'react';
-import NavBar from '../Components/NavBar';
-import Footer from '../Components/Footer';
-import FourGrids from '../Components/bitmun/OurTeam/FourGrids';
-import Timer from '../Components/bitmun/OurTeam/Timer';
+import React from 'react'
+import NavBar from '../Components/NavBar'
+import Footer from '../Components/Footer'
+import Chairs from '../Components/bitmun/OurTeam/ChairsComponent'
+
 
 const Bitmun = () => {
   const initialTime = 300;
 
   return (
     <div>
-      <NavBar />
-      <Timer initialTime={initialTime} />
-      <FourGrids />
-      <Footer />
+        <NavBar />
+        <Chairs />
+        <Footer />
     </div>
   );
 };

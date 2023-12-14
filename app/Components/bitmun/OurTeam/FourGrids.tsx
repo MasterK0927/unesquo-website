@@ -1,6 +1,9 @@
 import React from 'react';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ec6a06c207ff429c01dbee84fee044c3c911e7e
 interface GridProps {
   content: string;
   imageUrl?: string;

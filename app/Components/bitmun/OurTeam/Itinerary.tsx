@@ -6,7 +6,6 @@ interface Team {
   id: number;
   src: string;
   name: string;
-  position: string;
 }
 
 interface ItineraryProps {

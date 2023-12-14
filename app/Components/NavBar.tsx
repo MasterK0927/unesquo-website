@@ -6,62 +6,62 @@ import logo from "../../public/bitmun.svg";
 import styled from "styled-components";
 
 function NavBar() {
-  const hero = useRef<HTMLDivElement>(null);
+    const hero = useRef<HTMLDivElement>(null);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [shouldAnimate, setShouldAnimate] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [shouldAnimate, setShouldAnimate] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 1280);
+    useEffect(() => {
+        const handleResize = () => {
+            setShouldAnimate(window.innerWidth > 1280);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    return (
+        <HeaderStyled ref={hero}>
+            <nav className="navbar">
+                <div className="logo">
+                    <Image src={logo} alt="logo" width={70} className="brand-logo" />
+                    <h2 className="brand">BITMUN</h2>
+                </div>
+                <div className="menu-icon" onClick={toggleMenu}>
+                    ☰
+                </div>
+                <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
+                    <li>
+                        <a href="/bitmun">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/bitmun/events">Events</a>
+                    </li>
+                    <li>
+                        <a href="/bitmun/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/bitmun/ourTeam" >Our Team</a>
+                    </li>
+                    <li>
+                        <a href="/bitmun/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-
-  return (
-    <HeaderStyled ref={hero}>
-      <nav className="navbar">
-        <div className="logo">
-          <Image src={logo} alt="logo" width={70} className="brand-logo" />
-          <h2 className="brand">BITMUN</h2>
-        </div>
-        <div className="menu-icon" onClick={toggleMenu}>
-          ☰
-        </div>
-        <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
-          <li>
-            <a href="/bitmun">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/bitmun/events">Events</a>
-          </li>
-          <li>
-            <a href="/bitmun/about">About Us</a>
-          </li>
-          <li>
-            <a href="/bitmun/ourTeam" >Our Team</a>
-          </li>
-          <li>
-            <a href="/bitmun/contact">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
-      
-    </HeaderStyled>
-  );
+        </HeaderStyled>
+    );
 }
 
 const HeaderStyled = styled.header`
@@ -203,18 +203,6 @@ const HeaderStyled = styled.header`
 
     .genesis-button{
       margin-top: 0 !important;
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    .brand-logo{
-      margin-top: 0;
-      width: 4rem !important;
-      height: 5rem !important;
-    }
-
-    .brand{
-      font-size: 1.5rem;
     }
   }
 `;

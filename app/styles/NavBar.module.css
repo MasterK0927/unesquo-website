@@ -1,0 +1,121 @@
+/* NavBar.module.css */
+
+.navbar {
+    padding: 0 4rem 0 4rem;
+    min-height: 10vh;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.brand-logo {
+    margin-top: 2rem;
+    transform: scale(1.4);
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.navItems li {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.navItems li:hover {
+    border: 1px solid var(--color-border);
+    background-color: #0ff;
+    color: black;
+}
+
+.navItems a {
+    color: rgb(64, 221, 255);
+}
+
+.navItems a:hover {
+    color: black;
+}
+
+.menuIcon {
+    visibility: visible;
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    padding: 1rem;
+}
+
+.navItems {
+    display: none;
+}
+
+.menuIcon:hover+.navItems,
+.navItems:hover {
+    display: flex;
+    flex-direction: column;
+}
+
+.navItems.close {
+    visibility: hidden;
+    width: 0 !important;
+}
+
+.navItems.open li {
+    margin: 0.4rem 0;
+}
+
+.navItems.open a {
+    color: white;
+}
+
+.navItems a {
+    padding: 1.3rem;
+    border-bottom: 1px solid rgba(254, 254, 254, 0.345);
+}
+
+/* Add your media query styles here */
+@media screen and (max-width: 1280px) {
+    .navItems {
+        padding: 0%;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .navbar {
+        padding: 1rem 2rem !important;
+        justify-content: space-between !important;
+    }
+
+    .brand {
+        font-size: 1.8rem;
+    }
+
+    .special {
+        width: 6rem !important;
+        height: 2.4rem !important;
+    }
+
+    .text {
+        margin-left: -0.8rem !important;
+    }
+}

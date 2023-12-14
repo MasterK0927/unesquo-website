@@ -51,6 +51,10 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
 const Itinerary: React.FC<ItineraryProps> = ({ itineraryData }) => {
   return (
     <>
+<<<<<<< HEAD
+=======
+      <h1 className={styles['heading']}>Itinerary</h1>
+>>>>>>> 2dca3271ccafc67e583549793a5148e19dc1c6bc
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
           {itineraryData.map((team) => (

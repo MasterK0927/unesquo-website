@@ -1,0 +1,24 @@
+/* styles.css */
+
+.itinerary-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flexDirection: 'column';
+    alignItems: 'center';
+  }
+  
+  .itinerary-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .itinerary-item {
+    margin-bottom: 8px;
+  }
+
+.centered {
+    text-align: center;
+  }
+  

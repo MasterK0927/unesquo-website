@@ -9,7 +9,11 @@ interface Team {
   position: string;
 }
 
+<<<<<<< HEAD
 interface ungaProps {
+=======
+interface UngaProps {
+>>>>>>> 6e50d6500f60565e3ba43d57d0b739d35fcf0928
   ungaData: Team[];
 }
 
@@ -48,9 +52,16 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
   );
 };
 
+<<<<<<< HEAD
 const Unga: React.FC<ungaProps> = ({ ungaData }) => {
   return (
     <>
+=======
+const Itinerary: React.FC<UngaProps> = ({ ungaData }) => {
+  return (
+    <>
+      <h1 className={styles['heading']}>Itinerary</h1>
+>>>>>>> 6e50d6500f60565e3ba43d57d0b739d35fcf0928
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>
           {ungaData.map((team) => (

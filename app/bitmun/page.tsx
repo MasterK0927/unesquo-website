@@ -7,7 +7,10 @@ import ChairPage from '../Components/bitmun/OurTeam/ChairData'
 import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids'
 import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage'
 import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1'
+<<<<<<< HEAD
 import Video from '../Components/bitmun/OurTeam/Video'
+=======
+>>>>>>> 6e50d6500f60565e3ba43d57d0b739d35fcf0928
 
 const initialTime = 3600;
 

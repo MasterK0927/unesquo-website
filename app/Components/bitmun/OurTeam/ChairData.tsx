@@ -112,7 +112,7 @@ const ChairPage: React.FC = () => {
   return (
     <div className={styles['container']}>
         <h1 className={styles['heading']}>UNGA</h1>
-      <Unga ungaData={ungaData} />
+      <Unga ungaData={ungaData}/>
       <h1 className={styles['heading']}>War Cabinet</h1>
       <WarCab warCabData={warCabData} />
       <h1 className={styles['heading']}>Ministry Of Magic</h1>

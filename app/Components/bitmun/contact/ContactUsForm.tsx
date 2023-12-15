@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import styles from './ContactUs.module.css';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
+
 import axios from 'axios';
 
 interface FormData {
@@ -12,14 +13,20 @@ interface FormData {
   
 
 const ContactUs: React.FC = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const {
+        register,
+        handleSubmit, // Specify SubmitHandler type
+        formState: { errors },
+      } = useForm<FormData>();
+
     const [submitting, setSubmitting] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const SHEET_API_URL = 'https://sheets.googleapis.com/v4/spreadsheets/your-spreadsheet-id/values/contact_form_unesquo!:append?key=your-api-key';
 
-    const onSubmit = async (data: FormData) => {
+    const onSubmit: SubmitHandler<FormData> = async (data) =>{
         setSubmitting(true);
 
         const formData = {

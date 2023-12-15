@@ -37,7 +37,7 @@ function Video() {
   return (
     <div>
       <div className={styles.video_wrap}>
-        <video className={styles.video} autoPlay muted playsInline loop poster="http://placehold.it/350x350">
+        <video className={styles.video} autoPlay playsInline loop poster="http://placehold.it/350x350">
           <source src="bitmun.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>

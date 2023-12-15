@@ -12,9 +12,8 @@ import Video from '../Components/bitmun/OurTeam/Video'
 const initialTime = 399600;
 
 const Bitmun = () => {
-
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
         <div><NavBar /></div>
         <Timer initialTime={initialTime}/>
         <Video />

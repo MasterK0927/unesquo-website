@@ -41,15 +41,15 @@ const FourGridsSection: React.FC = () => {
   return (
     <div>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Grid content="Grid 1" imageUrl="images/rover.jpg" />
+        <Grid  imageUrl="images/IMG_1648.jpg" />
 
         <Grid
           content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
         />
-        <Grid content="Grid 3" imageUrl="images/rover.jpg" />
+        <Grid content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."  />
 
         <Grid
-          content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
+         imageUrl="images/_MG_9409.jpg"
         />
       </div>
     </div>

@@ -98,13 +98,13 @@ const HeaderStyled = styled.header`
       gap: 2rem;
       font-size: 1.2rem;
       li {
-        padding: 0.5rem;
+        padding:0.75rem 0.75rem;
         border-radius: 0.5rem;
         }
       }
       li:hover {
         border: 1px solid var(--color-border);
-        background-color:#0ff ;
+        background: linear-gradient(45deg, #ff8c00, #ffd700);;
         color: black;
       }
     }
@@ -131,7 +131,7 @@ const HeaderStyled = styled.header`
       margin: 0;
     }
     .navbar{
-      padding : 1rem 2rem !important;
+      padding : 0rem 2rem !important;
       justify-content: space-between !important;
     }
     .brand{
@@ -163,10 +163,10 @@ const HeaderStyled = styled.header`
     .nav-items {
       display: none;
       position: absolute;
-      top: 5rem;
+      top: 7rem;
       left: 0;
       width: 100%;
-      background:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+      background:linear-gradient(to right, #0f0c29, #302b63, #24243e);
       text-align: center;
       padding-bottom: 0.7rem;
       padding-top: 0.5rem;
@@ -176,6 +176,7 @@ const HeaderStyled = styled.header`
     .nav-items.open {
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
     }
 
     .nav-items.close{
@@ -188,12 +189,12 @@ const HeaderStyled = styled.header`
     }
     
     .nav-items.open a {
-      color: white;
+      color: whitesmoke;
     }
 
     .nav-items a {
-      padding: 1.3rem ; 
-      border-bottom: 1px solid rgba(254, 254, 254, 0.345); 
+      padding: 1.2rem 0 ;
+      border-bottom: 1.25px solid rgba(254, 254, 254, 0.345); 
     }
 
 

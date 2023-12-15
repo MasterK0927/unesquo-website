@@ -1,22 +1,49 @@
-import React from 'react';
-import './video.css';
+import React, { useEffect } from 'react';
+import styles from './video.module.css';
 
-const Video: React.FC = () => {
-  const videoSource = 'https://www.youtube.com/embed/g01J3JZ9nMs?si=Q6VSm23zABPszSwC';
+function Video() {
+  useEffect(() => {
+    window.addEventListener('load', videoScroll);
+    window.addEventListener('scroll', videoScroll);
+
+    return () => {
+      window.removeEventListener('load', videoScroll);
+      window.removeEventListener('scroll', videoScroll);
+    };
+  }, []);
+
+  function videoScroll() {
+    const videoElements = document.querySelectorAll('video[autoplay]');
+    if (videoElements.length > 0) {
+      const windowHeight: number = window.innerHeight;
+  
+      for (let i = 0; i < videoElements.length; i++) {
+        const thisVideoElement = videoElements[i] as HTMLVideoElement;
+        const videoHeight: number = thisVideoElement.clientHeight;
+        const videoClientRect: DOMRect = thisVideoElement.getBoundingClientRect();
+  
+        if (
+          videoClientRect.top <= windowHeight - videoHeight * 0.5 &&
+          videoClientRect.top >= 0 - videoHeight * 0.5
+        ) {
+          thisVideoElement.play();
+        } else {
+          thisVideoElement.pause();
+        }
+      }
+    }
+  }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <iframe
-        width="85%"
-        height="500px"
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
-        src={videoSource}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+    <div>
+      <div className={styles.video_wrap}>
+        <video className={styles.video} autoPlay muted playsInline loop poster="http://placehold.it/350x350">
+          <source src="bitmun.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
     </div>
   );
-};
+}
 
 export default Video;

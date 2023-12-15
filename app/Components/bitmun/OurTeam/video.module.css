@@ -1,0 +1,24 @@
+.video {
+    display: block;
+    height: auto;
+    margin: auto;
+    position: relative;
+    width: 100%;
+}
+
+.video_wrap {
+    margin: 40px auto ;
+    position: relative;
+    width: 95%;
+}
+
+/* .video_wrap:after {
+    border-bottom: 1px solid red;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */

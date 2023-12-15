@@ -17,9 +17,9 @@ const Bitmun = () => {
     <div>
         <div><NavBar /></div>
         <Timer initialTime={initialTime}/>
-        <FourGridsSection />
-        <br />
         <Video />
+        <br />
+        <FourGridsSection />
         <ExampleUsage />
         <ExampleUsage1 />
         <ChairPage />

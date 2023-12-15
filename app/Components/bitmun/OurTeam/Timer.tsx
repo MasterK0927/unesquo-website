@@ -77,7 +77,7 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
       <style jsx>{`
         .timer-container {
           text-align: center;
-          margin: 5px;
+          margin: 5px 5px 15px 5px;
           border-radius: 15px;
           padding: 20px 20px 40px 20px;
           background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);

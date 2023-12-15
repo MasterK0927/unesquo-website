@@ -9,7 +9,7 @@ import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage'
 import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1'
 import Video from '../Components/bitmun/OurTeam/Video'
 
-const initialTime = 3600;
+const initialTime = 399600;
 
 const Bitmun = () => {
 

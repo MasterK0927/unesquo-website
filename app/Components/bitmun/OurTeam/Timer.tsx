@@ -50,21 +50,13 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
               margin: 5px;
               display: flex;
               box-shadow: 2px 2px 10px red, -2px -2px 10px red, 2px -2px 10px red, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
-              background: rgba(192, 192, 192, 0.2);
+              background: rgba(0, 0, 0, 0.6);
               backdrop-filter: blur(10px);
             }
     
             @media (max-width: 1000px) {
               .timer-item {
                 font-size: 1.5em;
-                font-weight: semibold;
-                padding: 5px;
-                border-radius: 5px;
-                margin: 5px;
-                display: flex;
-                box-shadow: 2px 2px 10px red, -2px -2px 10px red, 2px -2px 10px red, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
-                background: rgba(192, 192, 192, 0.2);
-                backdrop-filter: blur(10px);
               }
     
               .timer-item {

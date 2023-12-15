@@ -1,0 +1,40 @@
+.card {
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	overflow: hidden;
+	border: 0px solid black;
+	transition: transform 0.3s, border-color 0.3s;
+	margin: 10px;
+}
+
+.card:hover {
+	transform: scale(1.05);
+	border-color: orange;
+    border: 2px solid orange;
+    border-radius: 12px;
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+}
+
+.cardContent {
+	padding: 15px;
+	background-color: black;
+	color: white;
+}
+
+.title {
+	color: white;
+	transition: color 0.3s;
+}
+
+.card:hover .title {
+	color: orange;
+}
+
+.description {
+	color: white;
+}

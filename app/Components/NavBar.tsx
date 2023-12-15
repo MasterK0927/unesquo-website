@@ -46,7 +46,7 @@ function NavBar() {
                         </a>
                     </li>
                     <li>
-                        <a href="/bitmun/events">Events</a>
+                        <a href="/bitmun/events">Committees</a>
                     </li>
                     <li>
                         <a href="/bitmun/about">About Us</a>

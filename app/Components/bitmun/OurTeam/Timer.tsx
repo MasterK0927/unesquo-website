@@ -56,7 +56,7 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
     
             @media (max-width: 1000px) {
               .timer-item {
-                font-size: 1.75em;
+                font-size: 1.5em;
                 font-weight: semibold;
                 padding: 5px;
                 border-radius: 5px;
@@ -115,14 +115,14 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
           .timer-heading {
             font-family: 'Calibri', sans-serif;
             color: #E4931D;
-            font-size: 3.75em;
+            font-size: 3.5em;
             margin-bottom: 10px;
           }
 
           .timer-subheading {
             font-family: 'Calibri', sans-serif;
             color: white;
-            font-size: 1.75em;
+            font-size: 1.5em;
             margin-bottom: 20px;
           }
         }

@@ -6,9 +6,9 @@ import ContactUs from '@/app/Components/bitmun/contact/ContactUsForm'
 const Contact = () => {
   return (
     <div>
-        <NavBar/>
+        <div><NavBar/></div>
         <ContactUs/>
-        <Footer/>
+        <div><Footer/></div>
     </div>
   )
 }

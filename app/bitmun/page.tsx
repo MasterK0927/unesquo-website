@@ -15,7 +15,7 @@ const Bitmun = () => {
 
   return (
     <div>
-        <NavBar />
+        <div><NavBar /></div>
         <Timer initialTime={initialTime}/>
         <FourGridsSection />
         <br />
@@ -23,7 +23,7 @@ const Bitmun = () => {
         <ExampleUsage />
         <ExampleUsage1 />
         <ChairPage />
-        <Footer />
+        <div><Footer /></div>
     </div>
   );
 };

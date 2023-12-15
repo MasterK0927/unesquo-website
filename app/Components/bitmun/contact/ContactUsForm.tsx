@@ -4,6 +4,13 @@ import styles from './ContactUs.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+  }
+  
+
 const ContactUs: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [submitting, setSubmitting] = useState(false);
@@ -12,7 +19,7 @@ const ContactUs: React.FC = () => {
 
     const SHEET_API_URL = 'https://sheets.googleapis.com/v4/spreadsheets/your-spreadsheet-id/values/contact_form_unesquo!:append?key=your-api-key';
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data: FormData) => {
         setSubmitting(true);
 
         const formData = {

@@ -25,6 +25,16 @@ const Bitmun = () => {
       </section>
       <div style={{ margin: '20px 0' }}><ChairPage /></div>
       <div style={{ margin: '200px 0' }}><Footer /></div>
+    <div style={{ overflowX: 'hidden' }}>
+        <div><NavBar /></div>
+        <Timer initialTime={initialTime}/>
+        <Video />
+        <br />
+        <FourGridsSection />
+        <ExampleUsage />
+        <ExampleUsage1 />
+        <ChairPage />
+        <div><Footer /></div>
     </div>
   );
 };

@@ -22,3 +22,28 @@
     top: 50%;
     transform: translate(-50%, -50%);
 } */
+
+.muteToggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Add hover effect for better user experience */
+  .muteToggle:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  @media screen and (max-width: 1100px) {
+    .muteToggle {
+        bottom: 5px;
+        right: 5px;
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+  }

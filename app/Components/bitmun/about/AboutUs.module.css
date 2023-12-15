@@ -12,6 +12,7 @@
 .flexBox {
     display: flex;
     justify-content: space-between;
+    gap: 3rem;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;

@@ -111,7 +111,6 @@ const pressData = [
 const ChairPage: React.FC = () => {
   return (
     <div className={styles['container']}>
-        <h1 className={styles['heading']}>UNGA</h1>
       <Unga ungaData={ungaData}/>
       <h1 className={styles['heading']}>War Cabinet</h1>
       <WarCab warCabData={warCabData} />

@@ -1,34 +1,42 @@
 .card {
-	position: relative;
+	display: flex;
 	width: 100%;
-	max-width: 300px;
+	max-width: 1000px; /* Increased max-width for the entire card */
 	overflow: hidden;
-	border: 0px solid black;
+	border: 0;
 	transition: transform 0.3s, border-color 0.3s;
 	margin: 10px;
+	background-color: black;
+	color: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
 	transform: scale(1.05);
 	border-color: orange;
-    border: 2px solid orange;
-    border-radius: 12px;
+	border: 2px solid orange;
 }
 
 .card img {
-	width: 100%;
+	width: 500px; /* Increased width for the image */
 	height: auto;
+	border-radius: 12px 0 0 12px;
 }
 
 .cardContent {
-	padding: 15px;
-	background-color: black;
-	color: white;
+	flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1000px; /* Increased width for the cardContent */
 }
 
 .title {
 	color: white;
 	transition: color 0.3s;
+	margin-bottom: 10px;
 }
 
 .card:hover .title {
@@ -37,4 +45,19 @@
 
 .description {
 	color: white;
+	margin-bottom: 10px;
+}
+
+.button {
+	background-color: orange;
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: background-color 0.3s;
+}
+
+.button:hover {
+	background-color: #ff8c00;
 }

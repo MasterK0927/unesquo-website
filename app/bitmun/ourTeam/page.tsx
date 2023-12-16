@@ -6,7 +6,7 @@ import TeamBITMUNPage from '@/app/Components/bitmun/OurTeam/TeamBITMUNData'
 
 const Bitmun = () => {
   return (
-    <div>
+    <div style={{overflowX:'hidden'}}>
         <div><NavBar/></div>
         <TeamBITMUNPage/>
         <Footer/>

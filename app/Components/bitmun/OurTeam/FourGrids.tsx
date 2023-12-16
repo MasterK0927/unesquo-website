@@ -1,58 +1,73 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface GridProps {
   content: string;
   imageUrl?: string;
 }
 
+const GridContainer = styled.div`
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 80vh;
+  height: 60vh;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+`;
+
+const GridImage = styled.img`
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  margin-bottom: 10px;
+`;
+
+const GridText = styled.p`
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
 const Grid: React.FC<GridProps> = ({ content, imageUrl }) => {
-  const gridStyles: React.CSSProperties = {
-    border: '1px solid #ccc',
-    padding: '10px',
-    margin: '5px',
-    textAlign: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    width: imageUrl ? 'auto' : '70vh',
-    height: imageUrl ? 'auto' : '70vh',
-  };
-
-  const textStyles: React.CSSProperties = {
-    textAlign: 'center',
-    fontSize: '25px',
-  };
-
   return (
-    <div style={gridStyles}>
-      {imageUrl && (
-        <img
-          src={imageUrl}
-          alt="Grid Image"
-          style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'cover', marginBottom: '10px' }}
-        />
-      )}
-      <p style={textStyles}>{content}</p>
-    </div>
+    <GridContainer>
+      {imageUrl && <GridImage src={imageUrl} alt="Grid Image" />}
+      <GridText>{content}</GridText>
+    </GridContainer>
   );
 };
 
+const FourGridsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
 const FourGridsSection: React.FC = () => {
   return (
-    <div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Grid  imageUrl="images/IMG_1648.jpg" />
+    <FourGridsContainer>
+      <Grid imageUrl="images/IMG_1648.jpg" content="" />
 
-        <Grid
-          content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
-        />
-        <Grid content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."  />
+      <Grid
+        content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
+      />
+      <Grid
+        content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
+      />
+      <Grid imageUrl="images/_MG_9409.jpg" content="" />
 
-        <Grid
-         imageUrl="images/_MG_9409.jpg"
-        />
-      </div>
-    </div>
+    </FourGridsContainer>
   );
 };
 

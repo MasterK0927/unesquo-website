@@ -17,15 +17,16 @@ const itineraryData = [
 const ExampleUsage: React.FC = () => {
   return (
     <div className={styles.centered}>
-      <h1 style={{ 
-  fontSize: '100px',
-  color: '#4CAF50',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(76, 175, 80, 0.8)',
-  fontFamily: 'YourCustomFont, sans-serif'
-}}>20th Jan</h1>
-
+      <h1 className={styles.heading}>
+        <span style={{ 
+          fontSize: '4rem',
+          color: '#007BFF',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 123, 255, 0.8)',
+          fontFamily: 'Arial, sans-serif'
+        }}>20th Jan</span>
+      </h1>
       <ItineraryList itineraryData={itineraryData} />
     </div>
   );

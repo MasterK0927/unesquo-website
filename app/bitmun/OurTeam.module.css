@@ -1,0 +1,35 @@
+.section{
+    display: flex;
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 50px;
+}
+
+.ExampleUsage{
+    margin:100px 0;
+    width:50%;
+}
+
+.ExampleUsage1{
+    margin: 50px 0;
+    width: 50%;
+}
+
+@media screen and (max-width: 1100px) {
+    .ExampleUsage{
+        width:100%;
+        margin: 50px 0;
+    }
+    .ExampleUsage1{
+        width:100%;
+        margin: 25px 0;
+    }
+    .section{
+        flex-direction:column;
+        padding:0 10px;
+    }
+    .fourGrid{
+        display: none;
+    }
+}

@@ -8,33 +8,24 @@ import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids';
 import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage';
 import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
 import Video from '../Components/bitmun/OurTeam/Video';
+import styles from './OurTeam.module.css'
 
 const initialTime = 399600;
 
 const Bitmun = () => {
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <div style={{ margin: '20px 0' }}><NavBar /></div>
-      <div style={{ margin: '20px 0' }}><Timer initialTime={initialTime}/></div>
-      <div style={{ margin: '200px 0' }}><Video /></div>
+      <div ><NavBar /></div>
+      <div ><Timer initialTime={initialTime} /></div>
+      <div ><Video /></div>
       <br />
-      <div style={{ margin: '200px 0' }}><FourGridsSection /></div>
-      <section style={{ margin: '200px 0' }}>
-        <div style={{ margin: '200px 0' }}><ExampleUsage /></div>
-        <div style={{ margin: '20px 0' }}><ExampleUsage1 /></div>
+      <div className={styles.fourGrid}><FourGridsSection /></div>
+      <section className={styles.section} >
+        <div className={styles.ExampleUsage}><ExampleUsage /></div>
+        <div className={styles.ExampleUsage1}><ExampleUsage1 /></div>
       </section>
       <div style={{ margin: '20px 0' }}><ChairPage /></div>
       <div style={{ margin: '200px 0' }}><Footer /></div>
-    <div style={{ overflowX: 'hidden' }}>
-        <div><NavBar /></div>
-        <Timer initialTime={initialTime}/>
-        <Video />
-        <br />
-        <FourGridsSection />
-        <ExampleUsage />
-        <ExampleUsage1 />
-        <ChairPage />
-        <div><Footer /></div>
     </div>
   );
 };

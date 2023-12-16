@@ -20,8 +20,10 @@ function Footer() {
       <nav className="nav">
         <div className="logo-con">
           <div className="logo">
-            <Image src={logo} width={36} alt="logo" />
-            <h2>UNESQUO, BIT Mesra</h2>
+            <Image src={logo} width={40} alt="logo" />
+            <Link href="https://unesquo.in/">
+              <h2>UNESQUO, BIT Mesra</h2>
+            </Link>
           </div>
           <p className="para">
             The United Engineers' Speaking & Quizzing Organization is the

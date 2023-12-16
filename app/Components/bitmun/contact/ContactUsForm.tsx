@@ -59,21 +59,21 @@ const ContactUs: React.FC = () => {
                     <div className={styles.icon}>📍</div>
                     <div>
                         <h2 className={styles.h2}>Our Address</h2>
-                        <p className={styles.p}>123 Main Street, City, State ZIP</p>
+                        <p className={styles.p}>BIT Mesra, Ranchi-835215, Jharkhand </p>
                     </div>
                 </div>
                 <div className={styles.infoBlock}>
                     <div className={styles.icon}>✉️</div>
                     <div>
                         <h2 className={styles.h2}>Email</h2>
-                        <a href="mailto:info@yourdomain.com" className={styles.a}>info@yourdomain.com</a>
+                        <a href="mailto:bitmesramun@gmail.com" className={styles.a}>info@unesquo.in</a>
                     </div>
                 </div>
                 <div className={styles.infoBlock}>
                     <div className={styles.icon}>☎️</div>
                     <div>
                         <h2 className={styles.h2}>Phone</h2>
-                        <a href="tel:+1234567890" className={styles.a}>+1 234-567-890</a>
+                        <a href="tel:+916201628654" className={styles.a}>+91 620-1628-654</a>
                     </div>
                 </div>
             </div>

@@ -15,8 +15,8 @@ const ungaData = [
   },
   {
     id: 2,
-    src: '/images/shaurya.jpg',
-    name: 'Shaurya Singh',
+    src: '/tba.jpg',
+    name: 'TBA',
     position: 'VICECHAIR',
   },
   {
@@ -76,8 +76,8 @@ const jsipData = [
   },
   {
     id: 2,
-    src: '/images/nikhil.jpeg',
-    name: 'Nikhil Verma',
+    src: '/tba,jpg',
+    name: 'TBA',
     position: 'VICECHAIR',
   },
   {

@@ -17,7 +17,7 @@ const footer = [
     ],
   },
   {
-    title: "Photo Gallery",
+    title: "Gallery",
     links: [
       {
         name: "Genesis",

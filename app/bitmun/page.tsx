@@ -25,7 +25,7 @@ const Bitmun = () => {
         <div className={styles.ExampleUsage1}><ExampleUsage1 /></div>
       </section>
       <div style={{ margin: '20px 0' }}><ChairPage /></div>
-      <div style={{ margin: '200px 0' }}><Footer /></div>
+      <div><Footer /></div>
     </div>
   );
 };

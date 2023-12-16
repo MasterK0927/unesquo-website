@@ -39,9 +39,9 @@ const EventDetails: React.FC = () => {
     const gridStyles = {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-        gap: '20px',
-        padding: '20px',
-        margin: '20px'
+        gap: '500px',
+        padding: '200px',
+        margin: '200px'
       };
 
 	

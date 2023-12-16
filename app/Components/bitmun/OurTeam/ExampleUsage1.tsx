@@ -15,12 +15,12 @@ const ExampleUsage1: React.FC = () => {
   return (
     <div className={styles.centered}>
 <h1 style={{ 
-  fontSize: '100px',
-  color: '#4CAF50',
+  fontSize: '80px',
+  color: '#5575EC',
   fontWeight: 'bold',
   textAlign: 'center',
   textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(76, 175, 80, 0.8)',
-  fontFamily: 'YourCustomFont, sans-serif'
+  fontFamily: 'YourCustomFont, Helvetica'
 }}>21st Jan</h1>
       <ItineraryList1 itinerary1Data={itinerary1Data} />
     </div>

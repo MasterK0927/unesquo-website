@@ -12,12 +12,12 @@ interface ItineraryListProps {
 
 const itineraryContainerStyle: React.CSSProperties = {
   border: '1px solid #ccc',
-  padding: '20px',
-  margin: '20px',
+  padding: '10px',
+  margin: '10px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  fontSize: '50px',
+  fontSize: '40px',
   fontFamily: 'Serif',
   boxShadow: '0 0 20px yellow',
   background: 'black',
@@ -36,13 +36,13 @@ const itineraryListStyle: React.CSSProperties = {
 };
 
 const itineraryItemStyle: React.CSSProperties = {
-  marginBottom: '12px',
+  marginBottom: '8px',
 };
 
 const ItineraryList: React.FC<ItineraryListProps> = ({ itineraryData }) => {
   return (
     <div style={{ ...itineraryContainerStyle, ...glowTextEffect }}>
-      <h2 style={{ fontSize: '150px', margin: '0', paddingBottom: '20px', ...glowTextEffect }}>Itinerary</h2>
+      <h2 style={{ fontSize: '80px', margin: '0', paddingBottom: '20px', ...glowTextEffect }}>Itinerary</h2>
       <ul style={itineraryListStyle}>
         {itineraryData.map((item, index) => (
           <li key={index} style={itineraryItemStyle}>

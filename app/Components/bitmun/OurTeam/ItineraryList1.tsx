@@ -11,12 +11,12 @@ interface ItineraryList1Props {
 }
 const itineraryContainer1Style: React.CSSProperties = {
   border: '1px solid #ccc',
-  padding: '20px',
-  margin: '20px',
+  padding: '10px',
+  margin: '10px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  fontSize: '50px',
+  fontSize: '40px',
   fontFamily: 'Serif',
   boxShadow: '0 0 20px yellow',
   background: 'black',
@@ -43,7 +43,7 @@ const glowTextEffect: React.CSSProperties = {
   const ItineraryList1: React.FC<ItineraryList1Props> = ({ itinerary1Data }) => {
     return (
       <div style={{ ...itineraryContainer1Style, ...glowTextEffect }}>
-        <h2 style={{ fontSize: '150px' }}>Itinerary</h2>
+        <h2 style={{ fontSize: '80px' }}>Itinerary</h2>
         <ul style={itineraryList1Style}>
           {itinerary1Data.map((item, index) => (
             <li key={index} style={itineraryItem1Style}>

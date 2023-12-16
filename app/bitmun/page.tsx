@@ -20,7 +20,7 @@ const Bitmun = () => {
     // Simulate an asynchronous operation (e.g., loading data)
     const loadData = async () => {
       // Simulate loading for 2 seconds
-      await new Promise(resolve => setTimeout(resolve, 2800));
+      await new Promise(resolve => setTimeout(resolve, 2000));
       setLoading(false); // Set loading to false after 2 seconds
     };
 

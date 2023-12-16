@@ -49,9 +49,8 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
               border-radius: 5px;
               margin: 5px;
               display: flex;
-              box-shadow: 2px 2px 10px red, -2px -2px 10px red, 2px -2px 10px red, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
-              background: rgba(0, 0, 0, 0.6);
-              backdrop-filter: blur(10px);
+              box-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px -2px 10px white, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
+              background: black;
             }
     
             @media (max-width: 1000px) {
@@ -90,8 +89,8 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
         }
 
         .timer-heading {
-          font-family: 'Calibri', sans-serif;
-          color: #E4931D;
+          font-family: 'serif';
+          color: #ffcc00;
           font-size: 5em;
           margin-bottom: 10px;
         }

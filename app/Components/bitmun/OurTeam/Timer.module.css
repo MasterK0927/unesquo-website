@@ -4,7 +4,7 @@
     text-align: center;
     margin: 20px auto; /* Auto margin to center horizontally */
     border: 2px solid white;
-    background: white;
+    background: black;
     border-radius: 10px;
     padding: 10px;
   }
@@ -18,12 +18,12 @@
   .timer-display {
     font-family: 'Serif';
     font-size: 6em;
-    font-weight: semibold;
+    font-weight: bold;
     padding: 8px;
     background-color: white;
     border-radius: 10px;
     margin-top: 10px;
     display: inline-block;
-    box-shadow: 0 0 10px rgba(5, 5, 0, 0.1);
+    box-shadow: 0 0 10px rgba(10, 10, 0, 0.1);
   }
   

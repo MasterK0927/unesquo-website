@@ -1,5 +1,4 @@
 // ItineraryList.tsx
-
 import React from 'react';
 
 interface ItineraryItem {
@@ -13,14 +12,22 @@ interface ItineraryListProps {
 
 const itineraryContainerStyle: React.CSSProperties = {
   border: '1px solid #ccc',
-  padding: '10px',
+  padding: '20px',
   margin: '20px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  fontSize: '30px',
+  fontSize: '50px',
   fontFamily: 'Serif',
-  boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
+  boxShadow: '0 0 20px yellow',
+  background: 'black',
+  borderRadius: '10px',
+  textAlign: 'center',
+  position: 'relative',
+};
+
+const glowTextEffect: React.CSSProperties = {
+  textShadow: '0 0 5px yellow, 0 0 20px red',
 };
 
 const itineraryListStyle: React.CSSProperties = {
@@ -29,13 +36,13 @@ const itineraryListStyle: React.CSSProperties = {
 };
 
 const itineraryItemStyle: React.CSSProperties = {
-  marginBottom: '8px',
+  marginBottom: '12px',
 };
 
 const ItineraryList: React.FC<ItineraryListProps> = ({ itineraryData }) => {
   return (
-    <div style={itineraryContainerStyle}>
-      <h2>Itinerary</h2>
+    <div style={{ ...itineraryContainerStyle, ...glowTextEffect }}>
+      <h2 style={{ fontSize: '150px', margin: '0', paddingBottom: '20px', ...glowTextEffect }}>Itinerary</h2>
       <ul style={itineraryListStyle}>
         {itineraryData.map((item, index) => (
           <li key={index} style={itineraryItemStyle}>

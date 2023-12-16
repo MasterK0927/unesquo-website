@@ -37,7 +37,7 @@ const warCabData = [
   {
     id: 2,
     src: '/tba.jpg',
-    name: 'Akshat Raj Sharma',
+    name: 'TBA',
     position: 'VICECHAIR',
   },
   {

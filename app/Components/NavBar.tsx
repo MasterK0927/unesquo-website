@@ -3,65 +3,72 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../public/bitmun.svg";
+import unstop from "../../public/unstop.svg"
 import styled from "styled-components";
 
 function NavBar() {
-    const hero = useRef<HTMLDivElement>(null);
+  const hero = useRef<HTMLDivElement>(null);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldAnimate(window.innerWidth > 1280);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+  useEffect(() => {
+    const handleResize = () => {
+      setShouldAnimate(window.innerWidth > 1280);
     };
 
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return (
-        <HeaderStyled ref={hero}>
-            <nav className="navbar">
-                <div className="logo">
-                    <Image src={logo} alt="logo" width={70} className="brand-logo" />
-                    <h2 className="brand">BITMUN</h2>
-                </div>
-                <div className="menu-icon" onClick={toggleMenu}>
-                    ☰
-                </div>
-                <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
-                    <li>
-                        <a href="/bitmun">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/bitmun/events">Committees</a>
-                    </li>
-                    <li>
-                        <a href="/bitmun/about">About Us</a>
-                    </li>
-                    <li>
-                        <a href="/bitmun/ourTeam" >Our Team</a>
-                    </li>
-                    <li>
-                        <a href="/bitmun/contact">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-        </HeaderStyled>
-    );
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+
+  return (
+    <HeaderStyled ref={hero}>
+      <nav className="navbar">
+        <div className="logo">
+          <div className="unesquo">
+            <Image src={logo} alt="logo" width={70} className="brand-logo" />
+            <h2 className="brand">BITMUN</h2>
+          </div>
+          <div className="unstop">
+            <h2 className="brand_unstop">Powered by</h2>
+            <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
+          </div>
+        </div>
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰
+        </div>
+        <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
+          <li>
+            <a href="/bitmun">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/bitmun/events">Committees</a>
+          </li>
+          <li>
+            <a href="/bitmun/about">About Us</a>
+          </li>
+          <li>
+            <a href="/bitmun/ourTeam" >Our Team</a>
+          </li>
+          <li>
+            <a href="/bitmun/contact">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+    </HeaderStyled>
+  );
 }
 
 const HeaderStyled = styled.header`
@@ -75,10 +82,41 @@ const HeaderStyled = styled.header`
     align-items: center;
     .logo {
       display: flex;
+      position: relative;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       gap: 1rem;
       cursor: pointer;
+
+      .unesquo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+      }
+
+      .unstop{
+        width: fit-content;
+        gap: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position:absolute;
+        top: 95px;
+
+        .brand_unstop{
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: gray;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .brand-logo-unstop{
+          transform: scale(2);
+          margin-top: -0.5rem;
+        }
+      }
 
       .brand-logo{
         margin-top: 2rem;
@@ -135,8 +173,18 @@ const HeaderStyled = styled.header`
       justify-content: space-between !important;
     }
     .brand{
-      font-size: 1.8rem;
+      font-size: 1.5rem !important;
     }
+
+    .unstop{
+      gap: 1rem !important;
+    }
+
+    .brand-logo-unstop{
+      transform: scale(1.5) !important;
+      margin-top: 0rem !important;
+    }
+
     .special{
       width: 6rem !important;
       height: 2.4rem !important;

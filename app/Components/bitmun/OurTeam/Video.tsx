@@ -63,7 +63,7 @@ function Video() {
           autoPlay
           muted={isMuted}
           playsInline
-          poster="http://placehold.it/350x350"
+          poster='https://scontent.fccu13-2.fna.fbcdn.net/v/t39.30808-6/306843302_463685125799498_6440379255570587761_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=JGFG2aQq-50AX8DcNGf&_nc_ht=scontent.fccu13-2.fna&oh=00_AfCv5XXOBU53vGipi1CgjFXy6Tqx3DSKcLDneXAvMPq_qQ&oe=6581FA1B'
         >
           <source src="bitmun.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.

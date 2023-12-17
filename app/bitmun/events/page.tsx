@@ -7,7 +7,7 @@ import EventPage from '@/app/Components/bitmun/events/EventPage'
 
 const Event = () => {
     return (
-        <div>
+        <div style={{overflowX:'hidden'}}>
             <div><NavBar /></div>
             <EventPage />
             <div><Footer /></div>

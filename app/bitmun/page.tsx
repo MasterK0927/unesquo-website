@@ -11,7 +11,7 @@ import Video from '../Components/bitmun/OurTeam/Video';
 import styles from './OurTeam.module.css';
 import Preloader from '../Components/preloader/preloader';
 
-const initialTime = 2941200;
+const initialTime = 214200;
 
 const Bitmun = () => {
   const [loading, setLoading] = useState(true);

@@ -7,15 +7,15 @@ interface CardProps {
 	description: string;
 	registrationLink: string; 
 }
-const buttonStyles = {
-	marginTop: '3px',
-padding: '4px 8px', // Adjusted padding for smaller size
-backgroundColor: 'white',
-color: 'black',
-border: 'none',
-borderRadius: '4px', // Adjusted border radius for a slightly rounded look
-cursor: 'pointer',
-  };
+// const buttonStyles = {
+// 	marginTop: '3px',
+// padding: '4px 8px', // Adjusted padding for smaller size
+// backgroundColor: 'white',
+// color: 'black',
+// border: '5px solid orange',
+// borderRadius: '4px', // Adjusted border radius for a slightly rounded look
+// cursor: 'pointer',
+//   };
   
 
 const Card: React.FC<CardProps> = ({ image, title, description,registrationLink }) => {
@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ image, title, description,registrationLink 
 			<div className={styles.cardContent}>
 				<h2 className={styles.title}>{title}</h2>
 				<p className={styles.description}>{description}</p>
-				<a href={registrationLink} style={buttonStyles}>Register</a>
+				<a href={registrationLink} className={styles.button}>Register</a>
 			</div>
 		</div>
 	);

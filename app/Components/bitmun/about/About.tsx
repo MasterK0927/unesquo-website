@@ -3,7 +3,8 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
 import Image from 'next/image';
-import image from '@/public/images/bitcoin.jpg'
+import image1 from '@/public/images/webp/MUN.webp'
+import image2 from '@/public/images/webp/brochureimg.webp'
 
 const BitmunAboutUs: React.FC = () => {
     return (
@@ -11,7 +12,7 @@ const BitmunAboutUs: React.FC = () => {
             {/* Section 1 */}
             <div className={styles.flexBox}>
                 <div className={styles.subFlexBox}>
-                    <Image src={image}  alt="BITMUN Difference" className={styles.img} width={100} height={400} />
+                    <Image src={image1}  alt="BITMUN Difference" className={styles.img} width={600} height={461.54} />
                 </div>
                 <div className={styles.subFlexBoxContent}>
                     <h2 className={styles.h2}>What is MUN?</h2>
@@ -25,7 +26,7 @@ const BitmunAboutUs: React.FC = () => {
             {/* Section 2 */}
             <div className={styles.flexBox}>
                 <div className={styles.subFlexBox}>
-                    <Image src={image} alt="BITMUN Difference" className={styles.img} width={100} height={400} />
+                    <Image src={image2} alt="BITMUN Difference" className={styles.img} width={600} height={461.5} />
                 </div>
                 <div className={styles.subFlexBoxContent}>
                     <h2 className={styles.h2}>The BITMUN Difference</h2>

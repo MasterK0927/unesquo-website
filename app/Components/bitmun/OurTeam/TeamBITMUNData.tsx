@@ -83,7 +83,7 @@ const hospitalityData = [
   },
   {
     id: 2,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Aayushii.webp',
     name: 'Aayushii Singh',
     position: 'Hospitality',
   },
@@ -164,7 +164,7 @@ const designContentData = [
 const webTeamData = [
   {
     id: 1,
-    src: '/images/webp/Nikhil Verma.webp',
+    src: '/images/webp/NikhilVerma.webp',
     name: 'Nikhil Verma',
     position: 'Web Team',
   },
@@ -176,7 +176,7 @@ const webTeamData = [
   },
   {
     id: 3,
-    src: '/images/webp/Harsh N.webp',
+    src: '/images/webp/HarshN.webp',
     name: 'Harsh Narayan',
     position: 'Web Team',
   }
@@ -185,7 +185,7 @@ const webTeamData = [
 const culturalTeamData = [
   {
     id: 1,
-    src: '/images/webp/Aditya Verma.webp',
+    src: '/images/webp/AdityaVerma.webp',
     name: 'Aditya Verma',
     position: 'Cultural',
   },

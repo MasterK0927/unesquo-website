@@ -9,19 +9,19 @@ import Press from './press';
 const ungaData = [
   {
     id: 1,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'CHAIR',
   },
   {
     id: 2,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'VICECHAIR',
   },
   {
     id: 3,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'RAPPEUTER',
   },
@@ -30,19 +30,19 @@ const ungaData = [
 const warCabData = [
   {
     id: 1,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'CHAIR',
   },
   {
     id: 2,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'VICECHAIR',
   },
   {
     id: 3,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Rappeuter',
   },
@@ -50,19 +50,19 @@ const warCabData = [
 const MomData = [
   {
     id: 1,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'CHAIR',
   },
   {
     id: 2,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'VICECHAIR',
   },
   {
     id: 3,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Rappeuter',
   },
@@ -70,19 +70,19 @@ const MomData = [
 const jsipData = [
   {
     id: 1,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'CHAIR',
   },
   {
     id: 2,
-    src: '/tba,jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'VICECHAIR',
   },
   {
     id: 3,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Rappeuter',
   },
@@ -90,19 +90,19 @@ const jsipData = [
 const pressData = [
   {
     id: 1,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Secretary General',
   },
   {
     id: 2,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Deputy Secretary General',
   },
   {
     id: 3,
-    src: '/tba.jpg',
+    src: '/images/webp/tba.webp',
     name: 'TBA',
     position: 'Deputy Secretary General',
   },

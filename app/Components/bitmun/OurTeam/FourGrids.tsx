@@ -57,7 +57,7 @@ const FourGridsContainer = styled.div`
 const FourGridsSection: React.FC = () => {
   return (
     <FourGridsContainer>
-      <Grid imageUrl="images/IMG_1648.jpg" content="" />
+      <Grid imageUrl="images/IMG_1648.webp" content="" />
 
       <Grid
         content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
@@ -65,7 +65,7 @@ const FourGridsSection: React.FC = () => {
       <Grid
         content="Welcome to BITMUN, an immersive Model United Nations experience that delves into the heart of international diplomacy. BITMUN provides a platform for students to engage in diplomatic discourse, foster critical thinking, and develop a nuanced understanding of global issues."
       />
-      <Grid imageUrl="images/_MG_9409.jpg" content="" />
+      <Grid imageUrl="images/_MG_9409.webp" content="" />
 
     </FourGridsContainer>
   );

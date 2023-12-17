@@ -14,25 +14,25 @@ import CulturalTeamComponent from './CulturalTeamComponent';
 const teamData = [
   {
     id: 1,
-    src: '/images/harsh.jpg',
+    src: '/images/webp/harsh.webp',
     name: 'Harsh Ranjan',
     position: 'Secretary General',
   },
   {
     id: 2,
-    src: '/images/akshay.jpeg',
+    src: '/images/webp/Akshay.webp',
     name: 'Akshay Tripathi',
     position: 'Deputy Secretary General',
   },
   {
     id: 3,
-    src: '/images/penguin.jpeg',
+    src: '/images/webp/penguin.webp',
     name: ' Kumar Harshwardhan',
     position: 'Director General',
   },
   {
     id: 4,
-    src: '/images/chhavi.jpeg',
+    src: '/images/webp/chhavi.webp',
     name: 'Chhavi Rani',
     position: 'Deputy Director General',
   },
@@ -41,19 +41,19 @@ const teamData = [
 const delegateAffairsData = [
   {
     id: 1,
-    src: '/images/shaurya.jpg',
+    src: '/images/webp/Shaurya.webp',
     name: 'Shaurya Singh',
     position: 'Delegate Affairs',
   },
   {
     id: 2,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Ayan.webp',
     name: 'Ayan Mitra',
     position: 'Delegate Affairs',
   },
   {
     id: 3,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Shashwat.webp',
     name: ' Shashwat Jha',
     position: 'Delegate Affairs',
   },
@@ -62,7 +62,7 @@ const delegateAffairsData = [
 const executiveBoardData = [
   {
     id: 1,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Priyanka.webp',
     name: 'Priyanka Sinha',
     position: 'Executive Board',
   },
@@ -77,7 +77,7 @@ const executiveBoardData = [
 const hospitalityData = [
   {
     id: 1,
-    src: '/images/gaurav.jpg',
+    src: '/images/webp/gaurav.webp',
     name: 'Gaurav Kumar Singh',
     position: 'Hospitality',
   },
@@ -104,7 +104,7 @@ const financeSponsorshipData = [
   },
   {
     id: 3,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/sreejan.webp',
     name: 'Sreejan Nidhi',
     position: 'Finance & Sponsorship',
   }
@@ -113,7 +113,7 @@ const financeSponsorshipData = [
 const logisticsResourcesData = [
   {
     id: 1,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Arnav.webp',
     name: 'Arnav Roy',
     position: 'Logistics & Resources',
   },
@@ -128,13 +128,13 @@ const logisticsResourcesData = [
 const publicRelationsData = [
   {
     id: 1,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/shasank.webp',
     name: 'Shashank Shekhar',
     position: 'Public Relations',
   },
   {
     id: 2,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Shivam.webp',
     name: 'Kumar Shivam',
     position: 'Public Relations',
   },
@@ -143,19 +143,19 @@ const publicRelationsData = [
 const designContentData = [
   {
     id: 1,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Shreyansh.webp',
     name: 'Shreyansh Verma',
     position: 'Design & Content',
   },
   {
     id: 2,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/lily.webp',
     name: 'Lily',
     position: 'Design & Content',
   },
   {
     id: 3,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Praharsh.webp',
     name: 'Praharsh',
     position: 'Design & Content',
   }
@@ -164,19 +164,19 @@ const designContentData = [
 const webTeamData = [
   {
     id: 1,
-    src: '/images/nikhil.jpeg',
+    src: '/images/webp/Nikhil Verma.webp',
     name: 'Nikhil Verma',
     position: 'Web Team',
   },
   {
     id: 2,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Manan.webp',
     name: 'Manan Bansal',
     position: 'Web Team',
   },
   {
     id: 3,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Harsh N.webp',
     name: 'Harsh Narayan',
     position: 'Web Team',
   }
@@ -185,7 +185,7 @@ const webTeamData = [
 const culturalTeamData = [
   {
     id: 1,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Aditya Verma.webp',
     name: 'Aditya Verma',
     position: 'Cultural',
   },
@@ -197,7 +197,7 @@ const culturalTeamData = [
   },
   {
     id: 3,
-    src: '/images/smoke_2.png',
+    src: '/images/webp/Ambuj.webp',
     name: 'Ambuj Mishra',
     position: 'Cultural',
   }

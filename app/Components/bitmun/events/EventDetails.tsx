@@ -40,7 +40,7 @@ const EventDetails: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-around',
 		flexWrap: 'wrap',
-		padding: '10vh'
+		
       };
 
 	

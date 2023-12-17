@@ -64,10 +64,11 @@
 	background-color: #ff8c00;
 }
 
+
 @media all and (max-width:1280px){
 	.card{
 		flex-direction: column;
-		width: 40vw;
+		max-width: 100vw;
 	}
 
 	.cardContent{

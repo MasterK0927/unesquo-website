@@ -46,7 +46,7 @@ const EventDetails: React.FC = () => {
 	
 
 	return (
-		<div style={flexStyles}>
+		<div style={flexStyles as React.CSSProperties}>
 			{events.map((event, index) => (
 				<><Card key={index} {...event} /></>
 			))}

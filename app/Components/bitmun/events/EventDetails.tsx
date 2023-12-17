@@ -36,18 +36,17 @@ const EventDetails: React.FC = () => {
 		}
 	];
 
-    const gridStyles = {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-        gap: '500px',
-        padding: '200px',
-        margin: '200px'
+    const flexStyles = {
+        display: 'flex',
+        justifyContent: 'space-around',
+		flexWrap: 'wrap',
+		padding: '10vh'
       };
 
 	
 
 	return (
-		<div style={gridStyles}>
+		<div style={flexStyles}>
 			{events.map((event, index) => (
 				<><Card key={index} {...event} /></>
 			))}

@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+	align-items: center;
 	text-align: justify;
     width: 25vw; /* Increased width for the cardContent */
 }
@@ -54,11 +55,13 @@
     display: block;
     background: orange;
     padding: 10px;
+	margin: 25px;
     text-align: center;
     border-radius: 5px;
     color: white;
     font-weight: bold;
     line-height: 25px;
+	width: 60%;
 }
 .button:hover {
 	background-color: #ff8c00;

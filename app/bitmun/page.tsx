@@ -8,10 +8,11 @@ import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids';
 import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage';
 import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
 import Video from '../Components/bitmun/OurTeam/Video';
-import styles from './OurTeam.module.css';
 import Preloader from '../Components/preloader/preloader';
+import styles from './OurTeam.module.css';
 
-const initialTime = 2977200;
+// Set your target time in the format 'YYYY-MM-DDTHH:mm:ss'
+const targetTime = '2024-01-20T08:00:00';
 
 const Bitmun = () => {
   const [loading, setLoading] = useState(true);
@@ -19,9 +20,14 @@ const Bitmun = () => {
   useEffect(() => {
     // Simulate an asynchronous operation (e.g., loading data)
     const loadData = async () => {
-      // Simulate loading for 2 seconds
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setLoading(false); // Set loading to false after 2 seconds
+      try {
+        // Simulate loading for 2 seconds
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setLoading(false); // Set loading to false after 2 seconds
+      } catch (error) {
+        console.error('Error loading data:', error);
+        setLoading(false); // Handle error by setting loading to false
+      }
     };
 
     loadData();
@@ -32,17 +38,26 @@ const Bitmun = () => {
       {loading && <Preloader />}
       {!loading && (
         <>
-          <div><NavBar /></div>
-          <div><Timer initialTime={initialTime} /></div>
-          <div><Video /></div>
+          <NavBar />
+          {/* Pass targetTime instead of initialTime */}
+          <Timer targetTime={targetTime} />
+          <Video />
           <br />
-          <div className={styles.fourGrid}><FourGridsSection /></div>
-          <section className={styles.section} >
-            <div className={styles.ExampleUsage}><ExampleUsage /></div>
-            <div className={styles.ExampleUsage1}><ExampleUsage1 /></div>
+          <div className={styles.fourGrid}>
+            <FourGridsSection />
+          </div>
+          <section className={styles.section}>
+            <div className={styles.ExampleUsage}>
+              <ExampleUsage />
+            </div>
+            <div className={styles.ExampleUsage1}>
+              <ExampleUsage1 />
+            </div>
           </section>
-          <div style={{ margin: '20px 0' }}><ChairPage /></div>
-          <div><Footer /></div>
+          <div style={{ margin: '20px 0' }}>
+            <ChairPage />
+          </div>
+          <Footer />
         </>
       )}
     </div>

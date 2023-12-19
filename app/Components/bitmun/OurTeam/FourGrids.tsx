@@ -27,6 +27,7 @@ const GridImage = styled.img`
   max-height: 70vh;
   object-fit: cover;
   margin-bottom: 10px;
+  loading: lazy;
 `;
 
 const GridText = styled.p`

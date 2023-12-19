@@ -33,6 +33,7 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
           alt="Secreteriat"
           width={1200}
           height={1400}
+          loading='lazy'
         />
         <div className={styles["card__content"]}>
           <div className={styles["card__content--container"]}>

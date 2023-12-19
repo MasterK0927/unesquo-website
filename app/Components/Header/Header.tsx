@@ -105,10 +105,10 @@ function Header() {
                       width="78.5"
                       height="46"
                       filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
+                      colorInterpolationFilters="sRGB"
                     >
                       <feFlood
-                        flood-opacity="0"
+                        floodOpacity="0"
                         result="BackgroundImageFix"
                       ></feFlood>
                       <feBlend
@@ -130,11 +130,11 @@ function Header() {
                       y2="44"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="white" stop-opacity="0.6"></stop>
+                      <stop stopColor="white" stopOpacity="0.6"></stop>
                       <stop
                         offset="1"
-                        stop-color="white"
-                        stop-opacity="0.05"
+                        stopColor="white"
+                        stopOpacity="0.05"
                       ></stop>
                     </linearGradient>
                   </defs>
@@ -187,6 +187,7 @@ function Header() {
               style={{
                 transform: shouldAnimate ? imageHover.transform : "none",
               }}
+              loading="eager"
             />
           </div>
         </div>

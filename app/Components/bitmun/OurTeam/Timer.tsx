@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 interface TimerProps {
-  initialTime: number; // Initial time in seconds
+  targetTime: string; // Target time in the format 'YYYY-MM-DDTHH:mm:ss'
 }
 
-const Timer: React.FC<TimerProps> = ({ initialTime }) => {
-  const [time, setTime] = useState(initialTime);
+const Timer: React.FC<TimerProps> = ({ targetTime }) => {
+  const [time, setTime] = useState(calculateTimeDifference());
 
   useEffect(() => {
-    let timerInterval: NodeJS.Timeout;
-
-    // Update the timer every second
-    timerInterval = setInterval(() => {
-      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+    const timerInterval = setInterval(() => {
+      setTime(calculateTimeDifference());
     }, 1000);
 
     // Clean up the interval on component unmount
@@ -20,6 +17,19 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
       clearInterval(timerInterval);
     };
   }, []);
+
+  function calculateTimeDifference() {
+    const targetDate = new Date(targetTime);
+    const currentDate = new Date();
+
+    let timeDifference = Math.floor((targetDate.getTime() - currentDate.getTime()) / 1000);
+
+    if (timeDifference < 0) {
+      timeDifference = 0;
+    }
+
+    return timeDifference;
+  }
 
   const formatTime = (seconds: number) => {
     const days = Math.floor(seconds / (3600 * 24));
@@ -115,6 +125,25 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
             color: white;
             font-size: 1.5em;
             margin-bottom: 20px;
+          }
+
+          .timer-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+          }
+
+          .timer-item {
+            font-size: 1.5em;
+            font-weight: semibold;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px;
+            display: flex;
+            box-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px -2px 10px white, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
+            background: black;
           }
         }
       `}</style>

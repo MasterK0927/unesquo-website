@@ -42,7 +42,6 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
               {position}
             </div>
           </div>
-          <button className={styles["card__button"]}>Read more</button>
         </div>
       </article>
     </div>

@@ -8,12 +8,12 @@ const Preloader: React.FC = () => {
   const [time, setTime] = useState(1);
   const [outputText, setOutputText] = useState('');
 
-  const speed = 50; // Writing speed in milliseconds
+  const speed = 200; // Writing speed in milliseconds
   const text = 'sh andrew_website.sh';
 
   const output = [
     'CPU0 microcode updated early to revision 0x1b, date = 2014-05-29',
-    'LOADING.............',
+    'Overcoming Differences.............',
     'Initializing cgroup subsys cpu',
     'Initializing cgroup subsys cpuacct',
     'Command line: BOOT_IMAGE=/vmlinuz-3.19.0-21-generic.efi.signed root=UUID=14ac372e-6980-4fe8-b247-fae92d54b0c5 ro quiet splash acpi_enforce_resources=lax intel_pstate=enable rcutree.rcu_idle_gp_delay=1 nouveau.runpm=0 vt.handoff=7',
@@ -31,7 +31,7 @@ const Preloader: React.FC = () => {
 
   useEffect(() => {
     if (i < output.length) {
-      setOutputText((prev) => prev + `[    ${count / 1000}] ${output[i]}<br>`);
+      setOutputText((prev) => prev + `[    ${count / 2000}] ${output[i]}<br>`);
     }
   }, [i, count, outputText]);
 
@@ -56,15 +56,15 @@ const Preloader: React.FC = () => {
     if (textareaRef.current) {
       if (time % 2 === 0) {
         setI(i + 1);
-        setOutputText((prev) => prev + `[    ${count / 1000}] ${output[i]}<br>`);
+        setOutputText((prev) => prev + `[    ${count / 2000}] ${output[i]}<br>`);
       }
       if (time === 3) {
         setI(i + 1);
-        setOutputText((prev) => prev + `[    ${count / 1000}] ${output[i]}<br>`);
+        setOutputText((prev) => prev + `[    ${count / 2000}] ${output[i]}<br>`);
         setI(i + 1);
-        setOutputText((prev) => prev + `[    ${count / 1000}] ${output[i]}<br>`);
+        setOutputText((prev) => prev + `[    ${count / 2000}] ${output[i]}<br>`);
         setI(i + 1);
-        setOutputText((prev) => prev + `[    ${count / 1000}] ${output[i]}<br>`);
+        setOutputText((prev) => prev + `[    ${count / 2000}] ${output[i]}<br>`);
       }
       window.scrollTo(0, document.body.scrollHeight);
       setI(i + 1);

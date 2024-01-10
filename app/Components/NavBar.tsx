@@ -33,23 +33,25 @@ function NavBar() {
   return (
     <HeaderStyled ref={hero}>
       <nav className="navbar">
-        <div className="logo">
-          <div className="unesquo">
-            <Image src={logo} alt="logo" width={70} className="brand-logo" />
-            <h2 className="brand">BITMUN</h2>
+        <a href='/bitmun'>
+          <div className="logo">
+            <div className="unesquo">
+              <Image src={logo} alt="logo" width={70} className="brand-logo" />
+              <h2 className="brand">BITMUN</h2>
+            </div>
+            <div className="unstop">
+              <h2 className="brand_unstop">Powered by</h2>
+              <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
+            </div>
           </div>
-          <div className="unstop">
-            <h2 className="brand_unstop">Powered by</h2>
-            <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
-          </div>
-        </div>
+        </a>
         <div className="menu-icon" onClick={toggleMenu}>
           ☰
         </div>
         <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
           <li>
-            <a href="/bitmun">
-              Home
+            <a href="/bitmun/collaborations">
+              Collaborations
             </a>
           </li>
           <li>
@@ -211,10 +213,10 @@ const HeaderStyled = styled.header`
     .nav-items {
       display: none;
       position: absolute;
-      top: 7rem;
+      top: 7.2rem;
       left: 0;
       width: 100%;
-      background:linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      background:var(--color-bg);
       text-align: center;
       padding-bottom: 0.7rem;
       padding-top: 0.5rem;

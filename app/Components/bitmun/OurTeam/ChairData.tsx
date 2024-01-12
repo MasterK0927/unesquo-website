@@ -56,7 +56,7 @@ const MomData = [
   },
   {
     id: 3,
-    src: '/images/webp/tba.webp',
+    src: '/chair/siddhant.jpeg',
     name: 'Siddhant Jagat',
     position: 'Rappeuter',
   },

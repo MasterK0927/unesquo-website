@@ -15,26 +15,21 @@ const collaboratorsData = [
   },
   {
     id: 3,
-    src: '/Collaborations/sitmunpg.jpeg',
-    name: 'SITMUN',
-  },
-  {
-    id: 4,
     src: '/Collaborations/RTU.jpeg',
     name: 'RTU MUN',
   },
   {
-    id: 5,
+    id: 4,
     src: '/Collaborations/ssuimun2.jpeg',
     name: 'SSUIMUN',
   },
   {
-    id: 6,
+    id: 5,
     src: '/Collaborations/bbsrmun.jpeg',
     name: 'IIT-BBSR MUN',
   },
   {
-    id: 7,
+    id: 6,
     src: '/Collaborations/kgp.jpeg',
     name: 'GMUN IIT-KGP',
   },

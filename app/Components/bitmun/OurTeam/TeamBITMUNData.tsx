@@ -10,6 +10,7 @@ import PublicRelationsComponent from './PublicRelationsComponent';
 import DesignContentComponent from './DesignContentComponent';
 import WebTeamComponent from './WebTeamComponent';
 import CulturalTeamComponent from './CulturalTeamComponent';
+import FacultyAdvisorComponent from './FacultyAdvisor';
 
 const teamData = [
   {
@@ -203,6 +204,23 @@ const culturalTeamData = [
   }
 ];
 
+const facultyAdvisorData = [
+  {
+    id:1,
+    src: '/images/webp/Vishal_sir.webp',
+    name: 'Vishal Sir',
+    position: 'Faculty Advisor',
+    buttonSrc: 'https://www.bitmesra.ac.in/Display_My_Profile_00983KKj893L?id=ppAc27nZtLrHFFnQ78nQIqqk4D%252bguThSyZBAVvPXAHI1jxxGNLsvtncM8Jsqz8CS'
+  },
+  {
+    id:2,
+    src: '/images/webp/Sudhansu-sir.webp',
+    name: 'Sudhansu Sir',
+    position: 'Faculty Advisor',
+    buttonSrc: 'https://www.bitmesra.ac.in/Display_My_Profile_00983KKj893L?id=C23P3ze4k4p0SpK5OxL6ww%253d%253d'
+  }
+]
+
 
 
 
@@ -210,6 +228,7 @@ const TeamBITMUNPage: React.FC = () => {
   return (
     <div className={styles['container']}>
       <TeamBITMUNComponent teamData={teamData} />
+      <FacultyAdvisorComponent facultyAdvisorData={facultyAdvisorData} />
       <DelegateAffairsTeamComponent delegateAffairsData={delegateAffairsData} />
       <ExecutiveBoardComponent executiveBoardData={executiveBoardData} />
       <HospitalityComponent hospitalityData={hospitalityData} />

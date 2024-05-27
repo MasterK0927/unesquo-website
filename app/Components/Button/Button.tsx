@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FaRocket } from "react-icons/fa";
 
 interface ButtonProps {
   name: string;
@@ -9,15 +10,16 @@ interface ButtonProps {
   background?: string;
   color?: string;
   border?: string;
-  onclick?: () => void;
+  onClick?: () => void;
 }
 
 function Button({
   name,
   icon,
-  background = "var(--color-bg)",
-  color,
-  border,
+  background = "linear-gradient(45deg, #f2994a, #f2c94c)",
+  color = "#fff",
+  border = "1px solid #f2994a",
+  onClick,
 }: ButtonProps) {
   return (
     <ButtonStyled
@@ -26,6 +28,7 @@ function Button({
         color: color,
         border: border,
       }}
+      onClick={onClick}
     >
       {icon && icon}
       {name}
@@ -33,18 +36,31 @@ function Button({
   );
 }
 
+const backgroundColorAnimation = keyframes`
+  0% {
+    background: #f2994a;
+  }
+  50% {
+    background: #f2c94c;
+  }
+  100% {
+    background: #f2994a;
+  }
+`;
+
 const ButtonStyled = styled.button`
   padding: 0.8rem 2rem;
   border-radius: 30px;
-  border: 2px solid var(--color-border);
   cursor: pointer;
   font-size: 1.1rem;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   display: flex;
   align-items: center;
   gap: 1rem;
+  background-size: 200% 200%;
+  animation: ${backgroundColorAnimation} 2s ease infinite;
   &:hover {
-    background-color: var(--color-border);
+    transform: scale(1.05);
     color: white;
   }
 `;

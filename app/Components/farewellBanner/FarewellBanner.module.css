@@ -1,0 +1,200 @@
+.aircraftBanner {
+    position: absolute;
+    display: block;
+    animation: moveUpDown 30s infinite ease-in-out;
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    perspective: 1000px;
+    width: 650px;
+    transform: scale(0.5) translate(-240px, 50px);
+    transition: transform 3s ease-in-out;
+  }
+  
+  .segment {
+    width: 20px;
+    height: 90px;
+    margin-left: -1px;
+    animation: wave 2s infinite ease-in-out;
+    transform-origin: center;
+    background-attachment: fixed;
+    box-shadow: 0 0 10px white;
+  }
+  
+  .aircraft {
+    position: absolute;
+    width: 200px;
+    z-index: 1;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/image.png");
+    transform: translate(500px);
+    transition: transform 3s ease-in-out;
+  }
+  
+  .aircraft::before,
+  .aircraft::after {
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: -140px;
+    width: 170px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(66, 66, 66), transparent);
+    box-shadow: 0 0 10px white;
+  }
+  
+  .aircraft::before {
+    transform: translateY(-12px) rotate(4deg);
+    animation: waveline1 2s infinite ease-in-out;
+  }
+  
+  .aircraft::after {
+    transform: translateY(13px) rotate(-4deg);
+    animation: waveline2 2s infinite ease-in-out;
+  }
+  
+  @keyframes waveline1 {
+    0%,
+    100% {
+      transform: translateY(-10px) rotate(4deg);
+    }
+    50% {
+      transform: translateY(-11px) rotate(5deg);
+    }
+  }
+  
+  @keyframes waveline2 {
+    0%,
+    100% {
+      transform: translateY(13px) rotate(-4deg);
+    }
+    50% {
+      transform: translateY(14px) rotate(-5deg);
+    }
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      transform: translateX(-30px) translateY(0) perspective(1000px) rotateY(-10deg);
+    }
+    25% {
+      transform: translateX(-45px) translateY(-10px) perspective(1000px) rotateY(-15deg);
+    }
+    50% {
+      transform: translateX(-60px) translateY(-20px);
+    }
+    75% {
+      transform: translateX(-45px) translateY(-10px) perspective(1000px) rotateY(-15deg);
+    }
+    100% {
+      transform: translateX(-30px) translateY(0) perspective(1000px) rotateY(-10deg);
+    }
+  }
+  
+  @keyframes wave {
+    0%,
+    100% {
+      transform: rotateX(0deg) translateY(0);
+    }
+    50% {
+      transform: rotateX(0deg) translateY(7px);
+    }
+  }
+  
+  .propeller {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #ffffff00 0%, #9e9e9e 50%);
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: perspective(1000px) rotateY(10deg) translate(645px, -25px) scale(0.2);
+    transition: transform 3s ease-in-out;
+  }
+  
+  .propeller::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(rgba(255, 255, 255, 0.567), rgba(255, 255, 255, 0) 40%);
+    border-radius: 50%;
+    animation: rotate 0.1s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .flyAway {
+    transform: translateX(2000px) translateY(-500px) rotate(45deg) scale(12);
+  }
+
+  .flyBanner {
+    transform: translate(1500px, -500px) rotate(-20deg) scale(3);
+  }
+
+  @media (max-width: 1024px) {
+    .aircraft{
+      width: 195px;
+      transform: translateX(345px) translateY(0px);
+    }
+    .banner{
+      transform: scale(0.5) translate(-300px, 50px);
+    }
+    .aircraft::before,
+    .aircraft::after {
+      top: 70px;
+      left: -45px;
+      width: 220px;
+      height: 1px;
+    }
+    .propeller {
+      transform: perspective(1000px) rotateY(10deg) translate(465px, -25px) scale(0.2);
+    }
+    .flyAway {
+      transform: translateX(400px) translateY(-100px) rotate(45deg) scale(12);
+    }
+    .flyBanner {
+      transform: translate(100px, -100px) rotate(-20deg) scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .aircraft{
+      width: 195px;
+      transform: translateX(345px) translateY(0px);
+    }
+    .banner{
+      transform: scale(3) translate(-300px, 50px);
+    }
+    .aircraft::before,
+    .aircraft::after {
+      top: 70px;
+      left: -45px;
+      width: 220px;
+      height: 1px;
+    }
+    .propeller {
+      transform: perspective(1000px) rotateY(10deg) translate(465px, -25px) scale(0.2);
+    }
+    .flyAway {
+      transform: translateX(400px) translateY(-100px) rotate(45deg) scale(12);
+    }
+    .flyBanner {
+      transform: translate(100px, -100px) rotate(-20deg) scale(1);
+    }
+  }
+  

@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { FaRocket } from "react-icons/fa";
 import { Abril_Fatface } from "next/font/google";
 import hover3d from "../../utils/hover";
+import FarewellBanner from "../farewellBanner/FarewellBanner";
 
 const abril = Abril_Fatface({
   subsets: ["latin"],
@@ -147,6 +148,9 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <div className="farewellBanner">
+        <FarewellBanner />
+      </div>
       <div className="header-content">
         <div className="text-content">
           <h1 className={abril.className}>
@@ -162,7 +166,7 @@ function Header() {
             <div className="recruitment" onClick={recruitment}>
               <Button
                 name="Recruitment"
-                background="#f2994a"
+                background="linear-gradient(45deg, #f2994a, #f2c94c)"
                 color="#fff"
                 border="1px solid #f2994a"
                 icon={<FaRocket />}
@@ -328,6 +332,13 @@ const HeaderStyled = styled.header`
       width: max-content;
     }
   }
+  .farewellBanner{
+    display: flex;
+    width: auto;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
 
   .header-content {
     padding: 0 10rem 5rem 10rem;
@@ -461,6 +472,15 @@ const HeaderStyled = styled.header`
     .image-content{
       padding-top: 0.35rem !important;
       
+    }
+
+    .farewellBanner{
+      width: 100% !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      width: 140% !important;
+      padding-bottom: 1rem !important;
+      overflow: hidden;
     }
 
     .monkey{  

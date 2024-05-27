@@ -178,7 +178,7 @@
       transform: translateX(345px) translateY(0px);
     }
     .banner{
-      transform: scale(3) translate(-300px, 50px);
+      transform: scale(0.5) translate(-300px, 50px);
     }
     .aircraft::before,
     .aircraft::after {

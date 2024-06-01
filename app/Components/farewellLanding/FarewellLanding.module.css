@@ -1,0 +1,341 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181818, #2a2a2a); 
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 4rem;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 10px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+
+.gridItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: linear-gradient(145deg, #2a2a2a, #181818);
+  border: 2px solid #555;
+}
+
+.gridItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(255, 138, 0, 0.2), rgba(229, 46, 113, 0.2));
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.gridItem:hover::before {
+  opacity: 1;
+}
+
+.gridItemLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gridItem:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+}
+
+.gridItem:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlayContent .h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.overlayContent .p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.aircraftIcon {
+  width: 150px;
+  height: 150px;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  transition: font-size 0.3s ease;
+}
+
+.aircraftIcon:hover {
+  font-size: 5rem;
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.loadMoreButton:hover {
+  background: linear-gradient(90deg, #e52e71, #ff8a00);
+  transform: scale(1.05);
+}
+
+.loadMoreButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Loading Animation */
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.rippleTextContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.rippleText {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #ff88008a, #e52e71a9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  animation: rippleText 3s infinite ease-in-out;
+}
+
+.rippleText:nth-child(odd) {
+  animation-delay: 0s;
+}
+
+.rippleText:nth-child(even) {
+  animation-delay: 1.5s;
+}
+
+@keyframes rippleText {
+  0% {
+    opacity: 0;
+    transform: translate(calc(var(--random-x)), calc(var(--random-y))) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--random-x)), calc(var(--random-y))) scale(1.5);
+  }
+}
+
+.finalLogoContainer {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 2s ease 1.5s forwards;
+}
+
+.finalLogo {
+  width: 150px;
+  height: 150px;
+}
+
+.finalText {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  padding: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  
+  .gridContainer {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .gridItemLarge {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .gridContainer {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  
+  .gridItemLarge {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .gridContainer {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .gridItemLarge {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .overlayContent .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .overlayContent .p {
+    font-size: 1rem;
+  }
+}

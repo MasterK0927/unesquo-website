@@ -61,7 +61,7 @@ const FarewellLanding: React.FC = () => {
     }, 1000);
   };
 
-  const handleImageClick = (index) => {
+  const handleImageClick = (index:number) => {
     setLoading(true);
     const person = images[index];
     setTimeout(() => {

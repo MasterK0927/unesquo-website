@@ -6,6 +6,7 @@ import Image from 'next/image';
 import unesquoLogo from '../../../public/logo.png';
 import image from '../../../public/OIP (17).jpeg';
 import ProfileComponent from '../../Components/farewellProfile/ProfileComponent'; // Import the profile component
+import type { StaticImageData } from 'next/image'
 
 type Person = {
   src: StaticImageData;

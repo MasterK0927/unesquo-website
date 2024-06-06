@@ -1,17 +1,35 @@
-"use client";
+"use client"
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './FarewellLanding.module.css';
 import anime from 'animejs';
 import Image from 'next/image';
-import image from '../../../public/OIP (17).jpeg';
-import { useRouter } from 'next/navigation';
 import unesquoLogo from '../../../public/logo.png';
+import image from '../../../public/OIP (17).jpeg';
+import ProfileComponent from '../../Components/farewellProfile/ProfileComponent'; // Import the profile component
+
+const initialImages = [
+  { src: image, name: 'Arpan', slug: 'memory-1', skills: ['Skill 1', 'Skill 2'], description: 'Description for Arpan'},
+  { src: image, name: 'Person 2', slug: 'memory-2', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 3', slug: 'memory-3', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 4', slug: 'memory-4', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 5', slug: 'memory-5', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 6', slug: 'memory-6', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 7', slug: 'memory-7', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 8', slug: 'memory-8', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 9', slug: 'memory-9', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 10', slug: 'memory-10', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 11', slug: 'memory-11', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 12', slug: 'memory-12', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 13', slug: 'memory-13', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 14', slug: 'memory-14', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+  { src: image, name: 'Person 15', slug: 'memory-15', skills: ['Skill 1', 'Skill 2'], description: 'Description for Person 2' },
+];
 
 const FarewellLanding: React.FC = () => {
-  const route = useRouter();
   const gridRef = useRef<HTMLDivElement>(null);
-  const [images, setImages] = useState(Array(14).fill(image));
+  const [images, setImages] = useState(initialImages);
   const [loading, setLoading] = useState(false);
+  const [selectedPerson, setSelectedPerson] = useState(null);
 
   useEffect(() => {
     if (gridRef.current) {
@@ -43,12 +61,12 @@ const FarewellLanding: React.FC = () => {
     }, 1000);
   };
 
-  const handleImageClick = (index: number) => {
+  const handleImageClick = (index) => {
     setLoading(true);
-    const slug = `memory-${index + 1}`;
+    const person = images[index];
     setTimeout(() => {
       setLoading(false);
-      route.push(`/farewell/${slug}`);
+      setSelectedPerson(person);
     }, 3000);
   };
 
@@ -77,7 +95,6 @@ const FarewellLanding: React.FC = () => {
     );
   }
 
-
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -85,8 +102,8 @@ const FarewellLanding: React.FC = () => {
         <p className={styles.subtitle}>Celebrating Memories of Our Graduates</p>
       </header>
       <div className={styles.gridContainer} ref={gridRef}>
-        {images.map((src, index) => (
-          <div key={index}  onClick={() => handleImageClick(index)} className={`${styles.gridItem} ${index % 5 === 0 ? styles.gridItemLarge : ''}`}>
+        {images.map((person, index) => (
+          <div key={index} onClick={() => handleImageClick(index)} className={`${styles.gridItem} ${index % 5 === 0 ? styles.gridItemLarge : ''}`}>
             <div className={styles.overlay}>
               <div className={styles.overlayContent}>
                 <span className={styles.aircraftIcon}>✈️</span>
@@ -94,7 +111,7 @@ const FarewellLanding: React.FC = () => {
                 <p className={styles.p}>Enjoyed the view from above the clouds.</p>
               </div>
             </div>
-            <Image src={src} alt={`Memory ${index + 1}`} className={styles.image} />
+            <Image src={person.src} alt={`Memory ${index + 1}`} className={styles.image} />
           </div>
         ))}
       </div>
@@ -106,6 +123,12 @@ const FarewellLanding: React.FC = () => {
           <p className={styles.p}>Thank you for being part of our journey. Best wishes for your future endeavors!</p>
         </footer>
       </div>
+      {selectedPerson && (
+        <div className={styles.profileModal}>
+          <ProfileComponent person={selectedPerson} />
+          <button onClick={() => setSelectedPerson(null)}>Close</button>
+        </div>
+      )}
     </div>
   );
 };

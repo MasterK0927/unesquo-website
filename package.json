@@ -17,6 +17,7 @@
     "@types/react-dom": "18.2.4",
     "animejs": "^3.2.2",
     "axios": "^1.6.2",
+    "firebase": "^10.12.2",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.4",
     "leaflet": "^1.9.4",

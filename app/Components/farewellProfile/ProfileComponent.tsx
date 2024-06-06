@@ -9,8 +9,6 @@ import { StaticImageData } from 'next/image';
 type Person = {
   src: StaticImageData;
   name: string;
-  dob: string;
-  status: string;
   slug: string;
   skills: string[];
   description: string;
@@ -101,8 +99,6 @@ const ProfileComponent: React.FC<{ person: Person }> = ({ person }) => {
         <Image src={person.src} alt={person.name} width={200} height={200} className={styles.agentImage} />
         <div className={styles.agentDetails}>
           <p className={styles.p}><strong>Agent Name:</strong> {person.name}</p>
-          <p className={styles.p}><strong>DOB:</strong> {person.dob}</p>
-          <p className={styles.p}><strong>Status:</strong> {person.status}</p>
           <p className={styles.p}><strong>Code Name:</strong> {person.slug}</p>
         </div>
       </div>

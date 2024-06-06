@@ -4,12 +4,29 @@ import styles from './ProfileComponent.module.css';
 import Image from 'next/image';
 import { db } from '../../Components/firebase/firebase';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { StaticImageData } from 'next/image';
 
-const ProfileComponent = ({ person }) => {
-  const [comments, setComments] = useState([]);
+type Person = {
+  src: StaticImageData;
+  name: string;
+  dob: string;
+  status: string;
+  slug: string;
+  skills: string[];
+  description: string;
+};
+
+type Comment = {
+  name: string;
+  batch: string;
+  comment: string;
+};
+
+const ProfileComponent: React.FC<{ person: Person }> = ({ person }) => {
+  const [comments, setComments] = useState<Comment[]>([]);
   const [index, setIndex] = useState(0);
   const [showAddComment, setShowAddComment] = useState(false);
-  const [newComment, setNewComment] = useState({
+  const [newComment, setNewComment] = useState<Comment>({
     name: '',
     batch: '',
     comment: ''
@@ -19,7 +36,7 @@ const ProfileComponent = ({ person }) => {
     const fetchComments = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'comments'));
-        setComments(querySnapshot.docs.map(doc => doc.data()));
+        setComments(querySnapshot.docs.map(doc => doc.data() as Comment));
       } catch (error) {
         console.error('Error fetching comments:', error);
       }
@@ -43,14 +60,14 @@ const ProfileComponent = ({ person }) => {
     return () => clearInterval(interval);
   }, [comments]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewComment({ ...newComment, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Check if any of the comment fields are empty
     if (!newComment.name || !newComment.batch || !newComment.comment) {
       alert('Please fill in all fields.');
@@ -98,7 +115,7 @@ const ProfileComponent = ({ person }) => {
         <p className={styles.p}>{person.description}</p>
       </div>
 
-       <div className={styles.commentSection}>
+      <div className={styles.commentSection}>
         <h2 className={styles.h2}>Comments</h2>
         <div className={styles.commentSlider}>
           <button className={styles.sliderButton} onClick={handlePrevComment}>&lt;</button>
@@ -142,7 +159,7 @@ const ProfileComponent = ({ person }) => {
               value={newComment.comment}
               onChange={handleInputChange}
               required
-              maxLength="250"
+              maxLength={250}
             ></textarea>
             <div>
               <button type="submit" className={styles.button}>Submit</button>

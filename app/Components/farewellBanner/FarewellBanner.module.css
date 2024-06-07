@@ -174,21 +174,21 @@
 
   @media (max-width: 768px) {
     .aircraft{
-      width: 195px;
-      transform: translateX(345px) translateY(0px);
+      width: 150px;
+      transform: translateX(345px) translateY(20px);
     }
     .banner{
       transform: scale(0.5) translate(-300px, 50px);
     }
     .aircraft::before,
     .aircraft::after {
-      top: 70px;
+      top: 50px;
       left: -45px;
-      width: 220px;
+      width: 200px;
       height: 1px;
     }
     .propeller {
-      transform: perspective(1000px) rotateY(10deg) translate(465px, -25px) scale(0.2);
+      transform: perspective(1000px) rotateY(10deg) translate(410px, -24px) scale(0.2);
     }
     .flyAway {
       transform: translateX(400px) translateY(-100px) rotate(45deg) scale(12);

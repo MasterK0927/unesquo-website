@@ -5,27 +5,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #000000, #333333); /* Dark background */
   font-family: 'Roboto', sans-serif;
 }
 
 .loginBox {
-    background-color: rgba(243, 241, 238, 0.247); /* Transparent white background */
-    backdrop-filter: blur(10px); /* Blurred background effect */
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(221, 219, 219, 0.596), 0 6px 6px rgba(202, 201, 201, 0.582), 0 0 0 1px rgba(187, 185, 185, 0.486), 0 0 0 1px rgba(158, 157, 157, 0.541);
-    padding: 40px;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-  }
-  
+  background-color: rgba(243, 241, 238, 0.247); /* Transparent white background */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(221, 219, 219, 0.596), 0 6px 6px rgba(202, 201, 201, 0.582), 0 0 0 1px rgba(187, 185, 185, 0.486), 0 0 0 1px rgba(158, 157, 157, 0.541);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
 
 .title {
   margin-bottom: 20px;
   font-size: 24px;
   color: transparent;
-  background: linear-gradient(to right, #ff7e5f, #e28742); 
+  background: linear-gradient(to right, #ff7e5f, #e28742); /* Gradient text color */
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -61,12 +61,12 @@
   cursor: pointer;
   font-size: 16px;
   background: linear-gradient(to right, #ff8800, #b3003c); /* Animated gradient background */
-  transition:  background 1s ease-in-out;
+  transition: background 1s ease-in-out;
 }
 
 .button:hover {
-    background: linear-gradient(to right, #b3003c, #ff8800); /* Animated gradient background */
-    transition:  background 1s ease-in-out;
+  background: linear-gradient(to right, #b3003c, #ff8800); /* Animated gradient background */
+  transition: background 1s ease-in-out;
 }
 
 .button:disabled {
@@ -74,3 +74,11 @@
   cursor: not-allowed;
 }
 
+.googleButton {
+  margin-top: 20px;
+  background: #4285f4; /* Google button color */
+}
+
+.googleButton:hover {
+  background: #357ae8;
+}

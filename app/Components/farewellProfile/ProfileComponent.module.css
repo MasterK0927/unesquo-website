@@ -2,7 +2,10 @@
     background-color: #f0f0f0;
     border: 2px solid #000;
     border-radius: 10px;
-    width: 80%;
+    max-width: 40vw;
+    min-width: 425px;
+    height: 90vh;
+    overflow-y: scroll;
     margin: 0 auto;
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
@@ -43,7 +46,7 @@
     max-width: 200px;
   }
   
-  .agentDetails, .specialSkills, .description {
+  .agentDetails, .topComments, .description {
     border: 2px solid #000;
     padding: 10px;
     border-radius: 5px;
@@ -51,13 +54,47 @@
     flex: 2;
   }
   
-  .agentDetails .p, .specialSkills .p, .description .p {
+  .agentDetails .p, .topComments .p, .description .p {
     margin: 0;
     padding: 5px 0;
     font-size: 1em;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    background: linear-gradient(90deg, #ff7e5f, #e28742);
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  .nameBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .p2{
+    font-size: 1.1em;
+    background: linear-gradient(90deg, #ff7e5f, #e28742);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+  }
+
+  .p3{
+    font-size: 1.1em;
+    background: linear-gradient(90deg, #ff7e5f, #d85d25);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+    padding: 0px 5px;
+  }
+
+  .p4{
+    font-size: 0.8em;
+    background: linear-gradient(90deg, #ff7e5f, #42dde2);
+    -webkit-background-clip: text;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    color: transparent;
+    margin-top: 8px;
+    padding: 0px 5px;
   }
   
   .agentDetails {
@@ -67,13 +104,13 @@
     font-weight: bold;
   }
   
-  .specialSkills {
+  .topComments {
     background-color: #d3d3d3;
     padding: 10px;
     margin-top: 20px;
   }
   
-  .specialSkills .h2, .description .h2 {
+  .topComments .h2, .description .h2 {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-family: 'Arial Black', sans-serif;
@@ -113,11 +150,20 @@
   
   .commentsList {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
-  .comment {
-    border-bottom: 1px solid #ccc;
+  .comment1 {
+    text-align: center;
     padding: 10px 0;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
   }
   
   @media (max-width: 768px) {
@@ -186,9 +232,9 @@
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 4px 8px;
     margin: 0 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 18px;
   }
   
@@ -307,4 +353,108 @@
   .comment-exit-active {
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
+  }
+
+  .addCommentSection {
+    margin-top: 20px;
+  }
+  
+  .commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #331616;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+  }
+  
+  .commentForm .input,
+  .commentForm .textArea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1.2px solid #fa6234;
+    border-radius: 5px;
+  }
+  
+  .commentForm .textarea {
+    height: 100px;
+  }
+  
+  .commentForm .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .commentForm .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Comment Actions Styles */
+  .commentActions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .editButton,
+  .deleteButton {
+    padding: 3px 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .editButton {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .editButton:hover {
+    background-color: #218838;
+  }
+  
+  .deleteButton {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .comment2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0px 20px 0px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange ;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #ff7f5f63, #e287426b);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .p5{
+    font-size: 0.8em;
+    background: linear-gradient(90deg, #d45636, #428de2);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+    padding: 0px 5px;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+
+  .buttonAdd{
+    display: flex;
+    gap: 10px;
   }

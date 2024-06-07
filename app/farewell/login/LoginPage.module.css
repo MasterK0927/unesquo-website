@@ -1,0 +1,76 @@
+/* LoginPage.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.loginBox {
+    background-color: rgba(243, 241, 238, 0.247); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Blurred background effect */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(221, 219, 219, 0.596), 0 6px 6px rgba(202, 201, 201, 0.582), 0 0 0 1px rgba(187, 185, 185, 0.486), 0 0 0 1px rgba(158, 157, 157, 0.541);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: transparent;
+  background: linear-gradient(to right, #ff7e5f, #e28742); 
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: black;
+  width: 100%;
+  border: 1px solid burlywood;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.button {
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background: linear-gradient(to right, #ff8800, #b3003c); /* Animated gradient background */
+  transition:  background 1s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #b3003c, #ff8800); /* Animated gradient background */
+    transition:  background 1s ease-in-out;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+

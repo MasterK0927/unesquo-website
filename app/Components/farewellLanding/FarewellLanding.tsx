@@ -142,7 +142,7 @@ const FarewellLanding: React.FC = () => {
       {selectedPerson && (
         <div className={styles.profileModal}>
           <ProfileComponent person={selectedPerson} />
-          <button onClick={() => setSelectedPerson(null)}>Close</button>
+          <button className={styles.closeButton} onClick={() => setSelectedPerson(null)}>Close</button>
         </div>
       )}
     </div>

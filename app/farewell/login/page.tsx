@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter(); // Get the router instance
 
-  const handleSignIn = async (e) => {
+  const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission behavior
     setLoading(true);
     try {

@@ -1,25 +1,26 @@
+/* General Container Styling */
 .container {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #181818, #2a2a2a); 
+  background: linear-gradient(135deg, #181818, #2a2a2a);
 }
 
-
+/* Header Styling */
 .header {
   text-align: center;
   margin-bottom: 40px;
 }
 
 .title {
-  font-size: 4rem;
-  color: #2c3e50;
+  font-size: 3rem;
+  color: #f5f5f5;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,66 +30,41 @@
 .subtitle {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
-  color: #fff;
+  color: #bbb;
   margin-top: 10px;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Grid Styling */
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto auto;
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
   width: 100%;
+  max-width: 1200px;
   padding: 0 20px;
 }
-
 
 .gridItem {
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #2a2a2a;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: linear-gradient(145deg, #2a2a2a, #181818);
-  border: 2px solid #555;
-}
-
-.gridItem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, rgba(255, 138, 0, 0.2), rgba(229, 46, 113, 0.2));
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-  transition: opacity 0.4s ease;
-  opacity: 0;
-}
-
-.gridItem:hover::before {
-  opacity: 1;
-}
-
-.gridItemLarge {
-  grid-column: span 2;
-  grid-row: span 2;
 }
 
 .gridItem:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 
 .image {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
+/* Overlay Styling */
 .overlay {
   position: absolute;
   top: 0;
@@ -115,38 +91,24 @@
 
 .overlayContent .h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  color: #2c3e50;
+  font-size: 1.5rem;
   margin: 0;
   padding: 0;
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .overlayContent .p {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  padding-top: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.aircraftIcon {
-  width: 150px;
-  height: 150px;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  transition: font-size 0.3s ease;
-}
-
-.aircraftIcon:hover {
-  font-size: 5rem;
-}
-
+/* Bottom Section Styling */
 .bottomSection {
   display: flex;
   flex-direction: column;
@@ -161,7 +123,7 @@
   border: none;
   padding: 15px 30px;
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 25px;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -177,7 +139,7 @@
   cursor: not-allowed;
 }
 
-/* Footer styles */
+/* Footer Styling */
 .footer {
   text-align: center;
   padding: 20px;
@@ -185,12 +147,12 @@
   color: white;
   width: 100%;
   max-width: 1200px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
-/* Loading Animation */
+/* Loading Container Styling */
 .loadingContainer {
   display: flex;
   align-items: center;
@@ -235,6 +197,7 @@
   animation-delay: 1.5s;
 }
 
+/* Profile Modal Styling */
 .profileModal {
   position: fixed;
   top: 0;
@@ -276,6 +239,7 @@
   }
 }
 
+/* Final Logo Container Styling */
 .finalLogoContainer {
   position: relative;
   text-align: center;
@@ -311,48 +275,37 @@
 /* Media Queries */
 @media (max-width: 1280px) {
   .title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
   
   .gridContainer {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .gridItemLarge {
-    grid-column: span 1;
-    grid-row: span 1;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
 
 @media (max-width: 720px) {
   .title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
   .gridContainer {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  .overlay{
+  .overlay {
     opacity: 1;
     width: auto;
     height: 70px;
     top: 81.5%;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.534) ;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.534);
   }
 
-  .overlayContent .p{
+  .overlayContent .p {
     opacity: 0;
   }
 
-  /* .overlayContent .h2{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-  } */
-
-  .overlayContent .h2{
+  .overlayContent .h2 {
     position: absolute;
     bottom: 25px;
     left: 30px;
@@ -361,36 +314,26 @@
   .aircraftIcon {
     opacity: 0;
   }
-  
-  .gridItemLarge {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
 }
 
 @media (max-width: 640px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   
   .gridContainer {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  .gridItemLarge {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  
+
   .subtitle {
     font-size: 1rem;
   }
   
   .overlayContent .h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   
   .overlayContent .p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }

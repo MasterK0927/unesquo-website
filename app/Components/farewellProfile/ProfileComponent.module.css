@@ -1,323 +1,265 @@
 .profileContainer {
-    background-color: #f0f0f0;
-    border: 2px solid #000;
-    border-radius: 10px;
-    max-width: 40vw;
-    min-width: 400px;
-    height: 80vh;
-    overflow-y: scroll;
-    margin: 0 auto;
-    padding: 20px;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    font-family: 'Arial', sans-serif;
-    color: #000;
-  }
-  
-  .header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .title {
-    margin: 0;
-    font-size: 1.5em;
-    font-family: 'Arial Black', sans-serif;
-  }
-  
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  max-width: 40vw;
+  min-width: 400px;
+  height: 80vh;
+  overflow-y: scroll;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.agentInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 12px 12px;
+}
+
+.agentImage {
+  flex: 1;
+  border-radius: 12px;
+  max-width: 180px;
+}
+
+.agentDetails, .topComments, .description {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #fff;
+  flex: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.agentDetails .p, .topComments .p, .description .p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.p2, .p3, .p4, .p5 {
+  font-size: 1em;
+  color: #555;
+}
+
+.agentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: normal;
+}
+
+.topComments {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.topComments .h2, .description .h2 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.description {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.commentSection {
+  margin-top: 20px;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.commentForm .input, .commentForm .textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.commentForm .button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.commentForm .button:hover {
+  background-color: #555;
+}
+
+.commentsList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment1, .comment2 {
+  text-align: center;
+  padding: 10px 0;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
   .agentInfo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 0 0 10px 10px;
-  }
-  
-  .agentImage {
-    flex: 1;
-    border: 2px solid #000;
-    border-radius: 10px;
-    animation: zoomIn 1s ease-in-out;
-    max-width: 200px;
-  }
-  
-  .agentDetails, .topComments, .description {
-    border: 2px solid #000;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-    flex: 2;
-  }
-  
-  .agentDetails .p, .topComments .p, .description .p {
-    margin: 0;
-    padding: 5px 0;
-    font-size: 1em;
-    background: linear-gradient(90deg, #ff7e5f, #e28742);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  .nameBlock {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .p2{
-    font-size: 1.1em;
-    background: linear-gradient(90deg, #ff7e5f, #e28742);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-bottom: 8px;
-  }
-
-  .p3{
-    font-size: 1.1em;
-    background: linear-gradient(90deg, #ff7e5f, #d85d25);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-bottom: 8px;
-    padding: 0px 5px;
-  }
-
-  .p4{
-    font-size: 0.8em;
-    background: linear-gradient(90deg, #ff7e5f, #42dde2);
-    -webkit-background-clip: text;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    color: transparent;
-    margin-top: 8px;
-    padding: 0px 5px;
-  }
-  
-  .agentDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-weight: bold;
-  }
-  
-  .topComments {
-    background-color: #d3d3d3;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  
-  .topComments .h2, .description .h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-family: 'Arial Black', sans-serif;
-    text-align: center;
-  }
-  
-  .description {
-    background-color: #e8e8e8;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  
-  .commentSection {
-    margin-top: 20px;
-  }
-  
-  .commentForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .commentForm .input, .commentForm .textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .commentForm .button {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .commentsList {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .comment1 {
-    text-align: center;
-    padding: 10px 0;
-    flex: 1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  @media (max-width: 768px) {
-    .agentInfo {
       flex-direction: column;
-    }
-  
-    .agentImage {
+  }
+  .agentImage {
       align-self: center;
-    }
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes zoomIn {
-    from {
-      transform: scale(0);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  .agentInfo > div {
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  .commentSection {
-    margin-top: 20px;
-  }
-  
-  .h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .commentSlider {
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .sliderButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 4px 8px;
-    margin: 0 10px;
-    border-radius: 50px;
-    font-size: 18px;
-  }
-  
-  .comment {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .comment p {
-    margin: 5px 0;
-  }
-  
-  /* Animation */
-  .comment-enter {
-    transform: translateX(100%);
-  }
-  
-  .comment-enter-active {
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .comment-exit {
-    transform: translateX(-100%);
-  }
-  
-  .comment-exit-active {
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .smallText {
-    font-size: 12px;
-  }
-  
-  @keyframes slideIn {
-    0% {
+}
+
+.commentSection {
+  margin-top: 20px;
+}
+
+.h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.commentSlider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sliderButton {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 0 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.comment {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+.comment-enter {
+  transform: translateX(100%);
+}
+
+.comment-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.comment-exit {
+  transform: translateX(-100%);
+}
+
+.comment-exit-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.smallText {
+  font-size: 12px;
+}
+
+@keyframes slideIn {
+  0% {
       opacity: 0;
       transform: translateX(100%);
-    }
-    100% {
+  }
+  100% {
       opacity: 1;
       transform: translateX(0);
-    }
   }
-  
-  /* Add comment section styles */
-  .addCommentSection {
-    margin-top: 20px;
-  }
-  
-  .addButton {
-    border: 2px solid transparent;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-  }
-  
-  .addButton:hover {
-    border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-  }
-  
-  .commentForm {
-    margin-top: 20px;
-  }
-  
-  .commentForm .input,
+}
+
+/* Add comment section styles */
+.addCommentSection {
+  margin-top: 20px;
+}
+
+.addButton {
+  border: 1px solid transparent;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.addButton:hover {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.commentForm {
+  margin-top: 20px;
+}
+
+.commentForm .input,
 .commentForm .textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .commentForm .textarea {
@@ -325,136 +267,52 @@
 }
 
 .commentForm .button {
-  background-color: #007bff;
+  background-color: #333;
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: 14px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .commentForm .button:hover {
-  background-color: #0056b3;
+  background-color: #555;
 }
-.comment-enter {
-    transform: translateX(100%);
-  }
-  
-  .comment-enter-active {
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .comment-exit {
-    transform: translateX(-100%);
-  }
-  
-  .comment-exit-active {
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-  }
 
-  .addCommentSection {
-    margin-top: 20px;
-  }
-  
-  .commentForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    border: 1px solid #331616;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.commentActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
-  }
-  
-  .commentForm .input,
-  .commentForm .textArea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1.2px solid #fa6234;
-    border-radius: 5px;
-  }
-  
-  .commentForm .textarea {
-    height: 100px;
-  }
-  
-  .commentForm .button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .commentForm .button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Comment Actions Styles */
-  .commentActions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .editButton,
-  .deleteButton {
-    padding: 3px 6px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-  }
-  
-  .editButton {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .editButton:hover {
-    background-color: #218838;
-  }
-  
-  .deleteButton {
-    background-color: #dc3545;
-    color: #fff;
-  }
+.editButton, .deleteButton {
+  padding: 3px 6px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 5px;
+}
 
-  .comment2{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px 0px 20px 0px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid orange ;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #ff7f5f63, #e287426b);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
+.editButton {
+  background-color: #28a745;
+  color: #fff;
+}
 
-  .p5{
-    font-size: 0.8em;
-    background: linear-gradient(90deg, #d45636, #428de2);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-bottom: 8px;
-    padding: 0px 5px;
-  }
-  
-  .deleteButton:hover {
-    background-color: #c82333;
-  }
+.editButton:hover {
+  background-color: #218838;
+}
 
-  .buttonAdd{
-    display: flex;
-    gap: 10px;
-  }
+.deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+.buttonAdd {
+  display: flex;
+  gap: 10px;
+}

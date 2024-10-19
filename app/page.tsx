@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 import TeamPage from "./Components/TeamData";
+import GenesisBanner from "./Components/genesisBanner/GenesisBanner";
 
 const Carousel = () => {
   // Use useState to determine the window width on the client side
@@ -99,6 +100,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <GenesisBanner />
       <MainStyled>
         <Carousel />
 

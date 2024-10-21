@@ -12,11 +12,7 @@ import {
 } from 'lucide-react';
 import styles from './landing.module.css';
 
-// Import local images
-import debateImage from '../../../../public/events/lamest.png';
-import quizImage from '../../../../public/events/jam.png';
-import munImage from '../../../../public/events/lamest.png';
-import scienceImage from '../../../../public/events/pyramid.png';
+import tba from '../../../../public/logo.png'
 import genesisImage from '../../../../public/genesis-logo.png';
 import Footer from '../../Footer';
 
@@ -39,65 +35,126 @@ interface Event {
 const hardcodedEvents: Event[] = [
     {
         id: '1',
-        title: 'Parliamentary Debate',
-        type: 'Debate',
-        description: 'Experience the art of parliamentary debate where teams engage in structured argumentation on contemporary issues.',
-        date: 'TBA',
-        time: '10:00 AM - 4:00 PM',
-        venue: 'Main Auditorium',
-        teamSize: '3 members per team',
-        prizePool: 'NA',
-        registrationLink: '#',
-        imageUrl: debateImage,
+        title: 'Pyramid',
+        type: 'Wordplay',
+        description: 'In this fun test of wit, one participant is blindfolded while the other must convey a specific idea using only words-without visual cues or key, alluding terms...',
+        date: 'Sat, 26th October 2024',
+        time: '3:30 PM - 5:30 PM',
+        venue: 'Seminar Hall',
+        teamSize: '2-3 members',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/CJKwHMtuWkRCTKZQA',
+        imageUrl: tba,
         featured: true,
         rating: 4.8
     },
     {
         id: '2',
-        title: 'Quiz Master Challenge',
-        type: 'Quiz',
-        description: 'Test your knowledge across multiple domains in this intensive quizzing competition.',
-        date: 'TBA',
-        time: '11:00 AM - 3:00 PM',
-        venue: 'Knowledge Center',
-        teamSize: '2 members per team',
-        prizePool: 'NA',
-        registrationLink: '#',
-        imageUrl: quizImage,
+        title: 'Jam',
+        type: 'Wordplay',
+        description: 'A lightning-paced challenge where words flow faster than ever before. Participants will dive into a hilarious race of wits with even crazier twists...',
+        date: 'Sun, 27th October 2024',
+        time: '4:00 PM - 5:00 PM',
+        venue: 'Seminar Hall',
+        teamSize: '1 member',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/d334hrLZdy8waWkF8',
+        imageUrl: tba,
         featured: false,
         rating: 4.5
     },
     {
         id: '3',
-        title: 'Model United Nations',
-        type: 'Debate',
-        description: 'Step into the shoes of international diplomats. Debate global issues, draft resolutions, and experience international relations firsthand.',
-        date: 'TBA',
-        time: '9:00 AM - 5:00 PM',
-        venue: 'Conference Hall',
-        teamSize: 'Individual Participation',
-        prizePool: 'NA',
-        registrationLink: '#',
-        imageUrl: munImage,
+        title: 'BizQuiz',
+        type: 'Quiz',
+        description: 'Join us for BizQuiz, an exciting online business quiz competition organized by UNESQUO...',
+        date: 'Sat, 26th October 2024',
+        time: '10:00 PM',
+        venue: 'Online (Unstop)',
+        teamSize: '1 member',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/Xg1mMGQGCm776hSN7',
+        imageUrl: tba,
         featured: true,
         rating: 4.7
     },
     {
         id: '4',
-        title: 'Science Trivia Night',
+        title: 'MELA Quiz',
         type: 'Quiz',
-        description: 'Put your scientific knowledge to the test in this exciting trivia night covering various fields of science.',
-        date: 'TBA',
-        time: '7:00 PM - 10:00 PM',
-        venue: 'Science Center',
-        teamSize: '3-4 members per team',
-        prizePool: 'NA',
-        registrationLink: '#',
-        imageUrl: scienceImage,
+        description: 'Calling all Trivia Titans! Dive deep into a world of questions spanning Music, Entertainment, Literature, and Arts...',
+        date: 'Sun, 27th October 2024',
+        time: '10:00 PM',
+        venue: 'Online (Unstop)',
+        teamSize: 'Solo',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/eyq2e3B1rGVR8uh58',
+        imageUrl: tba,
+        featured: false,
+        rating: 4.6
+    },
+    {
+        id: '5',
+        title: 'India Quiz',
+        type: 'Quiz',
+        description: 'Think you know everything about India? Join us for the India Quiz covering India\'s rich history, culture, and current affairs...',
+        date: 'Sun, 27th October 2024',
+        time: '5:00 PM',
+        venue: 'Seminar Hall',
+        teamSize: '1-3 members',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/oPooU2Q1qMaWbnsv6',
+        imageUrl: tba,
+        featured: true,
+        rating: 4.8
+    },
+    {
+        id: '6',
+        title: 'Eureka',
+        type: 'Storytelling',
+        description: 'A magical atmosphere to see how much strongly your brains are intertwined as for the same destination...',
+        date: 'Sat, 26th October 2024',
+        time: '5:30 PM - 8:00 PM',
+        venue: 'Seminar Hall',
+        teamSize: '1-3 members',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/owR5xE4AJA6H5hPn7',
+        imageUrl: tba,
+        featured: false,
+        rating: 4.5
+    },
+    {
+        id: '7',
+        title: 'Genesis Quiz',
+        type: 'Quiz',
+        description: 'Join us for the ultimate GENESIS Quiz, testing your knowledge on various topics...',
+        date: 'Sun, 27th October 2024',
+        time: '11:00 AM',
+        venue: '233A',
+        teamSize: '1-3 members',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/tCiNpNA4kXL8a9wT8',
+        imageUrl: tba,
+        featured: true,
+        rating: 4.8
+    },
+    {
+        id: '8',
+        title: 'BPD',
+        type: 'Debate',
+        description: 'Experience the art of structured argumentation with BPD as teams engage in formal debates...',
+        date: 'Mon, 28th October 2024',
+        time: '6:30 PM - 7:00 PM',
+        venue: 'Seminar Hall',
+        teamSize: '2 members (Speaker 1 & 2)',
+        prizePool: 'Exciting prizes',
+        registrationLink: 'https://forms.gle/Ada77JztnQhVWLj6A',
+        imageUrl: tba,
         featured: false,
         rating: 4.6
     }
 ];
+
 
 const GenesisEvents: React.FC = () => {
     const router = useRouter();

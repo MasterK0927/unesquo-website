@@ -80,11 +80,11 @@ function Header() {
           <li className="button genesis-button">
             <a
               className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special"
-              href="/bitmun"
+              href="#genesis"
               rel="noreferrer noopener"
             >
               <div className="btn special">
-                <div className="text">BITMUN</div>
+                <div className="text">GENESIS</div>
                 <svg
                   width="79"
                   height="46"

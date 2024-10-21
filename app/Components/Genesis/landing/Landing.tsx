@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import {
@@ -12,7 +12,13 @@ import {
 } from 'lucide-react';
 import styles from './landing.module.css';
 
-import tba from '../../../../public/logo.png'
+import eureka from '../../../../public/images/genesisEvents2024/Your paragraph text.png';
+import bizquiz from '../../../../public/images/genesisEvents2024/BizQuiz Genesis (1).png';
+import pyramid from '../../../../public/images/genesisEvents2024/Pyramid.png';
+import indiaquiz from '../../../../public/images/genesisEvents2024/indiaquiz-01-01-01-01.png';
+import jam from '../../../../public/images/genesisEvents2024/WhatsApp Image 2024-10-21 at 11.03.38 PM.jpeg';
+import britishparliament from '../../../../public/images/genesisEvents2024/Copy of British parli.png';
+import melaquiz from '../../../../public/images/genesisEvents2024/Mela Quiz.png';
 import genesisImage from '../../../../public/genesis-logo.png';
 import Footer from '../../Footer';
 
@@ -44,14 +50,14 @@ const hardcodedEvents: Event[] = [
         teamSize: '2-3 members',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/CJKwHMtuWkRCTKZQA',
-        imageUrl: tba,
+        imageUrl: pyramid,
         featured: true,
         rating: 4.8
     },
     {
         id: '2',
         title: 'Jam',
-        type: 'Wordplay',
+        type: 'Wordplay,Oration',
         description: 'A lightning-paced challenge where words flow faster than ever before. Participants will dive into a hilarious race of wits with even crazier twists...',
         date: 'Sun, 27th October 2024',
         time: '4:00 PM - 5:00 PM',
@@ -59,7 +65,7 @@ const hardcodedEvents: Event[] = [
         teamSize: '1 member',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/d334hrLZdy8waWkF8',
-        imageUrl: tba,
+        imageUrl: jam,
         featured: false,
         rating: 4.5
     },
@@ -74,7 +80,7 @@ const hardcodedEvents: Event[] = [
         teamSize: '1 member',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/Xg1mMGQGCm776hSN7',
-        imageUrl: tba,
+        imageUrl: bizquiz,
         featured: true,
         rating: 4.7
     },
@@ -89,7 +95,7 @@ const hardcodedEvents: Event[] = [
         teamSize: 'Solo',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/eyq2e3B1rGVR8uh58',
-        imageUrl: tba,
+        imageUrl: melaquiz,
         featured: false,
         rating: 4.6
     },
@@ -104,14 +110,14 @@ const hardcodedEvents: Event[] = [
         teamSize: '1-3 members',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/oPooU2Q1qMaWbnsv6',
-        imageUrl: tba,
+        imageUrl: indiaquiz,
         featured: true,
         rating: 4.8
     },
     {
         id: '6',
         title: 'Eureka',
-        type: 'Storytelling',
+        type: 'Wordplay,Oration',
         description: 'A magical atmosphere to see how much strongly your brains are intertwined as for the same destination...',
         date: 'Sat, 26th October 2024',
         time: '5:30 PM - 8:00 PM',
@@ -119,7 +125,7 @@ const hardcodedEvents: Event[] = [
         teamSize: '1-3 members',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/owR5xE4AJA6H5hPn7',
-        imageUrl: tba,
+        imageUrl: eureka,
         featured: false,
         rating: 4.5
     },
@@ -134,14 +140,14 @@ const hardcodedEvents: Event[] = [
         teamSize: '1-3 members',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/tCiNpNA4kXL8a9wT8',
-        imageUrl: tba,
+        imageUrl: genesisImage,
         featured: true,
         rating: 4.8
     },
     {
         id: '8',
         title: 'BPD',
-        type: 'Debate',
+        type: 'Oration',
         description: 'Experience the art of structured argumentation with BPD as teams engage in formal debates...',
         date: 'Mon, 28th October 2024',
         time: '6:30 PM - 7:00 PM',
@@ -149,11 +155,137 @@ const hardcodedEvents: Event[] = [
         teamSize: '2 members (Speaker 1 & 2)',
         prizePool: 'Exciting prizes',
         registrationLink: 'https://forms.gle/Ada77JztnQhVWLj6A',
-        imageUrl: tba,
+        imageUrl: britishparliament,
         featured: false,
         rating: 4.6
     }
 ];
+
+// Card component with scroll animation
+const EventCard: React.FC<{ event: Event; index: number }> = ({ event, index }) => {
+    const cardRef = React.useRef(null);
+    const isInView = useInView(cardRef, { once: true, margin: "-100px" });
+
+    const cardVariants = {
+        hidden: {
+            opacity: 0,
+            y: 50,
+            scale: 0.95
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                damping: 20,
+                stiffness: 100,
+                delay: index * 0.1, // Stagger effect
+                duration: 0.6
+            }
+        }
+    };
+
+    const contentVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: index * 0.1 + 0.2,
+                duration: 0.5
+            }
+        }
+    };
+
+    const router = useRouter();
+
+    return (
+        <motion.div
+            ref={cardRef}
+            className={styles.eventCard}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+        >
+            <motion.div
+                className={styles.eventImage}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+            >
+                <Image
+                    src={event.imageUrl}
+                    alt={event.title}
+                    layout="fill"
+                    objectFit="cover"
+                />
+                {event.featured && (
+                    <motion.span
+                        className={styles.featuredBadge}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        Featured
+                    </motion.span>
+                )}
+            </motion.div>
+            <motion.div
+                className={styles.eventContent}
+                variants={contentVariants}
+            >
+                <div className={styles.eventHeader}>
+                    <motion.span
+                        className={styles.eventType}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        {event.type}
+                    </motion.span>
+                    <motion.div
+                        className={styles.eventRating}
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <Star size={16} />
+                        <span>{event.rating.toFixed(1)}</span>
+                    </motion.div>
+                </div>
+                <h4 className={styles.eventTitle}>{event.title}</h4>
+                <p className={styles.eventDescription}>{event.description}</p>
+                <div className={styles.eventDetails}>
+                    <motion.div
+                        className={styles.detailItem}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <Calendar size={16} />
+                        <span>{event.date}</span>
+                    </motion.div>
+                    <motion.div
+                        className={styles.detailItem}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <MapPin size={16} />
+                        <span>{event.venue}</span>
+                    </motion.div>
+                    <motion.div
+                        className={styles.detailItem}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <Trophy size={16} />
+                        <span>{event.prizePool}</span>
+                    </motion.div>
+                </div>
+                <motion.button
+                    onClick={() => router.push(event.registrationLink)}
+                    className={styles.registerButton}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    Register Now
+                </motion.button>
+            </motion.div>
+        </motion.div>
+    );
+};
 
 
 const GenesisEvents: React.FC = () => {
@@ -172,7 +304,7 @@ const GenesisEvents: React.FC = () => {
 
     const filteredEvents = activeFilter === 'All'
         ? hardcodedEvents
-        : hardcodedEvents.filter(event => event.type === activeFilter);
+        : hardcodedEvents.filter(event => event.type.split(',').includes(activeFilter));
 
     return (
         <div className={styles.container}>
@@ -250,7 +382,7 @@ const GenesisEvents: React.FC = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <Filter size={20} className={styles.filterIcon} />
-                    {['All', 'Debate', 'Quiz', 'Wordplay'].map(filter => (
+                    {['All', 'Oration', 'Quiz', 'Wordplay'].map(filter => (
                         <motion.button
                             key={filter}
                             onClick={() => setActiveFilter(filter)}
@@ -270,64 +402,13 @@ const GenesisEvents: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <AnimatePresence>
-                        {filteredEvents.map(event => (
-                            <motion.div
+                    <AnimatePresence mode="wait">
+                        {filteredEvents.map((event, index) => (
+                            <EventCard
                                 key={event.id}
-                                className={styles.eventCard}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <div className={styles.eventImage}>
-                                    <Image
-                                        src={event.imageUrl}
-                                        alt={event.title}
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                    {event.featured && (
-                                        <span className={styles.featuredBadge}>
-                                            Featured
-                                        </span>
-                                    )}
-                                </div>
-                                <div className={styles.eventContent}>
-                                    <div className={styles.eventHeader}>
-                                        <span className={styles.eventType}>
-                                            {event.type}
-                                        </span>
-                                        <div className={styles.eventRating}>
-                                            <Star size={16} />
-                                            <span>{event.rating.toFixed(1)}</span>
-                                        </div>
-                                    </div>
-                                    <h4 className={styles.eventTitle}>{event.title}</h4>
-                                    <p className={styles.eventDescription}>{event.description}</p>
-                                    <div className={styles.eventDetails}>
-                                        <div className={styles.detailItem}>
-                                            <Calendar size={16} />
-                                            <span>{event.date}</span>
-                                        </div>
-                                        <div className={styles.detailItem}>
-                                            <MapPin size={16} />
-                                            <span>{event.venue}</span>
-                                        </div>
-                                        <div className={styles.detailItem}>
-                                            <Trophy size={16} />
-                                            <span>{event.prizePool}</span>
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={() => router.push(event.registrationLink)}
-                                        className={styles.registerButton}
-                                    >
-                                        Register Now
-                                    </button>
-                                </div>
-                            </motion.div>
+                                event={event}
+                                index={index}
+                            />
                         ))}
                     </AnimatePresence>
                 </motion.div>

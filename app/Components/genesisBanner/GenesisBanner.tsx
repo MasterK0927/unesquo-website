@@ -125,7 +125,7 @@ const GenesisBanner = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="genesis">
             <canvas ref={canvasRef} className={styles.canvas} />
 
             <motion.div

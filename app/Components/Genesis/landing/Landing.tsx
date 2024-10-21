@@ -250,7 +250,7 @@ const GenesisEvents: React.FC = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <Filter size={20} className={styles.filterIcon} />
-                    {['All', 'Debate', 'Quiz'].map(filter => (
+                    {['All', 'Debate', 'Quiz', 'Wordplay'].map(filter => (
                         <motion.button
                             key={filter}
                             onClick={() => setActiveFilter(filter)}

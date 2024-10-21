@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/alumniComponents.module.css';
 import Image from 'next/image';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick"
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Alumni {
     id: number;
@@ -17,52 +15,105 @@ interface AlumniProps {
 }
 
 const CarouselAlumni: React.FC<AlumniProps> = ({ alumniData }) => {
-    // Use useState to determine the window width on the client side
     const [windowWidth, setWindowWidth] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
-    // Use useEffect to set the initial window width and update it on window resize
     useEffect(() => {
         setWindowWidth(window.innerWidth);
-
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-
-        // Add an event listener to update the window width on resize
         window.addEventListener('resize', handleResize);
-
-        // Remove the event listener when the component unmounts
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: windowWidth > 1000 ? 3 : 1,
-        slidesToScroll: 1,
-        pauseOnFocus: true,
-        autoplay: true,
-        autoplaySpeed: 1000
+    const slidesToShow = windowWidth > 1000 ? 3 : 1;
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) =>
+            prev === alumniData.length - slidesToShow ? 0 : prev + 1
+        );
     };
 
+    const prevSlide = () => {
+        setCurrentSlide((prev) =>
+            prev === 0 ? alumniData.length - slidesToShow : prev - 1
+        );
+    };
+
+    useEffect(() => {
+        if (!isHovered) {
+            const timer = setInterval(nextSlide, 3000);
+            return () => clearInterval(timer);
+        }
+    }, [currentSlide, isHovered]);
+
     return (
-        <div className={styles["alumni-carousel"]}>
-            <Slider {...settings}>
-                {alumniData.map((alumni) => (
-                    <div key={alumni.id} className={styles['alumni-item']}>
-                        <div className={styles["dpeDzF"]}>
-                            <div className={styles["content"]}>
-                                <Image src={alumni.src} alt="alumni" width={200} height={225} className={styles['alumniImage']} />
-                                <h3 className={styles['alumni-name']}> {alumni.name}</h3>
-                                <div className={styles['alumni-position']}><div className={styles['circle']}></div>{alumni.position}</div>
+        <div
+            className={styles['alumni-carousel']}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <button
+                onClick={prevSlide}
+                className={`${styles['nav-btn']} ${styles['nav-btn-left']}`}
+                aria-label="Previous slide"
+            >
+                <ChevronLeft />
+            </button>
+            <button
+                onClick={nextSlide}
+                className={`${styles['nav-btn']} ${styles['nav-btn-right']}`}
+                aria-label="Next slide"
+            >
+                <ChevronRight />
+            </button>
+            <div className={styles['carousel-container']}>
+                <div
+                    className={styles['carousel-track']}
+                    style={{
+                        transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`,
+                    }}
+                >
+                    {alumniData.map((alumni, index) => (
+                        <div
+                            key={alumni.id}
+                            className={`${styles['alumni-item']} ${index >= currentSlide && index < currentSlide + slidesToShow ? styles.active : ''
+                                }`}
+                        >
+                            <div className={styles.cardWrapper}>
+                                <div className={styles.imageContainer}>
+                                    <Image
+                                        src={alumni.src}
+                                        alt={`${alumni.name} - ${alumni.position}`}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className={styles.alumniImage}
+                                    />
+                                    <div className={styles.overlay} />
+                                </div>
+                                <div className={styles.infoContainer}>
+                                    <h3 className={styles['alumni-name']}>{alumni.name}</h3>
+                                    <div className={styles['alumni-position']}>{alumni.position}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ))}
+                </div>
+            </div>
+            <div className={styles['carousel-dots']}>
+                {Array.from({ length: alumniData.length - (slidesToShow - 1) }).map((_, idx) => (
+                    <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`${styles.dot} ${currentSlide === idx ? styles['dot-active'] : ''}`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                    />
                 ))}
-            </Slider>
+            </div>
         </div>
     );
 }

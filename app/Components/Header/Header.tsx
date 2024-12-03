@@ -5,7 +5,8 @@ import Image from "next/image";
 import logo from "../../../public/logo.png";
 import Button from "../Button/Button";
 import styled from "styled-components";
-import { FaRocket } from "react-icons/fa";
+import { FaRocket, FaUsers } from "react-icons/fa";
+
 import { Abril_Fatface } from "next/font/google";
 import hover3d from "../../utils/hover";
 import FarewellBanner from "../farewellBanner/FarewellBanner";
@@ -16,7 +17,16 @@ const abril = Abril_Fatface({
 });
 
 const recruitment = () => {
-  window.location.href = "https://forms.gle/4QggtdFevyaYvWjx8";
+  // window.location.href = "https://forms.gle/4QggtdFevyaYvWjx8";
+  alert(
+    "✨ To all those who didn’t make it this time, take heart! 🌟 This is not a defeat but the forging of a legend yet to unfold. 🌌 The stars themselves were born of chaos, and your radiance, tempered by trials, shall one day eclipse the heavens. 🌠 Greatness does not yield to the fleeting; rise again, for destiny awaits your inevitable triumph. 💪🌟\n\n🌟 Until we meet again, adieu! 🌈"
+  );
+  window.location.href = "https://www.instagram.com/p/DCa1OjKp2CB/?img_index=1";
+};
+const aboutUs = () => {
+  alert("🎯 Ban jayega, toh ye bhi handle kar lenge! 💪😎\n\nChallenges are just stepping stones to greatness. 🚀✨");
+  window.location.href = "/about";
+
 };
 
 function Header() {
@@ -172,7 +182,8 @@ function Header() {
                 icon={<FaRocket />}
               />
             </div>
-            <Button name="About us" />
+            {/* isko handle krna h <=1000px */}
+            <Button name="About us" icon={<FaUsers/>} onClick={aboutUs}/>
           </div>
         </div>
         <div className="image-content">

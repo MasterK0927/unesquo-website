@@ -4,7 +4,7 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background: linear-gradient(135deg, #0a0814 0%, #1a1033 100%);
+    background: linear-gradient(135deg, #1E3A5F, #3AAFA9); 
   }
   
   .canvas {
@@ -40,7 +40,7 @@
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 1;
-    background: linear-gradient(45deg, #fff 20%, #9333ea 50%, #6366f1 80%);
+    background: linear-gradient(45deg, #F5C542 20%, #9333ea 50%, #6366f1 80%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -51,11 +51,12 @@
     font-size: 3rem;
     opacity: 0.7;
     margin-left: 1rem;
+    color: #F5C542;
   }
   
   .subtitle {
     font-size: 1.25rem;
-    color: #a855f7;
+    color: #F5C542;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 0.5rem;
@@ -72,7 +73,7 @@
   .ctaButton {
     margin-top: 2rem;
     padding: 1rem 2.5rem;
-    background: linear-gradient(45deg, #7c3aed, #4f46e5);
+    background: linear-gradient(45deg, #7c3aed, #c0392b);
     border: none;
     border-radius: 3rem;
     color: white;
@@ -82,11 +83,12 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
   }
   
   .ctaButton:hover {
     transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 10px 3px rgb(255, 247, 0);
   }
   
   .buttonIcon {
@@ -118,12 +120,13 @@
   .iconBox:hover {
     transform: translateY(-5px) scale(1.05);
     background: rgba(255, 255, 255, 0.05);
+    border-color: #F5C542;
   }
   
   .icon {
     width: 2.5rem;
     height: 2.5rem;
-    color: #a855f7;
+    color: #F5C542;
     margin-bottom: 1rem;
   }
   

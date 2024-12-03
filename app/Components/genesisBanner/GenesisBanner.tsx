@@ -61,7 +61,7 @@ const GenesisBanner = () => {
                 // Draw particle
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(139, 92, 246, ${0.2 + Math.random() * 0.3})`;
+                ctx.fillStyle = `rgba(245, 197, 66, ${0.2 + Math.random() * 0.3})`;
                 ctx.fill();
 
                 // Connect particles
@@ -73,7 +73,7 @@ const GenesisBanner = () => {
 
                     if (distance < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${0.1 * (1 - distance / 100)})`;
+                        ctx.strokeStyle = `rgba(245, 197, 66, ${0.1 * (1 - distance / 100)})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particle.x, particle.y);
                         ctx.lineTo(particle2.x, particle2.y);
@@ -137,11 +137,11 @@ const GenesisBanner = () => {
                 <div className={styles.leftContent}>
                     <motion.div variants={itemVariants}>
                         <h1 className={styles.title}>
-                            GENESIS
-                            <span className={styles.year}>2024</span>
+                        BITMUN
+                            <span className={styles.year}>2025</span>
                         </h1>
                         <div className={styles.subtitle}>
-                            Debate & Quiz Spectacle
+                        The Ultimate Arena of Intellect
                         </div>
                     </motion.div>
 
@@ -149,13 +149,13 @@ const GenesisBanner = () => {
                         className={styles.description}
                         variants={itemVariants}
                     >
-                        Where intellect meets eloquence, and knowledge transforms into power.
-                        Join the ultimate battlefield of minds.
+                        A platform where diverse minds come together, engage in powerful debates, and foster transformative ideas that shape the future.
+                        Join the arena where intellect meets innovation and discussions spark change.
                     </motion.p>
 
                     <motion.button
                         className={styles.ctaButton}
-                        onClick={() => router.push('/genesis')}
+                        onClick={() => router.push('/bitmun')}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -173,23 +173,42 @@ const GenesisBanner = () => {
                         {[
                             { Icon: Brain, text: "Strategic Thinking" },
                             { Icon: Lightbulb, text: "Quick Wit" },
-                            { Icon: Flame, text: "Fierce Debates" }
-                        ].map(({ Icon, text }) => (
+                            { Icon: Flame, text: "Fierce Debates" },
+                            { 
+                                Icon: ExternalLink, 
+                                text: "Register Now!", 
+                                link: "/bitmun" // Add a `link` property
+                            }
+                        ].map(({ Icon, text, link }) => (
                             <motion.div
-                                key={text}
-                                className={styles.iconBox}
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.05, y: -5 }}
+                            key={text}
+                            className={styles.iconBox}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.05, y: -5 }}
                             >
-                                <motion.div
-                                    whileHover={{ rotate: 360 }}
-                                    transition={{ duration: 0.6 }}
-                                >
-                                    <Icon className={styles.icon} />
-                                </motion.div>
-                                <span className={styles.iconLabel}>{text}</span>
-                            </motion.div>
-                        ))}
+                            {link ? (
+                                <a href={link} className={styles.iconLink}>
+                                    <motion.div
+                                        whileHover={{ rotate: 360 }}
+                                        transition={{ duration: 0.6 }}
+                                    >
+                                        <Icon className={styles.icon} />
+                                    </motion.div>
+                                    <span className={styles.iconLabel}>{text}</span>
+                                </a>
+                            ) : (
+                                <>
+                                    <motion.div
+                                        whileHover={{ rotate: 360 }}
+                                        transition={{ duration: 0.6 }}
+                                    >
+                                        <Icon className={styles.icon} />
+                                    </motion.div>
+                                    <span className={styles.iconLabel}>{text}</span>
+                                </>
+                            )}
+                        </motion.div>
+                    ))}
                     </motion.div>
                 </div>
             </motion.div>

@@ -29,17 +29,25 @@ function Header() {
     const handleResize = () => {
       setShouldAnimate(window.innerWidth > 1280);
     };
-
+  
     handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      // setIsMenuOpen(!isMenuOpen);
+      document.body.classList.remove('noscroll');
     };
   }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if(isMenuOpen){
+      document.body.classList.remove('noscroll');
+    }else{
+      document.body.classList.add('noscroll');
+    } 
+    
   };
 
   const hoverHero = hover3d(hero, {
@@ -75,13 +83,14 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#events">Events</a>
+            <a href="#events" onClick={toggleMenu}>Events</a>
           </li>
           <li className="button genesis-button">
             <a
               className="button__StyledButton-sc-18iddzu-1 ixHxFg wrapper_special"
               href="#genesis"
               rel="noreferrer noopener"
+              onClick={toggleMenu}
             >
               <div className="btn special">
                 <div className="text">GENESIS</div>
@@ -144,7 +153,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="/about" onClick={toggleMenu}>About</a>
           </li>
         </ul>
       </nav>
@@ -435,6 +444,10 @@ const HeaderStyled = styled.header`
     .nav-items.open {
       display: flex;
       flex-direction: column;
+      height:100%;
+      background-color:black;
+      position:fixed;
+      justify-content:center;
     }
 
     .nav-items.close{
@@ -497,6 +510,11 @@ const HeaderStyled = styled.header`
     }
     
   }
+    @media screen and (min-width: 1280px){
+      .menu-icon {
+      visibility: hidden;
+    }
+    }
 `;
 
 export default Header;

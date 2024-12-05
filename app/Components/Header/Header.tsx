@@ -6,7 +6,6 @@ import logo from "../../../public/logo.png";
 import Button from "../Button/Button";
 import styled from "styled-components";
 import { FaRocket, FaUsers } from "react-icons/fa";
-
 import { Abril_Fatface } from "next/font/google";
 import hover3d from "../../utils/hover";
 import FarewellBanner from "../farewellBanner/FarewellBanner";
@@ -94,7 +93,7 @@ function Header() {
               rel="noreferrer noopener"
             >
               <div className="btn special">
-                <div className="text">GENESIS</div>
+                <div className="text">BITMUN</div>
                 <svg
                   width="79"
                   height="46"
@@ -408,7 +407,7 @@ const HeaderStyled = styled.header`
       height: 2rem !important;
     }
     .special{
-      width: 6rem !important;
+      width: 5.5rem !important;
       height: 2.4rem !important;
       
     }

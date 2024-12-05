@@ -7,8 +7,8 @@ import BitmunAboutUs from '@/app/Components/bitmun/about/About'
 const Contact = () => {
   return (
     <div style={{overflowX:'hidden'}}>
-      <div><NavBar/></div>
-        <BitmunAboutUs/>
+      {/* <div><NavBar/></div> */}
+        {/* <BitmunAboutUs/> */}
       <div><Footer/></div>
     </div>
   )

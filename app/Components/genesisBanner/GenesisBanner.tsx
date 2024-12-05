@@ -177,7 +177,7 @@ const GenesisBanner = () => {
                             { 
                                 Icon: ExternalLink, 
                                 text: "Register Now!", 
-                                link: "/bitmun" // Add a `link` property
+                                link: "/bitmun"
                             }
                         ].map(({ Icon, text, link }) => (
                             <motion.div

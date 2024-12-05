@@ -80,7 +80,7 @@ const Timer: React.FC<TimerProps> = ({ targetTime }) => {
 
   return (
     <div className="timer-container">
-      <h2 className="timer-heading">BITMUN 24'</h2>
+      <h2 className="timer-heading">BITMUN 25'</h2>
       <h6 className="timer-subheading">Overcoming Differences</h6>
       {formatTime(time)}
       <style jsx>{`

@@ -40,8 +40,8 @@
         display: none;
     }
     .registration_butons{
-        flex-direction: column; /* Stack items vertically */
-        gap: 15px; /* Adjust spacing between buttons */
+        flex-direction: column; 
+        gap: 13px; 
         align-items: center;
     }
     

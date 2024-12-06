@@ -18,12 +18,12 @@ const abril = Abril_Fatface({
 const recruitment = () => {
   // window.location.href = "https://forms.gle/4QggtdFevyaYvWjx8";
   alert(
-    "✨ To all those who didn’t make it this time, take heart! 🌟 This is not a defeat but the forging of a legend yet to unfold. 🌌 The stars themselves were born of chaos, and your radiance, tempered by trials, shall one day eclipse the heavens. 🌠 Greatness does not yield to the fleeting; rise again, for destiny awaits your inevitable triumph. 💪🌟\n\n🌟 Until we meet again, adieu! 🌈"
+    "To all those who didn’t make it this time, take heart! This is not a defeat but the forging of a legend yet to unfold. The stars themselves were born of chaos, and your radiance, tempered by trials, shall one day eclipse the heavens. Greatness does not yield to the fleeting; rise again, for destiny awaits your inevitable triumph. \n Until we meet again, adieu! "
   );
   window.location.href = "https://www.instagram.com/p/DCa1OjKp2CB/?img_index=1";
 };
 const aboutUs = () => {
-  alert("🎯 Ban jayega, toh ye bhi handle kar lenge! 💪😎\n\nChallenges are just stepping stones to greatness. 🚀✨");
+  alert("coming soon!");
   window.location.href = "/about";
 
 };
@@ -181,8 +181,9 @@ function Header() {
                 icon={<FaRocket />}
               />
             </div>
-            {/* isko handle krna h <=1000px */}
+            <div>
             <Button name="About us" icon={<FaUsers/>} onClick={aboutUs}/>
+            </div>
           </div>
         </div>
         <div className="image-content">
@@ -370,6 +371,8 @@ const HeaderStyled = styled.header`
         display: flex;
         gap: 1rem;
         margin-top: 2.5rem;
+        align-items: center;
+        justify-content: space-around;
       }
     }
 
@@ -504,6 +507,18 @@ const HeaderStyled = styled.header`
       align-items: center;
       position: center;
       text-align: center;
+    }
+    .buttons{
+        flex-direction: column; 
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .recruitment,
+    .buttons > button {
+      padding: 0.35rem 0;
     }
     
   }

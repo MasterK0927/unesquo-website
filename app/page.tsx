@@ -205,5 +205,8 @@ const MainStyled = styled.main`
       margin-bottom: 5rem;
     }
   }
+  .noscroll{
+    overflow:hidden;
+  }
 `;
 

@@ -1,3 +1,10 @@
+.registration_butons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
 .section{
     display: flex;
     width:100%;
@@ -31,5 +38,14 @@
     }
     .fourGrid{
         display: none;
+    }
+    .registration_butons{
+        flex-direction: column; 
+        gap: 13px; 
+        align-items: center;
+    }
+    
+    .registration_butons div{
+        padding: 0.35rem 0;
     }
 }

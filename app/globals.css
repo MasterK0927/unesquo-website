@@ -43,3 +43,6 @@ header {
   position: relative;
   z-index: 10;
 }
+html{
+  overflow-x: hidden;
+}

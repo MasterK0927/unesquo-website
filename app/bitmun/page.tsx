@@ -90,14 +90,14 @@ const Bitmun = () => {
           <div className={styles.fourGrid}>
             <FourGridsSection />
           </div>
-          <section className={styles.section}>
+          {/* <section className={styles.section}>
             <div className={styles.ExampleUsage}>
               <ExampleUsage />
             </div>
             <div className={styles.ExampleUsage1}>
               <ExampleUsage1 />
             </div>
-          </section>
+          </section> */}
           <div style={{ margin: '20px 0' }}>
             <ChairPage />
           </div>

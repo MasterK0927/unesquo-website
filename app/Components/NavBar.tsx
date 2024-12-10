@@ -40,8 +40,8 @@ function NavBar() {
               <h2 className="brand">BITMUN</h2>
             </div>
             <div className="unstop">
-              <h2 className="brand_unstop">Powered by</h2>
-              <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
+              {/* <h2 className="brand_unstop">Powered by</h2>
+              <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" /> */}
             </div>
           </div>
         </a>
@@ -125,6 +125,7 @@ const HeaderStyled = styled.header`
         transform: scale(1.4);
       }
       .brand{
+        padding-left:0.30rem;
         font-size: 2rem;
         font-weight: 700;
         color: white;

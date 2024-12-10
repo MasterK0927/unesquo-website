@@ -83,7 +83,24 @@ const Timer: React.FC<TimerProps> = ({ targetTime }) => {
       <h2 className="timer-heading">BITMUN 25'</h2>
       <h6 className="timer-subheading">Overcoming Differences</h6>
       {formatTime(time)}
+      <h4 className='date-container'>18-19 January</h4>
       <style jsx>{`
+        .date-container {
+        margin-top: 20px;
+        font-family: 'Arial', sans-serif;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #ffffff;
+        background: linear-gradient(90deg, #ffcc00, #e4931d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        padding: 10px 15px;
+        border-radius: 8px;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        text-align: center;
+      }
         .timer-container {
           text-align: center;
           margin: 5px 5px 15px 5px;

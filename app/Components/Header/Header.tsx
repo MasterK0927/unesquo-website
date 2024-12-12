@@ -424,8 +424,6 @@ const HeaderStyled = styled.header`
     }
     
     .menu-icon {
-      visibility: visible;
-      display: block;
       cursor: pointer;
       font-size: 1.5rem;
       color: white;
@@ -522,6 +520,12 @@ const HeaderStyled = styled.header`
     }
     
   }
+   @media screen and (min-width: 1280px) {
+       .menu-icon {
+         display:none;
+      }
+
+   }
 `;
 
 export default Header;

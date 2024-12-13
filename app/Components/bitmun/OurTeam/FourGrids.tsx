@@ -13,9 +13,13 @@ const GridContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 80vh;
+  width: 90vh;
   height: 60vh;
-  background: #121212;
+  background: linear-gradient(
+    135deg, 
+    rgba(33, 33, 50, 0.9), 
+    rgba(20, 20, 40, 0.95)
+  );
   border-radius: 16px;
   box-shadow: 
     0 10px 30px rgba(0,0,0,0.3),

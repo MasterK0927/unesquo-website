@@ -5,8 +5,8 @@ import Footer from '../Components/Footer';
 import Timer from '../Components/bitmun/OurTeam/Timer';
 import ChairPage from '../Components/bitmun/OurTeam/ChairData';
 import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids';
-import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage';
-import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
+// import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage';
+// import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
 import Video from '../Components/bitmun/OurTeam/Video';
 import Preloader from '../Components/preloader/preloader';
 import styles from './OurTeam.module.css';
@@ -85,14 +85,14 @@ const Bitmun = () => {
           <div className={styles.fourGrid}>
             <FourGridsSection />
           </div>
-          <section className={styles.section}>
+          {/* <section className={styles.section}>
             <div className={styles.ExampleUsage}>
               <ExampleUsage />
             </div>
             <div className={styles.ExampleUsage1}>
               <ExampleUsage1 />
             </div>
-          </section>
+          </section> */}
           <div style={{ margin: '20px 0' }}>
             <ChairPage />
           </div>

@@ -301,3 +301,110 @@
     }
 
 }
+
+
+    .container {
+        background: linear-gradient(
+            135deg, 
+            rgba(33, 33, 50, 0.466), 
+            rgba(20, 20, 40, 0.677)
+        );
+        min-height: 100vh;
+        padding: 4rem 2rem;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        border-radius: 24px;
+    }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .mainTitle {
+    font-size: 5rem;
+    margin: 0;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: shineAnimation 2s ease-in-out infinite;
+
+    @keyframes shineAnimation {
+        0% {
+            background-position: -100% 0;
+        }
+        40%, 100% {
+            background-position: 200% 0;
+        }   
+    }
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: #9699b0;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 1.25px rgba(255, 255, 255, 0.5);
+  }
+  
+  .sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .section {
+    background: rgba(255, 255, 255, 0.014);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    transition: all 0.3s ease;
+  }
+  
+  .sectionTitle {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #fff,
+        0 0 40px rgb(255, 196, 0),
+        0 0 80px rgb(255, 196, 0),
+        0 0 120px rgb(255, 196, 0),
+        0 0 200px rgb(255, 196, 0),
+        0 0 300px rgb(255, 196, 0),
+        0 0 400px rgb(255, 196, 0);
+    text-align: center;
+  }
+  
+  .sectionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .mainTitle {
+      font-size: 3rem;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+    }
+    
+    .sectionTitle {
+      font-size: 3rem;
+    }
+
+    .section {
+        border: none;
+        backdrop-filter: none;
+        background: none;
+    }
+  }

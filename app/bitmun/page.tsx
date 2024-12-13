@@ -10,10 +10,9 @@ import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
 import Video from '../Components/bitmun/OurTeam/Video';
 import Preloader from '../Components/preloader/preloader';
 import styles from './OurTeam.module.css';
-import Button from "../Components/Button/Button";
+import Button from "../Components/bitmun/button/Button";
 import { FaCrown, FaUserCheck, FaBullhorn } from "react-icons/fa";
 
-// Set your target time in the format 'YYYY-MM-DDTHH:mm:ss'
 const targetTime = '2025-01-18T08:00:00';
 
 const ExecutiveBoard = () => {
@@ -24,7 +23,6 @@ const DelegateRegistration = () => {
   window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeoo42Qp2L3tTAevlnV8BxCZsUdcbsAr5u88VB15b_x-B6sPg/viewform";
 };
 const CampusAmbassador = () => {
-  // window.location.href = "https://forms.gle/4QggtdFevyaYvWjx8";
   window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeqN4PwaEVWdhxLSvBYTWZa2ZgKIQayfZ92hcE-eUjHJpOW1w/viewform";
 };
 
@@ -32,15 +30,13 @@ const Bitmun = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate an asynchronous operation (e.g., loading data)
     const loadData = async () => {
       try {
-        // Simulate loading for 2 seconds
         await new Promise(resolve => setTimeout(resolve, 1500));
-        setLoading(false); // Set loading to false after 2 seconds
+        setLoading(false);
       } catch (error) {
         console.error('Error loading data:', error);
-        setLoading(false); // Handle error by setting loading to false
+        setLoading(false);
       }
     };
 
@@ -53,7 +49,6 @@ const Bitmun = () => {
       {!loading && (
         <>
           <NavBar />
-          {/* Pass targetTime instead of initialTime */}
           <Timer targetTime={targetTime} />
           <div className={styles.registration_butons}>
             <div className={styles.executive} onClick={ExecutiveBoard}>

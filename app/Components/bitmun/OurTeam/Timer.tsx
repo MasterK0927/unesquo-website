@@ -1,153 +1,269 @@
 import React, { useState, useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TimerProps {
-  targetTime: string; // Target time in the format 'YYYY-MM-DDTHH:mm:ss'
+  targetTime: string;
 }
 
-const Timer: React.FC<TimerProps> = ({ targetTime }) => {
+const shineAnimation = keyframes`
+  0% {
+    background-position: -100% 0;
+  }
+  40%, 100% {
+    background-position: 200% 0;
+  }
+`;
+
+const Container = styled(motion.div)`
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    min-height: 20vh;
+    padding: 0.5rem;
+  }
+`;
+
+const TimerCard = styled(motion.div)`
+  background: linear-gradient(
+    135deg, 
+    rgba(33, 33, 50, 0.9), 
+    rgba(20, 20, 40, 0.95)
+  );
+  border-radius: 24px;
+  padding: 2rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(100, 100, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100vw;
+  max-width: 100vw;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    width: 95vw;
+    gap: 1rem;
+  }
+`;
+
+const Title = styled(motion.h1)`
+  font-size: 6rem;
+  margin: 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: ${shineAnimation} 2s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+`;
+
+const Subtitle = styled(motion.h2)`
+  font-size: 2rem;
+  color: #9699b0;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0 0 1.25px rgba(255, 255, 255, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const TimeUnitsContainer = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    gap: 0.75rem;
+  }
+`;
+
+const TimeUnit = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+`;
+
+const TimeValue = styled(motion.div)`
+  background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 12px;
+  min-width: 100px;
+  text-align: center;
+  color: #8b5cf6;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: monospace;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    min-width: 70px;
+  }
+`;
+
+const TimeLabel = styled.span`
+  color: #9699b0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const TimerExpired = styled.div`
+  font-size: 3rem;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+const Timer = ({ targetTime }: TimerProps) => {
   const [time, setTime] = useState(calculateTimeDifference());
-
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setTime(calculateTimeDifference());
-    }, 1000);
-
-    // Clean up the interval on component unmount
-    return () => {
-      clearInterval(timerInterval);
-    };
-  }, []);
+  const [isExpired, setIsExpired] = useState(false);
 
   function calculateTimeDifference() {
     const targetDate = new Date(targetTime);
     const currentDate = new Date();
-
     let timeDifference = Math.floor((targetDate.getTime() - currentDate.getTime()) / 1000);
-
-    if (timeDifference < 0) {
-      timeDifference = 0;
-    }
-
-    return timeDifference;
+    return Math.max(0, timeDifference);
   }
 
-  const formatTime = (seconds: number) => {
-    const days = Math.floor(seconds / (3600 * 24));
-    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      const remainingTime = calculateTimeDifference();
+      setTime(remainingTime);
+      
+      if (remainingTime <= 0) {
+        setIsExpired(true);
+        clearInterval(timerInterval);
+      }
+    }, 1000);
 
-    return (
-      <div className="timer-items">
-        <div className="timer-item">{String(days).padStart(2, '0')}d</div>
-        <div className="timer-item">{String(hours).padStart(2, '0')}h</div>
-        <div className="timer-item">{String(minutes).padStart(2, '0')}m</div>
-        <div className="timer-item">{String(remainingSeconds).padStart(2, '0')}s</div>
-        <style jsx>
-          {`
-            .timer-items {
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              gap: 10px;
-            }
-            .timer-item {
-              font-size: 3em;
-              font-weight: semibold;
-              padding: 5px;
-              border-radius: 5px;
-              margin: 5px;
-              display: flex;
-              box-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px -2px 10px white, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
-              background: black;
-            }
-    
-            @media (max-width: 1000px) {
-              .timer-item {
-                font-size: 1.5em;
-              }
-    
-              .timer-item {
-                margin: 0 5px;
-              }
-            }
-          `}
-        </style>
-      </div>
-    );
+    return () => clearInterval(timerInterval);
+  }, []);
+
+  const days = Math.floor(time / (3600 * 24));
+  const hours = Math.floor((time % (3600 * 24)) / 3600);
+  const minutes = Math.floor((time % 3600) / 60);
+  const seconds = time % 60;
+
+  const timeUnits = [
+    { value: days, label: 'Days' },
+    { value: hours, label: 'Hours' },
+    { value: minutes, label: 'Minutes' },
+    { value: seconds, label: 'Seconds' },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.1
+      }
+    }
   };
 
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
+  const numberVariants = {
+    initial: { scale: 0.8, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
+    exit: { scale: 0.8, opacity: 0 }
+  };
+
+  if (isExpired) {
+    return (
+      <Container>
+        <TimerCard>
+          <TimerExpired>Event Has Started!</TimerExpired>
+        </TimerCard>
+      </Container>
+    );
+  }
+
   return (
-    <div className="timer-container">
-      <h2 className="timer-heading">BITMUN 25'</h2>
-      <h6 className="timer-subheading">Overcoming Differences</h6>
-      {formatTime(time)}
-      <style jsx>{`
-        .timer-container {
-          text-align: center;
-          margin: 5px 5px 15px 5px;
-          border-radius: 15px;
-          padding: 20px 20px 40px 20px;
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
-          backdrop-filter: blur(10px);
-          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .timer-heading {
-          font-family: 'serif';
-          color: #ffcc00;
-          font-size: 5em;
-          margin-bottom: 10px;
-        }
-
-        .timer-subheading {
-          font-family: 'Calibri', sans-serif;
-          color: white;
-          font-size: 2em;
-          margin-bottom: 20px;
-        }
-
-        @media (max-width: 1000px) {
-          .timer-heading {
-            font-family: 'Calibri', sans-serif;
-            color: #E4931D;
-            font-size: 3.5em;
-            margin-bottom: 10px;
-          }
-
-          .timer-subheading {
-            font-family: 'Calibri', sans-serif;
-            color: white;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-          }
-
-          .timer-items {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-          }
-
-          .timer-item {
-            font-size: 1.5em;
-            font-weight: semibold;
-            padding: 5px;
-            border-radius: 5px;
-            margin: 5px;
-            display: flex;
-            box-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px -2px 10px white, -2px 2px 10px rgba(5, 5, 0, 0.1), 0 0 10px rgba(5, 5, 0, 0.1), inset 0 0 10px rgba(5, 5, 0, 0.1);
-            background: black;
-          }
-        }
-      `}</style>
-    </div>
+    <Container
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <TimerCard>
+        <Title variants={itemVariants}>
+          BITMUN 25'
+        </Title>
+        <Subtitle variants={itemVariants}>
+          Overcoming Differences
+        </Subtitle>
+        <TimeUnitsContainer>
+          {timeUnits.map(({ value, label }) => (
+            <TimeUnit key={label}>
+              <AnimatePresence mode="wait">
+                <TimeValue
+                  key={value}
+                  variants={numberVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30
+                  }}
+                >
+                  {String(value).padStart(2, '0')}
+                </TimeValue>
+              </AnimatePresence>
+              <TimeLabel>{label}</TimeLabel>
+            </TimeUnit>
+          ))}
+        </TimeUnitsContainer>
+      </TimerCard>
+    </Container>
   );
 };
 

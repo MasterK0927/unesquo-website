@@ -4,6 +4,7 @@
     align-items: center;
     gap: 20px;
     padding: 20px 0;
+    margin-top: 15px;
 }
 .section{
     display: flex;

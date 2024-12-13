@@ -1,79 +1,122 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import styles from './video.module.css';
 
-function Video() {
-
+const VideoPlayer = () => {
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Intersection Observer for autoplay and pause
   useEffect(() => {
-    // Function to play the video
-    const playVideo = () => {
-      const videoElement = document.getElementById('autoplayVideo') as HTMLVideoElement;
-      if (videoElement) {
-        videoElement.play();
-      }
-    };
+    const currentVideoRef = videoRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentVideoRef?.play().catch(error => console.error('Autoplay failed:', error));
+            setIsPlaying(true);
+          } else {
+            currentVideoRef?.pause();
+            setIsPlaying(false);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    // Event listener to play the video when the component mounts
-    window.addEventListener('load', playVideo);
+    if (currentVideoRef) {
+      observer.observe(currentVideoRef);
+    }
 
-    // Event listener to play/pause the video when scrolling
-    window.addEventListener('scroll', videoScroll);
-
-    // Cleanup the event listeners when the component unmounts
     return () => {
-      window.removeEventListener('load', playVideo);
-      window.removeEventListener('scroll', videoScroll);
+      if (currentVideoRef) {
+        observer.unobserve(currentVideoRef);
+      }
     };
   }, []);
 
-  // Function to handle video play/pause based on scroll
-  function videoScroll() {
-    const videoElement = document.getElementById('autoplayVideo') as HTMLVideoElement;
-    if (videoElement) {
-      const windowHeight = window.innerHeight;
-      const videoHeight = videoElement.clientHeight;
-      const videoClientRect = videoElement.getBoundingClientRect();
-
-      if (
-        videoClientRect.top <= windowHeight - videoHeight * 0.5 &&
-        videoClientRect.top >= 0 - videoHeight * 0.5
-      ) {
-        videoElement.play();
-      } else {
-        videoElement.pause();
-      }
-    }
-  }
+  // Toggle Mute Handler
   const handleToggleMute = () => {
-    const videoElement = document.getElementById('autoplayVideo') as HTMLVideoElement;
-
-    if (videoElement) {
-      videoElement.muted = !isMuted;
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
     }
   };
 
+  // Toggle Play/Pause
+  const handleTogglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play().catch(error => console.error('Play failed:', error));
+        setIsPlaying(true);
+      }
+    }
+  };
+
   return (
-    <div>
-      <div className={styles.video_wrap}>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ 
+        duration: 0.8,
+        ease: "easeInOut"
+      }}
+      className={styles.videoContainer}
+    >
+      <motion.div 
+        initial={{ scale: 0.95, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        transition={{ 
+          duration: 0.6,
+          ease: "easeOut"
+        }}
+        className={styles.videoWrapper}
+      >
+        {/* Video Element */}
         <video
+          ref={videoRef}
           id="autoplayVideo"
+          poster='https://scontent.fccu13-2.fna.fbcdn.net/v/t39.30808-6/306843302_463685125799498_6440379255570587761_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=JGFG2aQq-50AX8DcNGf&_nc_ht=scontent.fccu13-2.fna&oh=00_AfCv5XXOBU53vGipi1CgjFXy6Tqx3DSKcLDneXAvMPq_qQ&oe=6581FA1B'
           className={styles.video}
           autoPlay
           muted={isMuted}
           playsInline
-          poster='https://scontent.fccu13-2.fna.fbcdn.net/v/t39.30808-6/306843302_463685125799498_6440379255570587761_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=JGFG2aQq-50AX8DcNGf&_nc_ht=scontent.fccu13-2.fna&oh=00_AfCv5XXOBU53vGipi1CgjFXy6Tqx3DSKcLDneXAvMPq_qQ&oe=6581FA1B'
         >
           <source src="bitmun.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        <div className={styles.muteToggle} onClick={handleToggleMute}>
-          {isMuted ? 'Unmute' : 'Mute'}
-        </div>
-      </div>
-    </div>
-  );
-}
 
-export default Video;
+        {/* Control Overlay */}
+        <div className={styles.controlsContainer}>
+          {/* Mute Toggle */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleToggleMute}
+            className={styles.muteToggle}
+            aria-label={isMuted ? "Unmute" : "Mute"}
+          >
+            {isMuted ? 'Unmute' : 'Mute'}
+          </motion.button>
+
+          {/* Play/Pause Toggle */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleTogglePlay}
+            className={styles.playToggle}
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? 'Pause' : 'Play'}
+          </motion.button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default VideoPlayer;

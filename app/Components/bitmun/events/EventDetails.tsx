@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { Height } from "@mui/icons-material";
 
 const EventDetails: React.FC = () => {
 	const events = [
@@ -40,15 +41,16 @@ const EventDetails: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-around',
 		flexWrap: 'wrap',
+		height: '50vh',
       };
 
 	
 
 	return (
 		<div style={flexStyles as React.CSSProperties}>
-			{events.map((event, index) => (
+			{/* {events.map((event, index) => (
 				<><Card key={index} {...event} /></>
-			))}
+			))} */}
 		</div>
 	);
 };

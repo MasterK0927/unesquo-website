@@ -51,6 +51,7 @@ const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
 const Unga: React.FC<ungaProps> = ({ ungaData }) => {
   return (
     <>
+      <h1 className={styles['heading_past']}>Last BITMUN Chairs</h1>
       <h1 className={styles['heading']}>UNGA</h1>
       <div className={styles.teamGrid}>
         <div className={styles.teamCards}>

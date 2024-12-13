@@ -260,6 +260,22 @@
         0 0 400px rgb(255, 196, 0);
 
 }
+.heading_past{
+    font-size: 4rem;
+    margin: 5rem 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px rgb(255, 136, 0),
+        0 0 80px rgb(255, 136, 0),
+        0 0 120px rgb(255, 136, 0),
+        0 0 200px rgb(255, 136, 0),
+        0 0 300px rgb(255, 136, 0),
+        0 0 400px rgb(255, 136, 0);
+}
 
 .teamCards {
     display: grid;

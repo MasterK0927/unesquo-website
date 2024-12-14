@@ -1,64 +1,110 @@
 import React from 'react';
-import styles from './DelegateAffairs.module.css';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import styles from './DelegateAffairs.module.css';
 
-interface Team {
+interface PersonData {
   id: number;
   src: string;
   name: string;
   position: string;
 }
 
-interface jsipProps {
-  jsipData: Team[];
+interface jsipDataProps {
+  jsipData: PersonData[];
 }
 
-
-const TeamCard: React.FC<Team> = ({ id, src, name, position }) => {
+const TeamCard: React.FC<PersonData> = ({ id, src, name, position }) => {
   return (
-    <div key={id} className={styles['alumni-item']}>
-      {/* <div className={styles["dpeDzF"]}>
-        <div className={styles["content"]}>
-          <Image src={src} alt="alumni" width={200} height={225} className={styles['alumniImage']} />
-          <h3 className={styles['alumni-name']}>{name}</h3>
-          <div className={styles['alumni-position']}>
-            {position}
-          </div>
-        </div>
-      </div> */}
-      <article className={styles["card"]}>
+    <motion.div 
+      key={id} 
+      className={styles['alumni-item']}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: 0.2 * (id % 4),
+        ease: "easeOut" 
+      }}
+      viewport={{ 
+        once: false,
+        amount: 0.2
+      }}
+    >
+      <article className={styles.card}>
         <Image
-          className={styles["card__background"]}
+          className={styles.card__background}
           src={src}
-          alt="WarCab"
+          alt={`${name} - ${position}`}
           width={1200}
           height={1400}
           loading='lazy'
         />
-        <div className={styles["card__content"]}>
+        <motion.div 
+          className={styles.card__content}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            delay: 0.2 * (id % 4) + 0.3 
+          }}
+          viewport={{ 
+            once: false,
+            amount: 0.2 
+          }}
+        >
           <div className={styles["card__content--container"]}>
-            <h2 className={styles["card__title"]}>{name}</h2>
-            <div className={styles["card_description"]}>
+            <motion.h2 
+              className={styles.card__title}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: 0.2 * (id % 4) + 0.4 
+              }}
+              viewport={{ 
+                once: false,
+                amount: 0.2 
+              }}
+            >
+              {name}
+            </motion.h2>
+            <motion.div 
+              className={styles.card_description}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: 0.2 * (id % 4) + 0.5 
+              }}
+              viewport={{ 
+                once: false,
+                amount: 0.2 
+              }}
+            >
               {position}
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </article>
-    </div>
+    </motion.div>
   );
 };
 
-const Jsip: React.FC<jsipProps> = ({ jsipData }) => {
+const Jsip: React.FC<jsipDataProps> = ({ jsipData }) => {
   return (
-    <>
-      <div className={styles.teamGrid}>
-        <div className={styles.teamCards}>
-          {jsipData.map((team) => (
-            <TeamCard key={team.id} {...team} />
-          ))}
-        </div>
+    <motion.div 
+      className={styles.teamGrid}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className={styles.teamCards}>
+        {jsipData.map((person) => (
+          <TeamCard key={person.id} {...person} />
+        ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

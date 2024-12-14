@@ -1,0 +1,90 @@
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  .rippleTextContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .rippleText {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ff88008a, #e52e71a9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    animation: rippleText 3s infinite ease-in-out;
+  }
+  
+  .rippleText:nth-child(odd) {
+    animation-delay: 0s;
+  }
+  
+  .rippleText:nth-child(even) {
+    animation-delay: 1.5s;
+  }
+  
+  .finalLogoContainer {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 2s ease 1.5s forwards;
+  }
+  
+  .finalLogo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .finalText {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes rippleText {
+    0% {
+      opacity: 0;
+      transform: translate(calc(var(--random-x)), calc(var(--random-y))) scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(calc(var(--random-x)), calc(var(--random-y))) scale(1.5);
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }

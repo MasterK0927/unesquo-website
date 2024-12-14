@@ -8,10 +8,10 @@ import FourGridsSection from '../Components/bitmun/OurTeam/FourGrids';
 // import ExampleUsage from '../Components/bitmun/OurTeam/ExampleUsage';
 // import ExampleUsage1 from '../Components/bitmun/OurTeam/ExampleUsage1';
 import Video from '../Components/bitmun/OurTeam/Video';
-import Preloader from '../Components/preloader/preloader';
 import styles from './OurTeam.module.css';
 import Button from "../Components/bitmun/button/Button";
 import { FaCrown, FaUserCheck, FaBullhorn } from "react-icons/fa";
+import UnesquoLoading from '../Components/bitmun/loading/UnesquoLoading';
 
 const targetTime = '2025-01-18T08:00:00';
 
@@ -45,7 +45,7 @@ const Bitmun = () => {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
-      {loading && <Preloader />}
+      {loading && <UnesquoLoading />}
       {!loading && (
         <>
           <NavBar />

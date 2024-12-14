@@ -1,27 +1,31 @@
-"use client";
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../../public/bitmun.svg";
-import unstop from "../../public/unstop.svg"
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import logo from "../../public/bitmun.svg";
+import unstop from "../../public/unstop.svg";
 
-function NavBar() {
-  const hero = useRef<HTMLDivElement>(null);
-
+const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setShouldAnimate(window.innerWidth > 1280);
     };
 
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
     handleResize();
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -29,59 +33,111 @@ function NavBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-
   return (
-    <HeaderStyled ref={hero}>
-      <nav className="navbar">
-        <a href='/bitmun'>
+    <HeaderStyled>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 0.8 }}
+        style={{
+          backgroundColor: scrollPosition > 50 ? "rgba(26, 26, 26, 0.95)" : "#1a1a1a"
+        }}
+      >
+        <motion.a 
+          href="/bitmun"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 400 }}
+        >
           <div className="logo">
-            <div className="unesquo">
+            <motion.div 
+              className="unesquo"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+            >
               <Image src={logo} alt="logo" width={70} className="brand-logo" />
-              <h2 className="brand">BITMUN</h2>
-            </div>
-            <div className="unstop">
+              <motion.h2 
+                className="brand"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                BITMUN
+              </motion.h2>
+            </motion.div>
+            <motion.div 
+              className="unstop"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
               <h2 className="brand_unstop">Powered by</h2>
               <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
-            </div>
+            </motion.div>
           </div>
-        </a>
-        <div className="menu-icon" onClick={toggleMenu}>
-          ☰
-        </div>
-        <ul className={`nav-items ${isMenuOpen ? "open" : "close"}`}>
-          <li>
-            <a href="/bitmun/collaborations">
-              Collaborations
-            </a>
-          </li>
-          <li>
-            <a href="/bitmun/events">Committees</a>
-          </li>
-          <li>
-            <a href="/bitmun/about">About Us</a>
-          </li>
-          <li>
-            <a href="/bitmun/ourTeam" >Our Team</a>
-          </li>
-          <li>
-            <a href="/bitmun/contact">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
+        </motion.a>
 
+        <motion.button 
+          className={`menu-icon ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          ☰
+        </motion.button>
+
+        <AnimatePresence>
+          {(shouldAnimate || isMenuOpen) && (
+            <motion.ul
+              className={`nav-items ${isMenuOpen ? "open" : "close"}`}
+              initial={shouldAnimate ? { opacity: 0, x: 50 } : { opacity: 0, y: -20 }}
+              animate={shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            >
+              {["Collaborations", "Committees", "About Us", "Our Team", "Contact Us"].map((item, index) => (
+                <motion.li
+                  key={item}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, color: "#ff8c00" }}
+                >
+                  <a href={`/bitmun/${item.toLowerCase().replace(" ", "")}`}>
+                    {item}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </motion.nav>
     </HeaderStyled>
   );
-}
+};
 
 const HeaderStyled = styled.header`
   nav {
-    padding: 0 4rem 0 4rem;
+    padding: 0 4rem;
     min-height: 10vh;
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--color-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(
+        135deg, 
+        rgba(33, 33, 50, 0.9), 
+        rgba(20, 20, 40, 0.95)
+      );
+    color: #fff;
+    position: fixed;
+    width: 99%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 20px 20px;
+
     .logo {
       display: flex;
       position: relative;
@@ -91,43 +147,44 @@ const HeaderStyled = styled.header`
       gap: 1rem;
       cursor: pointer;
 
-      .unesquo{
+      .unesquo {
         display: flex;
         align-items: center;
         justify-content: center;
         height: fit-content;
       }
 
-      .unstop{
+      .unstop {
         width: fit-content;
         gap: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position:absolute;
+        position: absolute;
         top: 95px;
 
-        .brand_unstop{
+        .brand_unstop {
           font-size: 0.8rem;
           font-weight: 700;
-          color: gray;
+          color: #ccc;
           font-family: "Poppins", sans-serif;
         }
 
-        .brand-logo-unstop{
+        .brand-logo-unstop {
           transform: scale(2);
           margin-top: -0.5rem;
         }
       }
 
-      .brand-logo{
+      .brand-logo {
         margin-top: 2rem;
         transform: scale(1.4);
       }
-      .brand{
+      
+      .brand {
         font-size: 2rem;
         font-weight: 700;
-        color: white;
+        color: #fff;
         font-family: "Poppins", sans-serif;
       }
     }
@@ -137,77 +194,86 @@ const HeaderStyled = styled.header`
       align-items: center;
       gap: 2rem;
       font-size: 1.2rem;
+      list-style: none;
+
       li {
-        padding:0.75rem 0.75rem;
+        padding: 0.75rem 0.75rem;
         border-radius: 0.5rem;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(45deg, #ff8c00, #ffd700);
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 100%;
         }
       }
-      li:hover {
-        border: 1px solid var(--color-border);
-        background: linear-gradient(45deg, #ff8c00, #ffd700);;
-        color: black;
-      }
     }
 
     a {
-      color: rgb(64, 221, 255);
-    }
-
-    a {
-      color: inherit;
+      color: #40ddff;
       text-decoration: none;
-      width: -webkit-max-content;
-      width: -moz-max-content;
       width: max-content;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 2rem;
+      color: #40ddff;
+      background-color: transparent;
+      border: none;
+      transition: transform 0.3s ease-in-out;
+
+      &.open {
+        transform: rotate(90deg);
+      }
     }
   }
 
- 
   @media screen and (max-width: 1280px) {
-    
-    .nav-items{
-      padding: 0%;
+    nav {
+      padding: 0 2rem !important;
+      justify-content: space-between !important;
+      background: linear-gradient(
+        135deg, 
+        rgba(33, 33, 50, 0.9), 
+        rgba(20, 20, 40, 0.95)
+      );
+    }
+
+    .nav-items {
+      padding: 0;
       font-size: 1rem;
       margin: 0;
     }
-    .navbar{
-      padding : 0rem 2rem !important;
-      justify-content: space-between !important;
-    }
-    .brand{
+
+    .brand {
       font-size: 1.5rem !important;
     }
 
-    .unstop{
+    .unstop {
       gap: 1rem !important;
     }
 
-    .brand-logo-unstop{
+    .brand-logo-unstop {
       transform: scale(1.5) !important;
-      margin-top: 0rem !important;
+      margin-top: 0 !important;
     }
 
-    .special{
-      width: 6rem !important;
-      height: 2.4rem !important;
-      
-    }
-    .text{
-      margin-left: -0.8rem !important;
-    }
-    
-    
-    .nav-items {
-      display: none;
-    }
-    
     .menu-icon {
-      visibility: visible;
-      display: block;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: white;
-      padding: 1rem;
+      display: block !important;
+      visibility: visible !important;
+      z-index: 100;
     }
 
     .nav-items {
@@ -216,44 +282,36 @@ const HeaderStyled = styled.header`
       top: 7.2rem;
       left: 0;
       width: 100%;
-      background:var(--color-bg);
+      background: linear-gradient(
+        135deg, 
+        rgba(33, 33, 50, 0.9), 
+        rgba(20, 20, 40, 0.95)
+      );
       text-align: center;
       padding-bottom: 0.7rem;
       padding-top: 0.5rem;
       z-index: 10;
-    }
+      border-radius: 0 0 20px 20px;
 
-    .nav-items.open {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+      &.open {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
-    .nav-items.close{
-      visibility: hidden;
-      width: 0 !important;
-    }
+      &.close {
+        display: none;
+      }
 
-    .nav-items.open li {
-      margin: 0.4rem 0;
-    }
-    
-    .nav-items.open a {
-      color: whitesmoke;
-    }
-
-    .nav-items a {
-      padding: 1.2rem 0 ;
-      border-bottom: 1.25px solid rgba(254, 254, 254, 0.345); 
-    }
-
-
-    .button__StyledButton-sc-18iddzu-1{
-      border-bottom: none !important;
-    }
-
-    .genesis-button{
-      margin-top: 0 !important;
+      li {
+        margin: 0.4rem 0;
+        
+        a {
+          padding: 1.2rem 0;
+          color: #fff;
+          display: block;
+        }
+      }
     }
   }
 `;

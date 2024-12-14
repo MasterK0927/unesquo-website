@@ -21,6 +21,7 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  margin-top: 8rem;
 
   @media (max-width: 768px) {
     min-height: 20vh;

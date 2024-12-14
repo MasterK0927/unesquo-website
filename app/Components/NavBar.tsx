@@ -47,7 +47,7 @@ const NavBar = () => {
                 BITMUN
               </motion.h2>
             </motion.div>
-            <motion.div 
+            {/* <motion.div 
               className="unstop"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const NavBar = () => {
             >
               <h2 className="brand_unstop">Powered by</h2>
               <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.a>
 
@@ -263,7 +263,6 @@ const HeaderStyled = styled.header`
     .logo {
       gap: 0rem !important;
       margin-left: -1rem !important;
-      margin-top: -1rem !important;
     }
 
     .menu-icon {

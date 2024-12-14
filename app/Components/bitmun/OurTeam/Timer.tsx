@@ -247,7 +247,7 @@ const Timer = ({ targetTime }: TimerProps) => {
           BITMUN 25'
         </Title>
         <Subtitle variants={itemVariants}>
-          Overcoming Differences
+          Think globally act diplomatically
         </Subtitle>
         <TimeUnitsContainer>
           {timeUnits.map(({ value, label }) => (

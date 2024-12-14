@@ -27,6 +27,7 @@ const sectionVariants = {
 };
 
 const ChairPage: React.FC = () => {
+  // Typed data arrays
   const ungaData: PersonData[] = [
     {
       id: 1,
@@ -162,35 +163,65 @@ const ChairPage: React.FC = () => {
           }}
           className={styles.sectionsContainer}
         >
-          <motion.section variants={sectionVariants} className={styles.section}>
+          <motion.section 
+            variants={sectionVariants} 
+            className={styles.section} 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
               UNGA
             </motion.h2>
             <Unga ungaData={ungaData} />
           </motion.section>
 
-          <motion.section variants={sectionVariants} className={styles.section}>
+          <motion.section 
+            variants={sectionVariants} 
+            className={styles.section} 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
               War Cabinet
             </motion.h2>
             <WarCab warCabData={warCabData} />
           </motion.section>
 
-          <motion.section variants={sectionVariants} className={styles.section}>
+          <motion.section 
+            variants={sectionVariants} 
+            className={styles.section} 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
               Ministry of Magic
             </motion.h2>
             <Mom MomData={MomData} />
           </motion.section>
 
-          <motion.section variants={sectionVariants} className={styles.section}>
+          <motion.section 
+            variants={sectionVariants} 
+            className={styles.section} 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
               Joint Session of Indian Parliament
             </motion.h2>
             <Jsip jsipData={jsipData} />
           </motion.section>
 
-          <motion.section variants={sectionVariants} className={styles.section}>
+          <motion.section 
+            variants={sectionVariants} 
+            className={styles.section} 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
               International Press
             </motion.h2>

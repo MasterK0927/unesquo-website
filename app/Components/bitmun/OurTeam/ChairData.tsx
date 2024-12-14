@@ -7,9 +7,27 @@ import Mom from './mom';
 import Jsip from './jsip';
 import Press from './press';
 
-// Redefine the data directly in the component
+interface PersonData {
+  id: number;
+  src: string;
+  name: string;
+  position: string;
+}
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 const ChairPage: React.FC = () => {
-  const ungaData = [
+  const ungaData: PersonData[] = [
     {
       id: 1,
       src: '/chair/Aishnit_Yadav.jpg',
@@ -30,7 +48,7 @@ const ChairPage: React.FC = () => {
     },
   ];
 
-  const warCabData = [
+  const warCabData: PersonData[] = [
     {
       id: 1,
       src: '/chair/Pragyan_Sharma.jpeg',
@@ -45,7 +63,7 @@ const ChairPage: React.FC = () => {
     },
   ];
 
-  const MomData = [
+  const MomData: PersonData[] = [
     {
       id: 1,
       src: '/images/webp/NikhilVerma.webp',
@@ -66,7 +84,7 @@ const ChairPage: React.FC = () => {
     },
   ];
 
-  const jsipData = [
+  const jsipData: PersonData[] = [
     {
       id: 1,
       src: '/chair/Avyakt_Mishra.jpg',
@@ -81,7 +99,7 @@ const ChairPage: React.FC = () => {
     },
   ];
 
-  const pressData = [
+  const pressData: PersonData[] = [
     {
       id: 1,
       src: '/chair/Aditya_Dubey.jpg',
@@ -108,47 +126,6 @@ const ChairPage: React.FC = () => {
     },
   ];
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const renderSectionTitle = (title: string) => (
-    <motion.h2 
-      variants={sectionVariants}
-      className={styles.sectionTitle}
-    >
-      {title}
-    </motion.h2>
-  );
-
-  const renderSectionContent = (SectionComponent: React.ComponentType<any>, data: any[], title: string) => (
-    <motion.section 
-      variants={sectionVariants}
-      initial="hidden"
-      animate="visible"
-      className={styles.section}
-    >
-      {renderSectionTitle(title)}
-      <SectionComponent 
-        {...(SectionComponent.name === 'Unga' ? { ungaData: data } : 
-         SectionComponent.name === 'WarCab' ? { warCabData: data } : 
-         SectionComponent.name === 'Mom' ? { MomData: data } : 
-         SectionComponent.name === 'Jsip' ? { jsipData: data } : 
-         SectionComponent.name === 'Press' ? { pressData: data } : {})}
-        className={styles.sectionGrid}
-        cardClassName={styles.card}
-      />
-    </motion.section>
-  );
-
   return (
     <AnimatePresence>
       <motion.div 
@@ -164,7 +141,7 @@ const ChairPage: React.FC = () => {
           className={styles.header}
         >
           <h1 className={styles.mainTitle}>
-            BITMUN 24' Chairs
+            BITMUN 24&apos; Chairs
           </h1>
           <p className={styles.subtitle}>
             Celebrating the exceptional leadership driving our diplomatic discourse
@@ -185,11 +162,40 @@ const ChairPage: React.FC = () => {
           }}
           className={styles.sectionsContainer}
         >
-          {renderSectionContent(Unga, ungaData, "UNGA")}
-          {renderSectionContent(WarCab, warCabData, "War Cabinet")}
-          {renderSectionContent(Mom, MomData, "Ministry of Magic")}
-          {renderSectionContent(Jsip, jsipData, "Joint Session of Indian Parliament")}
-          {renderSectionContent(Press, pressData, "International Press")}
+          <motion.section variants={sectionVariants} className={styles.section}>
+            <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
+              UNGA
+            </motion.h2>
+            <Unga ungaData={ungaData} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants} className={styles.section}>
+            <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
+              War Cabinet
+            </motion.h2>
+            <WarCab warCabData={warCabData} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants} className={styles.section}>
+            <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
+              Ministry of Magic
+            </motion.h2>
+            <Mom MomData={MomData} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants} className={styles.section}>
+            <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
+              Joint Session of Indian Parliament
+            </motion.h2>
+            <Jsip jsipData={jsipData} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants} className={styles.section}>
+            <motion.h2 variants={sectionVariants} className={styles.sectionTitle}>
+              International Press
+            </motion.h2>
+            <Press pressData={pressData} />
+          </motion.section>
         </motion.div>
       </motion.div>
     </AnimatePresence>

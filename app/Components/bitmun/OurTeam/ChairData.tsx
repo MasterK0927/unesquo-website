@@ -39,7 +39,7 @@ const ChairPage: React.FC = () => {
     },
     {
       id: 2,
-      src: '/chair/Akshat_Raj_Sharma.jpg',
+      src: '/chair/Akshat_Raj_Sharma.JPG',
       name: 'Akshat Raj Sharma',
       position: 'VICECHAIR',
     },

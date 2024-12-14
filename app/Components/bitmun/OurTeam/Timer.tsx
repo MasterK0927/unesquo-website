@@ -109,7 +109,7 @@ const TimeUnit = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 6px;
+    padding: 3.25px;
   }
 `;
 

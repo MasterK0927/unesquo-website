@@ -56,7 +56,7 @@ const NavBar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Image src={logo} alt="logo" width={70} className="brand-logo" />
+              <Image src={logo} alt="logo" height={30} width={70} className="brand-logo" />
               <motion.h2 
                 className="brand"
                 initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ const NavBar = () => {
               transition={{ delay: 0.6 }}
             >
               <h2 className="brand_unstop">Powered by</h2>
-              <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
+              <Image src={unstop} alt="logo" height={30} width={40} className="brand-logo-unstop" />
             </motion.div>
           </div>
         </motion.a>

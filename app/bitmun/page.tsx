@@ -93,9 +93,7 @@ const Bitmun = () => {
               <ExampleUsage1 />
             </div>
           </section> */}
-          <div style={{ margin: '20px 0' }}>
             <ChairPage />
-          </div>
           <Footer />
         </>
       )}

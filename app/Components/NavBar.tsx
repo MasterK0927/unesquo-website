@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,25 +10,6 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 1280);
-    };
-
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,7 +37,7 @@ const NavBar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Image src={logo} alt="logo" height={30} width={70} className="brand-logo" />
+              <Image src={logo} alt="logo" width={70} className="brand-logo" />
               <motion.h2 
                 className="brand"
                 initial={{ opacity: 0 }}
@@ -73,7 +54,7 @@ const NavBar = () => {
               transition={{ delay: 0.6 }}
             >
               <h2 className="brand_unstop">Powered by</h2>
-              <Image src={unstop} alt="logo" height={30} width={40} className="brand-logo-unstop" />
+              <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
             </motion.div>
           </div>
         </motion.a>

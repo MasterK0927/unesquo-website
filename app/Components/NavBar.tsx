@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,25 +10,6 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setShouldAnimate(window.innerWidth > 1280);
-    };
-
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

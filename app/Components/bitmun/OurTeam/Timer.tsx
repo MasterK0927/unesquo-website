@@ -230,7 +230,7 @@ const Timer = ({ targetTime }: TimerProps) => {
     return (
       <Container>
         <TimerCard>
-          <TimerExpired>Event Has Started!</TimerExpired>
+          <TimerExpired>Event Has Ended! See You Next Time!</TimerExpired>
         </TimerCard>
       </Container>
     );

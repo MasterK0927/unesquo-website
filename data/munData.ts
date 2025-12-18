@@ -51,25 +51,25 @@ export const committees = [
 
 export const secretariat = [
     {
-        name: 'To Be Announced',
+        name: 'BITMUN',
         role: 'Secretary General',
         image: '',
         bio: 'Coming soon',
     },
     {
-        name: 'To Be Announced',
+        name: 'BITMUN',
         role: 'Deputy Secretary General',
         image: '',
         bio: 'Coming soon',
     },
     {
-        name: 'To Be Announced',
+        name: 'BITMUN',
         role: 'Director General',
         image: '',
         bio: 'Coming soon',
     },
     {
-        name: 'To Be Announced',
+        name: 'BITMUN',
         role: 'Vice President',
         image: '',
         bio: 'Coming soon',

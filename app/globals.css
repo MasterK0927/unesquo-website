@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --color-border: #424242;
   --color-bg: #111111;
@@ -43,6 +47,7 @@ header {
   position: relative;
   z-index: 10;
 }
-html{
+
+html {
   overflow-x: hidden;
 }

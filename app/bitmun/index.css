@@ -1,0 +1,435 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+    :root {
+        --background: 220 20% 3%;
+        --foreground: 0 0% 98%;
+
+        --card: 220 20% 5%;
+        --card-foreground: 0 0% 98%;
+
+        --popover: 220 20% 5%;
+        --popover-foreground: 0 0% 98%;
+
+        /* Lifestyle gradient theme - Blue to Pink to Orange */
+        --primary: 217 100% 65%;
+        /* #4E93FF */
+        --primary-foreground: 0 0% 100%;
+
+        --primary-light: 215 86% 70%;
+        /* #639CF2 */
+        --primary-glow: 195 100% 94%;
+        /* #E4F9FF */
+
+        --secondary: 320 98% 74%;
+        /* #FF7EEA */
+        --secondary-foreground: 0 0% 100%;
+
+        --accent: 27 100% 55%;
+        /* #F38300 */
+        --accent-foreground: 0 0% 100%;
+
+        --accent-red: 356 100% 56%;
+        /* #F3DDID approximation */
+
+        --muted: 220 20% 12%;
+        --muted-foreground: 0 0% 60%;
+        /* #999 */
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 20% 15%;
+        --input: 220 20% 15%;
+        --ring: 217 100% 65%;
+
+        --radius: 1.2rem;
+
+        /* Lifestyle editorial tokens */
+        --editorial-text: 0 0% 98%;
+        --editorial-text-light: 220 15% 65%;
+        --editorial-tag: 217 100% 70%;
+        --editorial-tag-bg: 220 20% 12%;
+        --editorial-hover: 220 20% 8%;
+
+        /* Gradient definitions - Orange to Blue inspired */
+        --gradient-primary: linear-gradient(135deg,
+                hsl(27 100% 55%),
+                hsl(217 100% 65%));
+        --gradient-hero: linear-gradient(135deg,
+                hsl(27 100% 55%) 0%,
+                hsl(14 100% 57%) 30%,
+                hsl(290 90% 60%) 60%,
+                hsl(217 100% 65%) 100%);
+        --gradient-accent: linear-gradient(90deg,
+                hsl(27 100% 55%),
+                hsl(14 100% 57%),
+                hsl(217 100% 65%));
+
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217 100% 65%;
+    }
+
+    .dark {
+        --background: 220 20% 8%;
+        --foreground: 220 15% 95%;
+
+        --card: 220 20% 10%;
+        --card-foreground: 220 15% 95%;
+
+        --popover: 220 20% 10%;
+        --popover-foreground: 220 15% 95%;
+
+        --primary: 217 100% 70%;
+        --primary-foreground: 0 0% 100%;
+
+        --primary-light: 215 86% 75%;
+        --primary-glow: 195 100% 30%;
+
+        --secondary: 320 98% 80%;
+        --secondary-foreground: 220 20% 10%;
+
+        --accent: 27 100% 60%;
+        --accent-foreground: 0 0% 100%;
+
+        --accent-red: 356 100% 60%;
+
+        --muted: 220 20% 15%;
+        --muted-foreground: 0 0% 60%;
+        /* #999 */
+
+        --destructive: 0 62.8% 50%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 20% 20%;
+        --input: 220 20% 20%;
+        --ring: 217 100% 70%;
+
+        --editorial-text: 220 15% 92%;
+        --editorial-text-light: 220 15% 65%;
+        --editorial-tag: 217 100% 70%;
+        --editorial-tag-bg: 217 40% 20%;
+        --editorial-hover: 220 20% 12%;
+
+        --gradient-primary: linear-gradient(135deg,
+                hsl(27 100% 60%),
+                hsl(217 100% 70%));
+        --gradient-hero: linear-gradient(135deg,
+                hsl(27 100% 60%) 0%,
+                hsl(14 100% 62%) 30%,
+                hsl(290 90% 65%) 60%,
+                hsl(217 100% 70%) 100%);
+        --gradient-accent: linear-gradient(90deg,
+                hsl(27 100% 60%),
+                hsl(14 100% 62%),
+                hsl(217 100% 70%));
+
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 217 100% 70%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217 100% 70%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-size: 1rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 2;
+    }
+
+    @media (min-width: 40em) {
+        body {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+/* Add the keyframes definition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blob {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(20px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    75% {
+        transform: translate(30px, 10px) scale(1.05);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--secondary) / 0.3);
+    }
+}
+
+/* Utility classes for animations */
+@layer utilities {
+    .animate-blob {
+        animation: blob 15s infinite ease-in-out;
+    }
+
+    .animate-float {
+        animation: float 6s infinite ease-in-out;
+    }
+
+    .animate-shimmer {
+        background-size: 200% auto;
+        animation: shimmer 3s linear infinite;
+    }
+
+    .animate-pulse-glow {
+        animation: pulse-glow 2s infinite ease-in-out;
+    }
+
+    .animate-spin-slow {
+        animation: spin 8s linear infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+@layer components {
+    .blog-feed__item {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .blog-feed__item.animate-fadeInUp {
+        animation: fadeInUp 0.3s ease-out forwards;
+    }
+
+    /* Stagger delays for grid layouts */
+    @media (min-width: 32em) {
+        .blog-feed__item:nth-child(2).animate-fadeInUp {
+            animation-delay: 150ms;
+        }
+    }
+
+    @media (min-width: 60em) {
+        .blog-feed__item:nth-child(2).animate-fadeInUp {
+            animation-delay: 150ms;
+        }
+
+        .blog-feed__item:nth-child(3).animate-fadeInUp {
+            animation-delay: 300ms;
+        }
+    }
+
+    /* Fluid typography for article titles */
+    .fluid-title {
+        font-size: clamp(2.5rem, 8vw + 0.625rem, 12.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+    }
+
+    @media (min-width: 768px) {
+        .fluid-title {
+            font-size: clamp(5rem, 10vw + 1.25rem, 15rem);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .fluid-title {
+            font-size: clamp(6.25rem, 12vw + 1.875rem, 18.75rem);
+        }
+    }
+
+    /* Grid System - Article Layout (Tailwind @layer components) */
+    @layer components {
+
+        /* Main Article Grid Container */
+        .article-grid {
+            @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4 md:px-8 lgPlus:px-12;
+            @apply grid-cols-18 mb-[2.734375rem];
+            @apply md:grid-cols-22;
+            @apply lgPlus:grid-cols-30 lgPlus:mb-[3.75rem];
+        }
+
+        /* Article Header Grid - Grid for navigation without vertical margins */
+        .article-header-grid {
+            @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4 md:px-8 lgPlus:px-12;
+            @apply grid-cols-18;
+            @apply md:grid-cols-22;
+            @apply lgPlus:grid-cols-30;
+        }
+    }
+
+    /* Article Body - Narrow reading width with responsive typography */
+    .article-body {
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-8 lgPlus:col-span-16;
+        @apply text-[1.125rem] leading-[1.45] tracking-[-0.01em];
+        @apply md:text-[1.5rem];
+        @apply lgPlus:text-[1.625rem];
+        @apply 3xl:text-[2.25rem];
+    }
+
+    /* Article Standard Content - Standard width, no typography */
+    .article-content-standard {
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-3 lgPlus:col-span-19;
+    }
+
+    /* Article Hero - Narrow width for hero content */
+    .article-hero {
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-8 lgPlus:col-span-16;
+    }
+
+    /* Article Wide Content - For wider layouts */
+    .article-wide-content {
+        @apply self-center;
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-3 lgPlus:col-span-19;
+    }
+
+    /* Article Centered Content - Extra narrow, centered */
+    .article-centered-content {
+        @apply self-center;
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-9 lgPlus:col-span-14;
+    }
+
+    /* Article Full Width - Spans entire grid */
+    .article-full-width {
+        @apply col-span-full self-center;
+    }
+
+    /* Article Two Column Grid - For related articles, blog listings */
+    .article-two-columns {
+        @apply list-none m-0 p-0 grid gap-12;
+        @apply md:grid-cols-2 md:gap-[70px];
+        @apply lgPlus:gap-24;
+        @apply 3xl:gap-32;
+    }
+
+    /* Article Column Left - Left side of two-column layout */
+    .article-column-left {
+        @apply col-start-1 col-end-9;
+        @apply md:col-start-1 md:col-end-11;
+        @apply lgPlus:col-start-1 lgPlus:col-end-15;
+    }
+
+    /* Article Column Right - Right side of two-column layout */
+    .article-column-right {
+        @apply col-start-10 col-end-[-1];
+        @apply md:col-start-12 md:col-end-[-1];
+        @apply lgPlus:col-start-16 lgPlus:col-end-[-1];
+    }
+
+    /* Article Section Grid - For section-based layouts */
+    .article-section-grid {
+        @apply grid w-full max-w-[1920px] gap-0;
+        @apply grid-cols-18 my-5;
+        @apply md:grid-cols-22 md:my-[2.734375rem];
+        @apply lgPlus:grid-cols-30 lgPlus:my-[3.75rem];
+        @apply 3xl:my-20;
+    }
+
+    /* Article Section Content - Inner grid for sections */
+    .article-section-content {
+        @apply grid w-full max-w-[1920px] gap-0;
+        @apply grid-cols-16 my-8 mb-12;
+        @apply md:grid-cols-18;
+        @apply lgPlus:grid-cols-26;
+    }
+
+    /* Article Wrapper Full - Full width wrapper */
+    .article-wrapper-full {
+        @apply col-span-full;
+    }
+
+    /* Article Wrapper Constrained - Constrained width wrapper */
+    .article-wrapper-constrained {
+        @apply col-start-2 col-span-16;
+        @apply md:col-start-3 md:col-span-18;
+        @apply lgPlus:col-start-3 lgPlus:col-span-26;
+    }
+}

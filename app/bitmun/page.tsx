@@ -318,24 +318,24 @@ const Index = () => {
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">General Inquiries</h3>
-                    <p className="text-muted-foreground">info@vitmun2025.org</p>
+                    <p className="text-muted-foreground">info@bitmun.org</p>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Registration Support</h3>
-                    <p className="text-muted-foreground">registrations@vitmun2025.org</p>
+                    <p className="text-muted-foreground">registrations@bitmun.org</p>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Phone</h3>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">Coming soon</p>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Follow Us</h3>
                     <div className="space-y-2">
-                      <p className="text-muted-foreground">Instagram: @vitmun2025</p>
-                      <p className="text-muted-foreground">LinkedIn: VITMUN 2025</p>
-                      <p className="text-muted-foreground">Twitter: @vitmun2025</p>
+                      <p className="text-muted-foreground">Instagram: @bitmun_bitmesra</p>
+                      <p className="text-muted-foreground">LinkedIn: BITMUN BIT Mesra</p>
+                      <p className="text-muted-foreground">Twitter: @bitmun</p>
                     </div>
                   </div>
                 </div>

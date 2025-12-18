@@ -51,35 +51,35 @@ export const committees = [
 
 export const secretariat = [
     {
-        name: 'Arjun Sharma',
+        name: 'To Be Announced',
         role: 'Secretary General',
         image: '',
-        bio: 'MUN veteran with 5+ years of experience',
+        bio: 'Coming soon',
     },
     {
-        name: 'Priya Krishnan',
+        name: 'To Be Announced',
         role: 'Deputy Secretary General',
         image: '',
-        bio: 'Former Best Delegate at HMUN',
+        bio: 'Coming soon',
     },
     {
-        name: 'Rahul Menon',
-        role: 'Director of Operations',
+        name: 'To Be Announced',
+        role: 'Director General',
         image: '',
-        bio: 'Logistics expert and debate champion',
+        bio: 'Coming soon',
     },
     {
-        name: 'Ananya Gupta',
-        role: 'Director of Communications',
+        name: 'To Be Announced',
+        role: 'Vice President',
         image: '',
-        bio: 'Award-winning journalist and speaker',
+        bio: 'Coming soon',
     },
 ];
 
 export const schedule = [
     {
         day: 'Day 1',
-        date: 'March 15, 2025',
+        date: 'January 18, 2025',
         events: [
             { time: '08:00', title: 'Registration', description: 'Check-in and welcome kit distribution' },
             { time: '09:30', title: 'Opening Ceremony', description: 'Keynote address and flag parade' },
@@ -91,34 +91,23 @@ export const schedule = [
     },
     {
         day: 'Day 2',
-        date: 'March 16, 2025',
+        date: 'January 19, 2025',
         events: [
             { time: '09:00', title: 'Committee Session III', description: 'Working paper drafting' },
             { time: '12:00', title: 'Lunch Break' },
             { time: '13:30', title: 'Committee Session IV', description: 'Moderated caucuses' },
-            { time: '16:00', title: 'Crisis Update', description: 'For crisis committees' },
-            { time: '17:30', title: 'Committee Session V', description: 'Draft resolution review' },
-            { time: '20:00', title: 'Delegate Dance', description: 'Evening social event' },
-        ],
-    },
-    {
-        day: 'Day 3',
-        date: 'March 17, 2025',
-        events: [
-            { time: '09:00', title: 'Committee Session VI', description: 'Final amendments' },
-            { time: '11:00', title: 'Voting Procedures', description: 'Resolution voting' },
-            { time: '13:00', title: 'Lunch Break' },
-            { time: '14:30', title: 'Closing Ceremony', description: 'Awards and recognition' },
-            { time: '16:30', title: 'Farewell', description: 'Photo sessions and departure' },
+            { time: '15:30', title: 'Committee Session V', description: 'Draft resolution review' },
+            { time: '17:00', title: 'Voting Procedures', description: 'Resolution voting' },
+            { time: '18:30', title: 'Closing Ceremony', description: 'Awards and recognition' },
         ],
     },
 ];
 
 export const partners = [
-    { name: 'Global MUN Society', category: 'Knowledge Partner' },
+    { name: 'UNESQUO', category: 'Host Organization' },
+    { name: 'BIT Mesra', category: 'Institutional Partner' },
     { name: 'Youth Diplomacy Foundation', category: 'Supporting Partner' },
-    { name: 'The Times of India', category: 'Media Partner' },
-    { name: 'United Nations Association', category: 'Institutional Partner' },
     { name: 'Model UN Institute', category: 'Training Partner' },
+    { name: 'Global MUN Society', category: 'Knowledge Partner' },
     { name: 'Green Earth Foundation', category: 'Sustainability Partner' },
 ];

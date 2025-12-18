@@ -13,6 +13,7 @@ import SecretariatCard from "@/components/SecretariatCard";
 import ScheduleDay from "@/components/ScheduleDay";
 import { committees, secretariat, schedule, partners } from "@/data/munData";
 import { Button } from "@/components/ui/button";
+import VideoSection from "@/components/VideoSection";
 
 const Index = () => {
   const committeesRef = useRef<(HTMLElement | null)[]>([]);
@@ -110,6 +111,25 @@ const Index = () => {
                   January 18-19, 2025 | BIT Mesra, Ranchi
                 </p>
               </div>
+            </div>
+          </GridContent>
+        </GridWrapper>
+      </Section>
+
+      {/* Video Section */}
+      <Section>
+        <GridWrapper>
+          <GridContent>
+            <div className="article-full-width mb-16">
+              <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-6">
+                BITMUN 2024
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-[60ch] mb-8">
+                Relive the highlights from last year's conference.
+              </p>
+            </div>
+            <div className="article-full-width">
+              <VideoSection />
             </div>
           </GridContent>
         </GridWrapper>
@@ -329,7 +349,7 @@ const Index = () => {
       <footer className="border-t border-border mt-24">
         <div className="article-grid py-12">
           <div className="article-hero text-center text-sm text-muted-foreground">
-            <p>© 2025 VITMUN. Empowering youth through diplomacy and dialogue.</p>
+            <p>© 2025 BITMUN. Empowering youth through diplomacy and dialogue.</p>
           </div>
         </div>
       </footer>

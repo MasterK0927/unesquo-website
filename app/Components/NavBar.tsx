@@ -47,7 +47,7 @@ const NavBar = () => {
                 BITMUN
               </motion.h2>
             </motion.div>
-            <motion.div 
+            {/* <motion.div 
               className="unstop"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const NavBar = () => {
             >
               <h2 className="brand_unstop">Powered by</h2>
               <Image src={unstop} alt="logo" width={40} className="brand-logo-unstop" />
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.a>
 
@@ -166,7 +166,12 @@ const HeaderStyled = styled.header`
       .brand {
         font-size: 2rem;
         font-weight: 700;
-        color: #fff;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
         font-family: "Poppins", sans-serif;
       }
     }
@@ -241,15 +246,23 @@ const HeaderStyled = styled.header`
 
     .brand {
       font-size: 1.5rem !important;
+      margin-left: 0.25rem;
+      gap: 0 !important;
     }
 
-    .unstop {
-      gap: 1rem !important;
+
+    // .brand-logo-unstop {
+    //   transform: scale(1.5) !important;
+    //   margin-top: 0 !important;
+    // }
+
+    .brand-logo {
+      transform: scale(1.4) !important;
     }
 
-    .brand-logo-unstop {
-      transform: scale(1.5) !important;
-      margin-top: 0 !important;
+    .logo {
+      gap: 0rem !important;
+      margin-left: -1rem !important;
     }
 
     .menu-icon {
@@ -261,7 +274,7 @@ const HeaderStyled = styled.header`
     .nav-items {
       display: none;
       position: absolute;
-      top: 7.2rem;
+      top: 6.5rem;
       left: 0;
       width: 100%;
       background: linear-gradient(
@@ -273,7 +286,7 @@ const HeaderStyled = styled.header`
       padding-bottom: 0.7rem;
       padding-top: 0.5rem;
       z-index: 10;
-      border-radius: 0 0 20px 20px;
+      border-radius:20px 20px;
 
       &.open {
         display: flex;

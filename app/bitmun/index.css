@@ -147,6 +147,71 @@ All colors MUST be HSL.
     }
 }
 
+@layer components {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  /* Custom grid utilities for @apply */
+  .col-span-14 { grid-column: span 14 / span 14; }
+  .col-span-16 { grid-column: span 16 / span 16; }
+  .col-span-18 { grid-column: span 18 / span 18; }
+  .col-span-19 { grid-column: span 19 / span 19; }
+  .col-span-26 { grid-column: span 26 / span 26; }
+
+  .col-start-8 { grid-column-start: 8; }
+  .col-start-9 { grid-column-start: 9; }
+  .col-start-10 { grid-column-start: 10; }
+  .col-start-12 { grid-column-start: 12; }
+  .col-start-15 { grid-column-start: 15; }
+  .col-start-16 { grid-column-start: 16; }
+
+  .col-end-9 { grid-column-end: 9; }
+  .col-end-11 { grid-column-end: 11; }
+  .col-end-15 { grid-column-end: 15; }
+
+  .grid-cols-16 { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .grid-cols-18 { grid-template-columns: repeat(18, minmax(0, 1fr)); }
+  .grid-cols-22 { grid-template-columns: repeat(22, minmax(0, 1fr)); }
+  .grid-cols-26 { grid-template-columns: repeat(26, minmax(0, 1fr)); }
+  .grid-cols-30 { grid-template-columns: repeat(30, minmax(0, 1fr)); }
+
+  /* Responsive grid utilities */
+  @media (min-width: 768px) {
+    .md\:col-span-18 { grid-column: span 18 / span 18; }
+    .md\:col-start-1 { grid-column-start: 1; }
+    .md\:col-start-3 { grid-column-start: 3; }
+    .md\:col-start-11 { grid-column-start: 11; }
+    .md\:col-start-12 { grid-column-start: 12; }
+    .md\:col-end-11 { grid-column-end: 11; }
+    .md\:col-end-\[-1\] { grid-column-end: -1; }
+    .md\:grid-cols-18 { grid-template-columns: repeat(18, minmax(0, 1fr)); }
+    .md\:grid-cols-22 { grid-template-columns: repeat(22, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 1180px) {
+    .lgPlus\:col-span-14 { grid-column: span 14 / span 14; }
+    .lgPlus\:col-span-16 { grid-column: span 16 / span 16; }
+    .lgPlus\:col-span-19 { grid-column: span 19 / span 19; }
+    .lgPlus\:col-span-26 { grid-column: span 26 / span 26; }
+    .lgPlus\:col-start-1 { grid-column-start: 1; }
+    .lgPlus\:col-start-3 { grid-column-start: 3; }
+    .lgPlus\:col-start-8 { grid-column-start: 8; }
+    .lgPlus\:col-start-9 { grid-column-start: 9; }
+    .lgPlus\:col-start-16 { grid-column-start: 16; }
+    .lgPlus\:col-end-15 { grid-column-end: 15; }
+    .lgPlus\:col-end-\[-1\] { grid-column-end: -1; }
+    .lgPlus\:grid-cols-26 { grid-template-columns: repeat(26, minmax(0, 1fr)); }
+    .lgPlus\:grid-cols-30 { grid-template-columns: repeat(30, minmax(0, 1fr)); }
+  }
+}
+
 @layer base {
     * {
         @apply border-border;
@@ -316,65 +381,150 @@ All colors MUST be HSL.
         }
     }
 
-    /* Grid System - Article Layout (Tailwind @layer components) */
-    @layer components {
+    /* Grid System - Article Layout */
 
-        /* Main Article Grid Container */
+    /* Main Article Grid Container */
+    .article-grid {
+        @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4;
+        grid-template-columns: repeat(18, minmax(0, 1fr));
+        margin-bottom: 2.734375rem;
+    }
+    @media (min-width: 768px) {
         .article-grid {
-            @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4 md:px-8 lgPlus:px-12;
-            @apply grid-cols-18 mb-[2.734375rem];
-            @apply md:grid-cols-22;
-            @apply lgPlus:grid-cols-30 lgPlus:mb-[3.75rem];
+            padding-left: 2rem;
+            padding-right: 2rem;
+            grid-template-columns: repeat(22, minmax(0, 1fr));
         }
+    }
+    @media (min-width: 1180px) {
+        .article-grid {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            grid-template-columns: repeat(30, minmax(0, 1fr));
+            margin-bottom: 3.75rem;
+        }
+    }
 
-        /* Article Header Grid - Grid for navigation without vertical margins */
+    /* Article Header Grid - Grid for navigation without vertical margins */
+    .article-header-grid {
+        @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4;
+        grid-template-columns: repeat(18, minmax(0, 1fr));
+    }
+    @media (min-width: 768px) {
         .article-header-grid {
-            @apply grid w-full max-w-[1920px] mx-auto gap-0 px-4 md:px-8 lgPlus:px-12;
-            @apply grid-cols-18;
-            @apply md:grid-cols-22;
-            @apply lgPlus:grid-cols-30;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            grid-template-columns: repeat(22, minmax(0, 1fr));
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-header-grid {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            grid-template-columns: repeat(30, minmax(0, 1fr));
         }
     }
 
     /* Article Body - Narrow reading width with responsive typography */
     .article-body {
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-8 lgPlus:col-span-16;
-        @apply text-[1.125rem] leading-[1.45] tracking-[-0.01em];
-        @apply md:text-[1.5rem];
-        @apply lgPlus:text-[1.625rem];
-        @apply 3xl:text-[2.25rem];
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+        font-size: 1.125rem;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+    }
+    @media (min-width: 768px) {
+        .article-body {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+            font-size: 1.5rem;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-body {
+            grid-column-start: 8;
+            grid-column: span 16 / span 16;
+            font-size: 1.625rem;
+        }
+    }
+    @media (min-width: 1920px) {
+        .article-body {
+            font-size: 2.25rem;
+        }
     }
 
     /* Article Standard Content - Standard width, no typography */
     .article-content-standard {
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-3 lgPlus:col-span-19;
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+    }
+    @media (min-width: 768px) {
+        .article-content-standard {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-content-standard {
+            grid-column-start: 3;
+            grid-column: span 19 / span 19;
+        }
     }
 
     /* Article Hero - Narrow width for hero content */
     .article-hero {
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-8 lgPlus:col-span-16;
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+    }
+    @media (min-width: 768px) {
+        .article-hero {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-hero {
+            grid-column-start: 8;
+            grid-column: span 16 / span 16;
+        }
     }
 
     /* Article Wide Content - For wider layouts */
     .article-wide-content {
         @apply self-center;
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-3 lgPlus:col-span-19;
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+    }
+    @media (min-width: 768px) {
+        .article-wide-content {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-wide-content {
+            grid-column-start: 3;
+            grid-column: span 19 / span 19;
+        }
     }
 
     /* Article Centered Content - Extra narrow, centered */
     .article-centered-content {
         @apply self-center;
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-9 lgPlus:col-span-14;
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+    }
+    @media (min-width: 768px) {
+        .article-centered-content {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-centered-content {
+            grid-column-start: 9;
+            grid-column: span 14 / span 14;
+        }
     }
 
     /* Article Full Width - Spans entire grid */
@@ -385,40 +535,104 @@ All colors MUST be HSL.
     /* Article Two Column Grid - For related articles, blog listings */
     .article-two-columns {
         @apply list-none m-0 p-0 grid gap-12;
-        @apply md:grid-cols-2 md:gap-[70px];
-        @apply lgPlus:gap-24;
-        @apply 3xl:gap-32;
+    }
+    @media (min-width: 768px) {
+        .article-two-columns {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 70px;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-two-columns {
+            gap: 6rem;
+        }
+    }
+    @media (min-width: 1920px) {
+        .article-two-columns {
+            gap: 8rem;
+        }
     }
 
     /* Article Column Left - Left side of two-column layout */
     .article-column-left {
-        @apply col-start-1 col-end-9;
-        @apply md:col-start-1 md:col-end-11;
-        @apply lgPlus:col-start-1 lgPlus:col-end-15;
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+    @media (min-width: 768px) {
+        .article-column-left {
+            grid-column-start: 1;
+            grid-column-end: 11;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-column-left {
+            grid-column-start: 1;
+            grid-column-end: 15;
+        }
     }
 
     /* Article Column Right - Right side of two-column layout */
     .article-column-right {
-        @apply col-start-10 col-end-[-1];
-        @apply md:col-start-12 md:col-end-[-1];
-        @apply lgPlus:col-start-16 lgPlus:col-end-[-1];
+        grid-column-start: 10;
+        grid-column-end: -1;
+    }
+    @media (min-width: 768px) {
+        .article-column-right {
+            grid-column-start: 12;
+            grid-column-end: -1;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-column-right {
+            grid-column-start: 16;
+            grid-column-end: -1;
+        }
     }
 
     /* Article Section Grid - For section-based layouts */
     .article-section-grid {
         @apply grid w-full max-w-[1920px] gap-0;
-        @apply grid-cols-18 my-5;
-        @apply md:grid-cols-22 md:my-[2.734375rem];
-        @apply lgPlus:grid-cols-30 lgPlus:my-[3.75rem];
-        @apply 3xl:my-20;
+        grid-template-columns: repeat(18, minmax(0, 1fr));
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    @media (min-width: 768px) {
+        .article-section-grid {
+            grid-template-columns: repeat(22, minmax(0, 1fr));
+            margin-top: 2.734375rem;
+            margin-bottom: 2.734375rem;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-section-grid {
+            grid-template-columns: repeat(30, minmax(0, 1fr));
+            margin-top: 3.75rem;
+            margin-bottom: 3.75rem;
+        }
+    }
+    @media (min-width: 1920px) {
+        .article-section-grid {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
     }
 
     /* Article Section Content - Inner grid for sections */
     .article-section-content {
         @apply grid w-full max-w-[1920px] gap-0;
-        @apply grid-cols-16 my-8 mb-12;
-        @apply md:grid-cols-18;
-        @apply lgPlus:grid-cols-26;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+        .article-section-content {
+            grid-template-columns: repeat(18, minmax(0, 1fr));
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-section-content {
+            grid-template-columns: repeat(26, minmax(0, 1fr));
+        }
     }
 
     /* Article Wrapper Full - Full width wrapper */
@@ -428,8 +642,19 @@ All colors MUST be HSL.
 
     /* Article Wrapper Constrained - Constrained width wrapper */
     .article-wrapper-constrained {
-        @apply col-start-2 col-span-16;
-        @apply md:col-start-3 md:col-span-18;
-        @apply lgPlus:col-start-3 lgPlus:col-span-26;
+        grid-column-start: 2;
+        grid-column: span 16 / span 16;
+    }
+    @media (min-width: 768px) {
+        .article-wrapper-constrained {
+            grid-column-start: 3;
+            grid-column: span 18 / span 18;
+        }
+    }
+    @media (min-width: 1180px) {
+        .article-wrapper-constrained {
+            grid-column-start: 3;
+            grid-column: span 26 / span 26;
+        }
     }
 }
